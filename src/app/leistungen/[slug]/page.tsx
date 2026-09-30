@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { company, getService, services } from "@/lib/content";
@@ -47,23 +46,13 @@ export default async function ServicePage(props: PageProps<"/leistungen/[slug]">
             ))}
           </ul>
         </div>
-        <div>
-          <Image
-            src={service.worstCase.image}
-            alt={service.worstCase.imageAlt}
-            width={2000}
-            height={1500}
-            sizes="(min-width: 768px) 50vw, 100vw"
-            className="rounded-2xl"
-          />
-          <blockquote className="mt-8 border-l-4 border-brand pl-6 text-xl font-semibold leading-snug">
-            „{service.worstCase.quote}“
-          </blockquote>
-          <p className="mt-6 leading-relaxed text-muted">{service.worstCase.text}</p>
+        <div className="rounded-2xl bg-paper p-8 sm:p-10">
+          <h2 className="text-2xl font-semibold tracking-tight text-navy">Warum das wichtig ist</h2>
+          <p className="mt-4 leading-relaxed text-muted">{service.why}</p>
         </div>
       </section>
 
-      <section className="bg-navy text-white">
+      <section className="bg-deep text-white">
         <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-14 sm:px-6 md:flex-row md:items-center md:justify-between">
           <p className="text-2xl font-semibold tracking-tight">Klingt nach Ihrer Situation?</p>
           <div className="flex flex-wrap gap-4">

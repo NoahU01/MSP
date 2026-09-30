@@ -13,8 +13,6 @@ export const company = {
   phoneHref: "tel:+497951278970",
   email: "info@msphr.de",
   vatId: "DE 2230 74168",
-  registerCourt: "Amtsgericht Ulm", // lt. CD-Handbuch 2018 – aktuell halten
-  registerNumber: "HRB 671366",
   customerLoginUrl: "https://msphr.de/customer-login/",
   brochureUrl: "/downloads/MSP-Imagebroschuere-Zukunftsfaktor-Mensch.pdf",
 };
@@ -25,8 +23,12 @@ export type Service = {
   subtitle?: string;
   teaser: string;
   items: string[];
-  /** Warum das Thema für den Unternehmenserfolg wichtig ist */
-  why: string;
+  worstCase: {
+    quote: string;
+    text: string;
+    image: string;
+    imageAlt: string;
+  };
 };
 
 export const services: Service[] = [
@@ -42,7 +44,14 @@ export const services: Service[] = [
       "Schnittstellenmanagement",
       "Prozessentwicklung",
     ],
-    why: "Um komplexe Unternehmensaufgaben effizient, effektiv und nachhaltig zu organisieren, braucht es Weitsicht. Markt- und Personalveränderungen müssen berücksichtigt und in die Zukunft gedacht werden. Agiles Arbeiten und die Herausforderungen der Digitalisierung erfordern häufig einen neuen Blick und die Bereitschaft, Bewährtes auf den Prüfstand zu stellen. Bestehende Strukturen, aber auch Führungs- und Kommunikationsprozesse werden deshalb ganzheitlich betrachtet und den unternehmerischen Zielen angepasst.",
+    worstCase: {
+      quote:
+        "In unseren Abteilungen gibt es keine klar definierten Verantwortlichen oder Abläufe. Jeder macht sein Ding nach bestem Wissen und Gewissen.",
+      text: "Um komplexe Unternehmensaufgaben effizient, effektiv und nachhaltig zu organisieren, braucht es Weitsicht. Markt- und Personalveränderungen müssen berücksichtigt und in die Zukunft gedacht werden. Agiles Arbeiten und die Herausforderungen der Digitalisierung erfordern häufig einen neuen Blick und die Bereitschaft, Bewährtes auf den Prüfstand zu stellen. Bestehende Strukturen, aber auch Führungs- und Kommunikationsprozesse werden deshalb ganzheitlich betrachtet und den unternehmerischen Zielen angepasst.",
+      image: "/images/worstcase-organisationsentwicklung.jpg",
+      imageAlt:
+        "Illustration: Eine Kollegin brüllt durch ein Megafon, ein Kollege zeigt abweisend auf sie – im Hintergrund Chaos im Büro.",
+    },
   },
   {
     slug: "fuehrungskraefteentwicklung",
@@ -56,7 +65,12 @@ export const services: Service[] = [
       "Transfersicherung",
       "Maßgeschneiderte Trainings und Workshops für Persönlichkeitsentwicklung und Führungskompetenz",
     ],
-    why: "Die Anforderungen an Führungskräfte sind hoch und haben sich stark gewandelt. Mitarbeitende haben heute oft genaue Vorstellungen davon, wie sie geführt werden möchten. Nicht jeder ist dieser Aufgabe gewachsen – und nicht immer wird eine mögliche Führungskraft als solche erkannt. Wer sich nicht frühzeitig um Führungsnachwuchs in den eigenen Reihen kümmert, steuert auf Nachfolge-Engpässe zu. Die gezielte Entwicklung von Führungskompetenzen und das Erkennen von Potenzialen sind deshalb integraler Bestandteil einer ganzheitlichen Personalstrategie.",
+    worstCase: {
+      quote: "Wer seinen Job gut macht, wird sich schon irgendwie hocharbeiten.",
+      text: "Die Anforderungen an Führungskräfte sind hoch und haben sich stark gewandelt. Mitarbeitende haben heute oft genaue Vorstellungen davon, wie sie geführt werden möchten. Nicht jeder ist dieser Aufgabe gewachsen – und nicht immer wird eine mögliche Führungskraft als solche erkannt. Wer sich nicht frühzeitig um Führungsnachwuchs in den eigenen Reihen kümmert, steuert auf Nachfolge-Engpässe zu. Die gezielte Entwicklung von Führungskompetenzen und das Erkennen von Potenzialen sind deshalb integraler Bestandteil einer ganzheitlichen Personalstrategie.",
+      image: "/images/worstcase-fuehrungskraefteentwicklung.jpg",
+      imageAlt: "Illustration zur Führungskräfteentwicklung aus der „Worst Case GmbH“.",
+    },
   },
   {
     slug: "personalentwicklung",
@@ -72,7 +86,12 @@ export const services: Service[] = [
       "Beurteilungssysteme",
       "Bildungscontrolling unter systemischen Gesichtspunkten",
     ],
-    why: "Wer die Unzufriedenheit seiner Mitarbeitenden nicht ernst nimmt, muss sich über hohe Fluktuation und mangelnde Arbeitsergebnisse nicht wundern. Ein schlechtes Arbeitsklima und fehlendes Vertrauen sind nicht nur unangenehm, sondern in Zeiten digitaler Transparenz sogar gefährlich. Dabei geht es um weit mehr als gute Stimmung: Mitarbeitende wollen wahrgenommen werden und die Möglichkeit erhalten, sich einzubringen und mit dem Unternehmen weiterzuentwickeln. Die Grundlagen dafür müssen systematisch geschaffen werden.",
+    worstCase: {
+      quote: "Wem unsere Methoden und Vorgehensweisen nicht gefallen, der soll halt gehen.",
+      text: "Wer die Unzufriedenheit seiner Mitarbeitenden nicht ernst nimmt, muss sich über hohe Fluktuation und mangelnde Arbeitsergebnisse nicht wundern. Ein schlechtes Arbeitsklima und fehlendes Vertrauen sind nicht nur unangenehm, sondern in Zeiten digitaler Transparenz sogar gefährlich. Dabei geht es um weit mehr als gute Stimmung: Mitarbeitende wollen wahrgenommen werden und die Möglichkeit erhalten, sich einzubringen und mit dem Unternehmen weiterzuentwickeln. Die Grundlagen dafür müssen systematisch geschaffen werden.",
+      image: "/images/worstcase-personalentwicklung.jpg",
+      imageAlt: "Illustration zur Personalentwicklung aus der „Worst Case GmbH“.",
+    },
   },
   {
     slug: "teamentwicklung",
@@ -89,7 +108,14 @@ export const services: Service[] = [
       "Gruppendynamische Prozesse",
       "Entwicklung einer Teamkultur",
     ],
-    why: "Wichtige Herausforderungen sind nur im Team zu meistern – und eine gute Arbeitsatmosphäre ist dafür die Grundlage. Vertrauensvolle Zusammenarbeit entsteht, wenn der Einzelne wahrgenommen wird und sich gerne als Teil des Ganzen versteht. Schon kleine Unstimmigkeiten können, wenn sie unbeachtet bleiben, zu langfristiger Unzufriedenheit und gestörten Abläufen führen. Führungskräfte sind hier in der Verantwortung, Teamgeist, Loyalität und Kooperationsbereitschaft zu fördern. Der objektive Blick von außen hilft, Probleme und ihre Ursachen zu erkennen und Konflikte aufzulösen.",
+    worstCase: {
+      quote:
+        "Würden die Anderen ihren Job richtig machen, wäre auch meine Leistung viel besser.",
+      text: "Wichtige Herausforderungen sind nur im Team zu meistern – und eine gute Arbeitsatmosphäre ist dafür die Grundlage. Vertrauensvolle Zusammenarbeit entsteht, wenn der Einzelne wahrgenommen wird und sich gerne als Teil des Ganzen versteht. Schon kleine Unstimmigkeiten können, wenn sie unbeachtet bleiben, zu langfristiger Unzufriedenheit und gestörten Abläufen führen. Führungskräfte sind hier in der Verantwortung, Teamgeist, Loyalität und Kooperationsbereitschaft zu fördern. Der objektive Blick von außen hilft, Probleme und ihre Ursachen zu erkennen und Konflikte aufzulösen.",
+      image: "/images/worstcase-teamentwicklung.jpg",
+      imageAlt:
+        "Illustration: Zwei Kollegen zeigen mit dem Finger aufeinander, ein dritter steht mit verschränkten Armen daneben.",
+    },
   },
 ];
 
@@ -100,7 +126,7 @@ export function getService(slug: string) {
 export type CaseStudy = {
   title: string;
   situation: string;
-  question: string;
+  cta: string;
 };
 
 export const cases: CaseStudy[] = [
@@ -108,43 +134,43 @@ export const cases: CaseStudy[] = [
     title: "Eigenverantwortung stärken",
     situation:
       "In einem Familienunternehmen steht die Nachfolge an. Die Kinder haben als geschäftsführende Gesellschafter übernommen und fragen: „Wie gelingt es, dass unsere Führungskräfte nicht mehr mit Problemen, sondern mit Lösungsvorschlägen zu uns kommen?“",
-    question: "Sie stehen vor derselben Herausforderung?",
+    cta: "Sie stehen vor derselben Herausforderung? Kontaktieren Sie uns.",
   },
   {
     title: "Schichtleiter entwickeln",
     situation:
       "Eine Mitarbeiterumfrage zeigt hohe Unzufriedenheit mit der Führungsleistung – insbesondere den sozialen Kompetenzen – auf Schichtleiterebene. Standort- und Personalleitung wünschen sich ein nachhaltiges Entwicklungskonzept.",
-    question: "Ähnliche Rückmeldungen aus Ihrer Mitarbeiterumfrage?",
+    cta: "Ähnliche Rückmeldungen aus Ihrer Mitarbeiterumfrage? Gerne stellen wir Ihnen unser Vorgehen vor.",
   },
   {
     title: "Mitarbeiterjahresgespräch nachhaltig etablieren",
     situation:
       "Ein Mittelständler will das Jahresgespräch neu aufsetzen, weil die Umsetzungsqualität nicht den Zielen entsprach. Der Prozess wird analysiert – und die Führungskräfte gestalten den neuen Prozess von Anfang an mit.",
-    question: "Sie interessieren sich für unser Vorgehen?",
+    cta: "Sie interessieren sich für unser Vorgehen? Sprechen Sie uns an.",
   },
   {
     title: "Führungstalente fordern und fördern",
     situation:
       "Zwei Produktionsstandorte eines internationalen Konzerns wollen ihre Kommunikationskultur neu ausrichten und junge Talente strategisch auf Führungsaufgaben vorbereiten – und so ans Unternehmen binden.",
-    question: "Kommunikationskultur und Talentförderung sind auch bei Ihnen Thema?",
+    cta: "Sprechen Sie mit uns über Kommunikationskultur und Talentförderung.",
   },
   {
     title: "Teamanalysen samt Handlungsempfehlungen",
     situation:
       "Nach einer Restrukturierung wünschen sich Geschäftsleitung und HR Teamanalysen für die betroffenen Bereiche. Leitfrage: „Was kann ich als Teammitglied tun, um das neue Team effizient und effektiv weiterzuentwickeln?“ – ergänzt um Empfehlungen für die Führungskräfte.",
-    question: "Interesse an Team- und Persönlichkeitsanalysen?",
+    cta: "Interesse an Team- und Persönlichkeitsanalysen? Gehen Sie mit uns in den Austausch.",
   },
   {
     title: "Teamleiterstruktur etablieren",
     situation:
       "Der Vertriebsleiter eines Mittelständlers will Verantwortung abgeben und eine neue Teamstruktur aufbauen. MSP begleitet den gesamten Strukturwandel – inklusive Auswahl geeigneter Teamleiter und erster Trainings für die neue Rolle.",
-    question: "Organisatorische Veränderungen stehen an?",
+    cta: "Organisatorische Veränderungen stehen an? Melden Sie sich.",
   },
   {
     title: "Kandidaten-Check",
     situation:
       "Nach mehreren enttäuschenden Personalentscheidungen sucht ein Maschinenbauer ein Tool, das die Passung zwischen Kandidat:innen und Position systematisch analysiert – und das sich auch in Personal- und Teamentwicklung sowie bei Konflikten einsetzen lässt.",
-    question: "Sie wollen Personalentscheidungen absichern?",
+    cta: "Sie wollen Personalentscheidungen absichern? Sprechen Sie uns an.",
   },
 ];
 

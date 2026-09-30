@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ContactForm } from "@/components/ContactForm";
-import { Section } from "@/components/Section";
-import { cases, company, services, steps } from "@/lib/content";
+import { ContactForm } from "./_v1/ContactForm";
+import { Section } from "./_v1/Section";
+import { cases, company, services, steps } from "./_v1/content";
 
 export const metadata: Metadata = { title: "Archiv – Startseite Version 1.0" };
 
-// Archiv: Stand der Startseite vom 30.09.2026 (erste Version). Nicht mehr weiterentwickeln.
+// ARCHIV – eingefrorener Stand der Startseite vom 30.09.2026 (Commit c9d9b4c).
+// Inhalte, Komponenten, Schrift und Farben liegen bewusst als Kopie in ./_v1 und im Layout. Nicht anpassen.
 export default function StartseiteV1() {
   return (
     <>
@@ -25,7 +26,7 @@ export default function StartseiteV1() {
           <p className="text-sm font-semibold uppercase tracking-widest text-brand">
             Zukunftsfaktor Mensch · seit {company.since}
           </p>
-          <h1 className="mt-5 max-w-3xl text-4xl font-semibold leading-[1.1] tracking-tight text-balance sm:text-6xl">
+          <h1 className="mt-5 max-w-3xl text-4xl font-bold leading-[1.1] tracking-tight text-balance sm:text-6xl">
             Ihr HR Businesspartner für Führungs-, Entwicklungs- und Veränderungsprozesse
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">
@@ -83,7 +84,7 @@ export default function StartseiteV1() {
               className="group flex flex-col rounded-2xl border border-line bg-white p-8 transition hover:-translate-y-0.5 hover:border-brand hover:shadow-lg hover:shadow-brand/10"
             >
               <span className="text-sm font-semibold text-brand">0{i + 1}</span>
-              <h3 className="mt-3 text-2xl font-semibold tracking-tight">{s.title}</h3>
+              <h3 className="mt-3 text-2xl font-bold tracking-tight">{s.title}</h3>
               {s.subtitle && <p className="text-sm text-muted">{s.subtitle}</p>}
               <p className="mt-4 leading-relaxed text-muted">{s.teaser}</p>
               <ul className="mt-6 space-y-2 text-sm">
@@ -105,8 +106,8 @@ export default function StartseiteV1() {
       {/* Zukunftsfaktor Mensch */}
       <Section tone="ink">
         <div className="grid gap-12 md:grid-cols-5 md:items-center">
-          <p className="text-3xl font-semibold leading-tight tracking-tight text-balance sm:text-4xl md:col-span-2">
-            Damit sich der <span className="underline decoration-brand decoration-4 underline-offset-8">Zukunftsfaktor Mensch</span> in Ihrem
+          <p className="text-3xl font-bold leading-tight tracking-tight text-balance sm:text-4xl md:col-span-2">
+            Damit sich der <span className="text-brand">Zukunftsfaktor Mensch</span> in Ihrem
             Unternehmen optimal entwickelt.
           </p>
           <div className="space-y-5 text-lg leading-relaxed text-white/75 md:col-span-3">
@@ -176,10 +177,10 @@ export default function StartseiteV1() {
         <ol className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {steps.map((step, i) => (
             <li key={step.title} className="rounded-2xl bg-white p-7 shadow-sm ring-1 ring-line">
-              <span className="flex size-10 items-center justify-center rounded-full bg-brand-soft font-semibold text-brand">
+              <span className="flex size-10 items-center justify-center rounded-full bg-brand-soft font-bold text-brand">
                 {i + 1}
               </span>
-              <h3 className="mt-5 text-xl font-semibold">{step.title}</h3>
+              <h3 className="mt-5 text-xl font-bold">{step.title}</h3>
               <p className="mt-2 leading-relaxed text-muted">{step.text}</p>
             </li>
           ))}
@@ -196,9 +197,9 @@ export default function StartseiteV1() {
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {cases.map((c) => (
             <article key={c.title} className="flex flex-col rounded-2xl border border-line p-7">
-              <h3 className="text-lg font-semibold">{c.title}</h3>
+              <h3 className="text-lg font-bold">{c.title}</h3>
               <p className="mt-3 text-[15px] leading-relaxed text-muted">{c.situation}</p>
-              <p className="mt-auto pt-6 text-sm font-semibold text-brand">{c.question}</p>
+              <p className="mt-auto pt-6 text-sm font-medium text-brand">{c.cta}</p>
             </article>
           ))}
           <a
@@ -207,7 +208,7 @@ export default function StartseiteV1() {
           >
             <div>
               <p className="text-sm font-semibold uppercase tracking-widest text-white/80">Download</p>
-              <h3 className="mt-3 text-2xl font-semibold">Imagebroschüre „Zukunftsfaktor Mensch“</h3>
+              <h3 className="mt-3 text-2xl font-bold">Imagebroschüre „Zukunftsfaktor Mensch“</h3>
             </div>
             <span className="mt-8 font-semibold">PDF herunterladen ↓</span>
           </a>

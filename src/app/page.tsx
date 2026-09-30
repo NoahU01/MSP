@@ -5,7 +5,7 @@ import { Section } from "@/components/Section";
 import { cases, company, services, steps } from "@/lib/content";
 
 // Neue Startseite (ab 01.10.2026). Vorherige Version: /archiv/startseite-v1
-// Story: Störer (Zukunftsfaktor Mensch → Unternehmenserfolg) → typische Sätze/Leistungen → Haltung → Vorgehen → Praxis (Akkordeon) → Kontakt
+// Zwischenstand bis zur neuen Grundstory: Hero → Leistungen → Haltung → Störer → Vorgehen → Praxis (Akkordeon) → Kontakt
 
 const pillars = [
   {
@@ -63,7 +63,40 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 1 · Störer: Zukunftsfaktor Mensch mit klarer Businesslogik */}
+      {/* Leistungen */}
+      <Section id="leistungen" eyebrow="Unsere Leistungen" title="Vier Hebel für Ihren Unternehmenserfolg">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2">
+          {services.map((s, i) => (
+            <Link
+              key={s.slug}
+              href={`/leistungen/${s.slug}`}
+              className="group flex flex-col rounded-2xl border border-line bg-white p-8 transition hover:-translate-y-0.5 hover:border-brand hover:shadow-lg hover:shadow-brand/10"
+            >
+              <span className="text-sm font-semibold text-brand">0{i + 1}</span>
+              <h3 className="mt-3 text-2xl font-semibold tracking-tight text-navy">{s.title}</h3>
+              {s.subtitle && <p className="text-sm text-muted">{s.subtitle}</p>}
+              <p className="mt-4 leading-relaxed text-muted">{s.teaser}</p>
+              <span className="mt-auto pt-8 text-sm font-semibold text-brand">
+                Mehr erfahren <span className="inline-block transition group-hover:translate-x-1">→</span>
+              </span>
+            </Link>
+          ))}
+        </div>
+      </Section>
+
+      {/* Haltung */}
+      <Section eyebrow="Unsere Haltung" title="Der Mensch im Mittelpunkt. Der Unternehmenserfolg im Blick.">
+        <div className="mt-12 grid gap-10 md:grid-cols-3">
+          {pillars.map((p) => (
+            <div key={p.title} className="border-t-2 border-brand pt-6">
+              <h3 className="text-xl font-semibold text-navy">{p.title}</h3>
+              <p className="mt-3 leading-relaxed text-muted">{p.text}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* Störer: Zukunftsfaktor Mensch mit klarer Businesslogik */}
       <Section tone="ink">
         <div className="grid gap-12 md:grid-cols-5 md:items-center">
           <p className="text-3xl font-semibold leading-tight tracking-tight text-balance sm:text-4xl md:col-span-2">
@@ -88,64 +121,10 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* 2 · Kennen Sie diese Sätze? → Leistungen */}
-      <Section
-        id="leistungen"
-        eyebrow="Kennen Sie diese Sätze?"
-        title={<>Vier typische Sätze aus der „Worst Case GmbH“ – und was wir dagegen tun.</>}
-      >
-        <div className="mt-12 grid gap-6 md:grid-cols-2">
-          {services.map((s) => (
-            <Link
-              key={s.slug}
-              href={`/leistungen/${s.slug}`}
-              className="group flex flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-line transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-navy/10 hover:ring-brand"
-            >
-              <Image
-                src={s.worstCase.image}
-                alt={s.worstCase.imageAlt}
-                width={2000}
-                height={1500}
-                sizes="(min-width: 768px) 50vw, 100vw"
-                className="aspect-[16/9] w-full object-cover"
-              />
-              <div className="flex flex-1 flex-col p-7 sm:p-8">
-                <blockquote className="text-xl font-semibold leading-snug text-ink">
-                  „{s.worstCase.quote}“
-                </blockquote>
-                <div className="mt-auto flex items-end justify-between gap-4 pt-8">
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-widest text-muted">Unsere Lösung</p>
-                    <p className="mt-1 text-lg font-semibold text-navy">{s.title}</p>
-                  </div>
-                  <span
-                    aria-hidden="true"
-                    className="flex size-10 shrink-0 items-center justify-center rounded-full bg-brand text-white transition group-hover:translate-x-1"
-                  >
-                    →
-                  </span>
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </Section>
-
-      {/* 3 · Haltung */}
-      <Section tone="paper" eyebrow="Unsere Haltung" title="Der Mensch im Mittelpunkt. Der Unternehmenserfolg im Blick.">
-        <div className="mt-12 grid gap-10 md:grid-cols-3">
-          {pillars.map((p) => (
-            <div key={p.title} className="border-t-2 border-brand pt-6">
-              <h3 className="text-xl font-semibold text-navy">{p.title}</h3>
-              <p className="mt-3 leading-relaxed text-muted">{p.text}</p>
-            </div>
-          ))}
-        </div>
-      </Section>
-
-      {/* 4 · Vorgehen */}
+      {/* Vorgehen */}
       <Section
         id="vorgehen"
+        tone="paper"
         eyebrow="Der Rahmen für Ihren Erfolg"
         title="In sechs Schritten vom Ziel zur gelebten Veränderung."
       >
@@ -153,7 +132,7 @@ export default function Home() {
           <span aria-hidden="true" className="absolute left-0 right-0 top-5 hidden h-px bg-line lg:block" />
           {steps.map((step, i) => (
             <li key={step.title} className="relative">
-              <span className="relative flex size-10 items-center justify-center rounded-full bg-navy font-semibold text-white ring-8 ring-white">
+              <span className="relative flex size-10 items-center justify-center rounded-full bg-navy font-semibold text-white ring-8 ring-paper">
                 {i + 1}
               </span>
               <h3 className="mt-5 font-semibold text-navy">{step.title}</h3>
@@ -163,7 +142,7 @@ export default function Home() {
         </ol>
       </Section>
 
-      {/* 5 · Praxis – schlichtes Akkordeon (FAQ-Stil) */}
+      {/* Praxis – schlichtes Akkordeon (FAQ-Stil) */}
       <Section
         id="praxis"
         eyebrow="Anliegen von Geschäftspartnern"
@@ -206,7 +185,7 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* 6 · Ansprechpartner + Kontakt */}
+      {/* Ansprechpartner + Kontakt */}
       <Section
         id="kontakt"
         tone="ink"
