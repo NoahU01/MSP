@@ -203,26 +203,28 @@ export const steps = [
 
 export type Person = {
   name: string;
+  /** Kurze Bezeichnung (1–3 Wörter) passend zum Baustein */
   role: string;
+  /** Baustein, für den die Person steht */
+  baustein: string;
   image: string;
   linkedin: string;
-  phone?: { label: string; href: string };
-  email?: string;
 };
 
-// Reihenfolge bewusst: Kathrin blickt im Foto nach rechts – links platziert schaut sie zur Seitenmitte.
 export const team: Person[] = [
   {
-    name: "Kathrin Strohmeier",
-    role: "Ansprechpartnerin", // TODO: Rolle/Titel von LinkedIn übernehmen
-    image: "/images/team/kathrin-strohmeier.jpg",
-    linkedin: "https://www.linkedin.com/in/kathrin-strohmeier/",
-  },
-  {
     name: "Mark Schweitzer-Pullar",
-    role: "Geschäftsführer",
+    role: "Strukturarchitekt", // steht für: "Strukturen, die tragen. Führung, die wirkt."
+    baustein: "MSP HR Business Partner",
     image: "/images/team/mark-schweitzer-pullar.jpg",
     linkedin: "https://www.linkedin.com/in/mark-schweitzer-pullar-1ab90914/",
+  },
+  {
+    name: "Kathrin Strohmeier",
+    role: "Praxisübersetzerin", // steht für: "Damit Entwicklung im Alltag wirklich ankommt."
+    baustein: "MSP Lernwelt",
+    image: "/images/team/kathrin-strohmeier.jpg",
+    linkedin: "https://www.linkedin.com/in/kathrin-strohmeier/",
   },
 ];
 

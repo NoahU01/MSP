@@ -22,7 +22,8 @@ export function ContactPeople() {
                 <Image src={p.image} alt={p.name} width={288} height={288} className="size-full object-cover" />
               </div>
               <p className="mt-5 text-lg font-semibold">{p.name}</p>
-              <p className="mt-0.5 text-sm text-white/65">{p.role}</p>
+              <p className="mt-1 font-semibold text-brand">{p.role}</p>
+              <p className="mt-0.5 text-xs uppercase tracking-widest text-white/55">{p.baustein}</p>
               <a
                 href={p.linkedin}
                 target="_blank"
