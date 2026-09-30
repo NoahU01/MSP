@@ -13,9 +13,12 @@ const lead =
 export function Hero({
   next = { href: "#ausgangslage", label: "Was Sie davon haben" },
   layout = "left",
+  overlap = false,
 }: {
   next?: { href: string; label: string };
   layout?: Layout;
+  /** Fingerabdruck 25 % kleiner, liegt über den Hintergründen und ragt in die nächste Sektion (Version 4/6) */
+  overlap?: boolean;
 }) {
   const centered = layout === "centered";
   const eyebrow = <p className="t-eyebrow text-brand">Zukunftsfaktor Mensch · seit {company.since}</p>;
@@ -37,7 +40,7 @@ export function Hero({
   );
 
   return (
-    <section className="relative overflow-hidden bg-white">
+    <section className={`relative bg-white ${overlap ? "overflow-x-clip" : "overflow-hidden"}`}>
       <Image
         src="/images/fingerprint.jpg"
         alt=""
@@ -45,7 +48,9 @@ export function Hero({
         height={818}
         priority
         className={
-          centered
+          overlap
+            ? "pointer-events-none absolute -right-40 top-[16rem] z-[5] w-[867px] max-w-none opacity-60 mix-blend-multiply lg:right-0 lg:top-[18rem] lg:w-[902px] [mask-image:linear-gradient(to_bottom,#000_65%,transparent_98%)]"
+            : centered
             ? "pointer-events-none absolute left-1/2 top-10 w-[820px] max-w-none -translate-x-1/2 opacity-30 mix-blend-multiply"
             : "pointer-events-none absolute -right-40 top-0 h-full w-auto max-w-none opacity-60 mix-blend-multiply sm:-right-20 lg:right-0"
         }

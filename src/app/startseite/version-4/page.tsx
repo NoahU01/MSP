@@ -15,7 +15,7 @@ export const metadata: Metadata = { title: "Startseite – Version 4" };
 export default function StartseiteVersion4() {
   return (
     <>
-      <Hero />
+      <Hero overlap />
       <Ausgangslage />
 
       <HebelSection />

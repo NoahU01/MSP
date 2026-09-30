@@ -22,7 +22,7 @@ export default function StartseiteVersion6() {
         name="Header"
         variants={[
           { label: "Version 3", node: <Hero layout="centered" /> },
-          { label: "Version 4", node: <Hero /> },
+          { label: "Version 4", node: <Hero overlap /> },
           { label: "Version 5", node: <HeroPeople /> },
         ]}
       />
