@@ -16,7 +16,6 @@ export const company = {
   registerCourt: "Amtsgericht Ulm", // lt. CD-Handbuch 2018 – aktuell halten
   registerNumber: "HRB 671366",
   customerLoginUrl: "https://msphr.de/customer-login/",
-  brochureUrl: "/downloads/MSP-Imagebroschuere-Zukunftsfaktor-Mensch.pdf",
 };
 
 export type Service = {
@@ -199,3 +198,40 @@ export const steps = [
     text: "Auch nach Projektabschluss stehen wir beratend und nachjustierend zur Seite. So werden „Rückfälle“ vermieden und neue Arbeitsweisen verankert.",
   },
 ];
+
+export type Person = {
+  name: string;
+  role: string;
+  image: string;
+  linkedin: string;
+  phone?: { label: string; href: string };
+  email?: string;
+};
+
+// Reihenfolge bewusst: Kathrin blickt im Foto nach rechts – links platziert schaut sie zur Seitenmitte.
+export const team: Person[] = [
+  {
+    name: "Kathrin Strohmeier",
+    role: "Ansprechpartnerin", // TODO: Rolle/Titel von LinkedIn übernehmen
+    image: "/images/team/kathrin-strohmeier.jpg",
+    linkedin: "https://www.linkedin.com/in/kathrin-strohmeier/",
+  },
+  {
+    name: "Mark Schweitzer-Pullar",
+    role: "Geschäftsführer",
+    image: "/images/team/mark-schweitzer-pullar.jpg",
+    linkedin: "https://www.linkedin.com/in/mark-schweitzer-pullar-1ab90914/",
+  },
+];
+
+// Download mit Mehrwert – Inhalt des PDFs wird noch gemeinsam erstellt.
+// Solange href null ist, zeigt die Seite "In Vorbereitung" statt des Download-Buttons.
+export const download = {
+  kicker: "Kostenloser Leitfaden",
+  title: "Zukunftsfaktor Mensch: So wird Entwicklung zum",
+  highlight: "Erfolgsfaktor.",
+  lead: "Wie Organisations-, Führungs- und Personalentwicklung gezielt auf Ihre Unternehmensziele einzahlen: die wichtigsten Hebel, typische Stolpersteine und konkrete Handlungsmöglichkeiten – kompakt zum Nachlesen und Weitergeben an Ihre Entscheider.",
+  pages: "ca. 8 Seiten", // TODO: nach Fertigstellung anpassen
+  size: null as string | null, // z. B. "1,2 MB"
+  href: null as string | null, // z. B. "/downloads/MSP-Leitfaden-Zukunftsfaktor-Mensch.pdf"
+};

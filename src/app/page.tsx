@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ContactForm } from "@/components/ContactForm";
+import { ContactPeople } from "@/components/ContactPeople";
+import { DownloadTeaser } from "@/components/DownloadTeaser";
 import { Section } from "@/components/Section";
 import { cases, company, services, steps } from "@/lib/content";
 
 // Neue Startseite (ab 01.10.2026). Vorherige Version: /archiv/startseite-v1
-// Zwischenstand bis zur neuen Grundstory: Hero → Leistungen → Haltung → Störer → Vorgehen → Praxis (Akkordeon) → Kontakt
+// Zwischenstand bis zur neuen Grundstory: Hero → Leistungen → Haltung → Störer → Vorgehen → Praxis (Akkordeon) → Download → Ansprechpartner/Kontakt
 
 const pillars = [
   {
@@ -184,59 +185,17 @@ export default function Home() {
             </details>
           ))}
         </div>
-        <div className="mt-12 flex flex-col gap-6 rounded-2xl bg-brand p-8 text-white sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-widest text-white/80">Imagebroschüre</p>
-            <p className="mt-1 text-2xl font-semibold">„Zukunftsfaktor Mensch“</p>
-          </div>
-          <a
-            href={company.brochureUrl}
-            className="self-start rounded-full bg-white px-7 py-3.5 font-semibold text-navy transition hover:bg-brand-soft sm:self-auto"
-          >
-            PDF herunterladen ↓
-          </a>
-        </div>
       </Section>
 
-      {/* Ansprechpartner + Kontakt */}
-      <Section
-        id="kontakt"
-        tone="ink"
-        eyebrow="Kontakt"
-        title="Lassen Sie uns über Ihre Situation sprechen."
-        intro="Ein erstes Gespräch ist unverbindlich. Wir hören zu, stellen die richtigen Fragen und sagen Ihnen offen, ob und wie wir unterstützen können."
-      >
-        <div className="mt-12 grid gap-12 lg:grid-cols-3">
-          <div className="space-y-6">
-            <div>
-              <p className="text-sm text-white/60">Ihr Ansprechpartner</p>
-              <p className="text-xl font-semibold">{company.ceo}</p>
-              <p className="text-white/80">Geschäftsführer</p>
-            </div>
-            <div>
-              <p className="text-sm text-white/60">Telefon</p>
-              <a href={company.phoneHref} className="text-xl font-semibold hover:underline">
-                {company.phone}
-              </a>
-            </div>
-            <div>
-              <p className="text-sm text-white/60">E-Mail</p>
-              <a href={`mailto:${company.email}`} className="text-xl font-semibold hover:underline">
-                {company.email}
-              </a>
-            </div>
-            <div>
-              <p className="text-sm text-white/60">Adresse</p>
-              <p className="text-lg">
-                {company.street}, {company.zip} {company.city}
-              </p>
-            </div>
-          </div>
-          <div className="lg:col-span-2">
-            <ContactForm />
-          </div>
+      {/* Download mit Mehrwert */}
+      <section className="bg-white py-16 sm:py-24">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <DownloadTeaser />
         </div>
-      </Section>
+      </section>
+
+      {/* Ansprechpartner + Kontakt */}
+      <ContactPeople />
     </>
   );
 }
