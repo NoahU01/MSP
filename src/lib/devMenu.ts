@@ -7,6 +7,9 @@ export const devMenu: { unterseiten: DevLink[]; archiv: DevLink[] } = {
   unterseiten: [
     { href: "/startseite/version-1", tag: "V1", title: "Startseite – Version 1", note: "Leistungen, Haltung, 6 Schritte (aktuell unter /)" },
     { href: "/startseite/version-2", tag: "V2", title: "Startseite – Version 2", note: "Grundproblem, zwei Bausteine, Einstieg in 2 Schritten" },
+    { href: "/startseite/version-3", tag: "V3", title: "Startseite – Version 3", note: "Zentrierter Hero, Marker, Laufband, Pop-ups" },
+    { href: "/startseite/version-4", tag: "V4", title: "Startseite – Version 4", note: "Interaktiver Hebel-Finder" },
+    { href: "/startseite/version-5", tag: "V5", title: "Startseite – Version 5", note: "Editorial & Bento, Personen im Hero" },
     { href: "/leistungen/organisationsentwicklung", tag: "OE", title: "Organisationsentwicklung", note: "Leistung" },
     { href: "/leistungen/fuehrungskraefteentwicklung", tag: "FE", title: "Führungskräfteentwicklung", note: "Leistung" },
     { href: "/leistungen/personalentwicklung", tag: "PE", title: "Personalentwicklung", note: "Leistung" },

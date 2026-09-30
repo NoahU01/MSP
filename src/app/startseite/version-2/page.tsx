@@ -6,28 +6,13 @@ import { Hero } from "@/components/home/Hero";
 import { PraxisAccordion } from "@/components/home/PraxisAccordion";
 import { Stoerer } from "@/components/home/Stoerer";
 import { Section } from "@/components/Section";
-import { bausteine, company, quickStart, type Baustein } from "@/lib/content";
+import { bausteine, company, pains, quickStart, type Baustein } from "@/lib/content";
 
 export const metadata: Metadata = { title: "Startseite – Version 2" };
 
 // Startseite Version 2 – Landingpage-Logik:
 // Hero → Grundproblem → Lösung: zwei Bausteine (einzeln oder kombiniert) → Störer → schneller Einstieg in 2 Schritten
 // → Praxis → Download → Ansprechpartner/Kontakt
-
-const pains = [
-  {
-    title: "Leistung versickert in unklaren Strukturen.",
-    text: "Verantwortlichkeiten sind nicht geklärt, Schnittstellen reiben, Entscheidungen bleiben liegen. Gute Leute arbeiten unter ihren Möglichkeiten.",
-  },
-  {
-    title: "Führung wird vorausgesetzt statt entwickelt.",
-    text: "Fachlich starke Mitarbeitende rücken in Führungsrollen – ohne das Handwerkszeug dafür. Teams und Ergebnisse zahlen den Preis.",
-  },
-  {
-    title: "Weiterbildung findet statt, aber sie wirkt nicht.",
-    text: "Trainings werden gebucht, der Alltag bleibt derselbe. Ohne klaren Bezug zu den Unternehmenszielen verpufft die Investition.",
-  },
-];
 
 export default function StartseiteVersion2() {
   return (

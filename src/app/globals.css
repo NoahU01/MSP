@@ -35,3 +35,22 @@ body {
   background: var(--color-brand);
   color: #fff;
 }
+
+/* Laufband (Marquee) für Startseiten-Varianten */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee { animation: none; }
+}
+
+/* Textmarker-Highlight (Idee aus empiria), in MSP-Türkis */
+.hl-marker {
+  background-image: linear-gradient(transparent 58%, rgb(0 154 163 / 0.28) 58%, rgb(0 154 163 / 0.28) 92%, transparent 92%);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}

@@ -322,3 +322,26 @@ export const quickStart = [
     text: "Sie erhalten einen umsetzbaren Vorschlag für das weitere Vorgehen – klar strukturiert, damit Sie schnell entscheiden können.",
   },
 ];
+
+// Die drei typischen Schmerzpunkte (Grundproblem) – für alle Startseiten-Varianten ab V2.
+export const pains = [
+  {
+    title: "Leistung versickert in unklaren Strukturen.",
+    text: "Verantwortlichkeiten sind nicht geklärt, Schnittstellen reiben, Entscheidungen bleiben liegen. Gute Leute arbeiten unter ihren Möglichkeiten.",
+  },
+  {
+    title: "Führung wird vorausgesetzt statt entwickelt.",
+    text: "Fachlich starke Mitarbeitende rücken in Führungsrollen – ohne das Handwerkszeug dafür. Teams und Ergebnisse zahlen den Preis.",
+  },
+  {
+    title: "Weiterbildung findet statt, aber sie wirkt nicht.",
+    text: "Trainings werden gebucht, der Alltag bleibt derselbe. Ohne klaren Bezug zu den Unternehmenszielen verpufft die Investition.",
+  },
+];
+
+// Kennzahlen – nur belegbare Fakten.
+export const facts = [
+  { value: "20+", label: "Jahre Erfahrung – seit 2002" },
+  { value: "2", label: "Bausteine – einzeln oder kombiniert" },
+  { value: "DE", label: "deutschlandweit für KMU und Großunternehmen" },
+];
