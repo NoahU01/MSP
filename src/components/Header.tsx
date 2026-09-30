@@ -1,10 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ContactButton } from "@/components/ContactButton";
-import { DevMenu } from "@/components/DevMenu";
-import { MainNav, MobileNav } from "@/components/MainNav";
+import { HeaderNav } from "@/components/HeaderNav";
 
 // Hauptnavigation: Hebel-Finder · Unsere Lösung · Umsetzung · (/ Entwicklung /) · Kontakt
+// (auf dem Storyboard nur Logo + / Entwicklung /, siehe HeaderNav)
 export function Header() {
   return (
     <header className="sticky top-0 z-40 bg-white/90 backdrop-blur">
@@ -19,12 +18,7 @@ export function Header() {
             className="h-8 w-auto sm:h-12"
           />
         </Link>
-        <nav aria-label="Hauptnavigation" className="flex items-center gap-3 sm:gap-7">
-          <MainNav />
-          <DevMenu />
-          <ContactButton />
-          <MobileNav />
-        </nav>
+        <HeaderNav />
       </div>
     </header>
   );

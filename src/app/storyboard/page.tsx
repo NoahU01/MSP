@@ -219,7 +219,8 @@ const rows: Row[] = [
     content: (
       <dl className="space-y-2">
         <Field k="Headline">Zukunftsfaktor Mensch: So wird Entwicklung zum Erfolgsfaktor.</Field>
-        <Field k="Inhalt">Kostenloser Leitfaden mit Mehrwert: Hebel, Stolpersteine und konkrete Handlungsmöglichkeiten – kompakt zum Weitergeben an Entscheider.</Field>
+        <Field k="Inhalt">Die Story der Startseite als PDF zum Mitnehmen: wofür MSP steht und wie die zwei Bausteine – HR Business Partner und Lernwelt – einzeln und gemeinsam wirken. Dazu Hebel, Stolpersteine und konkrete Handlungsmöglichkeiten.</Field>
+        <Field k="Zweck">Kompakt zum Weitergeben an Entscheider – die Homepage-Story in der Hand dessen, der am Ende entscheidet.</Field>
         <Field k="Status">PDF wird noch gemeinsam erstellt</Field>
       </dl>
     ),
