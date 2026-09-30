@@ -17,10 +17,10 @@ export default function StartseiteVersion2() {
     <>
       <Hero layout="split" />
       <Ausgangslage />
-      <Loesung />
+      <Loesung variant="cards" />
       <ClaimBand />
-      <Einstieg />
-      <PraxisAccordion />
+      <Einstieg variant="band" />
+      <PraxisAccordion look="edge" />
       <DownloadSection />
       <ContactPeople />
     </>

@@ -4,7 +4,14 @@ import { cases } from "@/lib/content";
 // Praxisbeispiele nach empiria-Muster „Formate“: Text links, Akkordeon rechts.
 // Einträge grau hinterlegt mit dunkelblauer Kante, Plus-Symbol als klares Akkordeon-Signal.
 // name="praxis": Es ist immer nur ein Eintrag geöffnet (natives exklusives Akkordeon).
-export function PraxisAccordion() {
+// look: "edge" = grau mit dunkelblauer Kante links, "fill" = nur hellgrau hinterlegt, "outline" = dünner hellgrauer Rand.
+const looks = {
+  edge: "rounded-2xl border-l-4 border-navy bg-paper",
+  fill: "rounded-2xl bg-paper",
+  outline: "rounded-2xl border border-line bg-white",
+};
+
+export function PraxisAccordion({ look = "edge" }: { look?: keyof typeof looks }) {
   return (
     <section id="praxis" className="bg-white py-24 sm:py-32">
       <div className="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
@@ -21,7 +28,7 @@ export function PraxisAccordion() {
 
         <div className="space-y-3">
           {cases.map((c) => (
-            <details key={c.topic} name="praxis" className="group rounded-2xl border-l-4 border-navy bg-paper">
+            <details key={c.topic} name="praxis" className={`group ${looks[look]}`}>
               <summary className="flex cursor-pointer list-none items-center gap-5 px-6 py-5 sm:px-7 [&::-webkit-details-marker]:hidden">
                 <span className="flex-1">
                   <span className="block text-[15px] font-light text-muted">{c.topic}</span>
@@ -29,7 +36,7 @@ export function PraxisAccordion() {
                 </span>
                 <span
                   aria-hidden="true"
-                  className="flex size-9 shrink-0 items-center justify-center rounded-full bg-white text-xl leading-none text-navy transition group-open:rotate-45 group-hover:bg-navy group-hover:text-white"
+                  className={`flex size-9 shrink-0 items-center justify-center rounded-full ${look === "outline" ? "bg-paper" : "bg-white"} text-xl leading-none text-navy transition group-open:rotate-45 group-hover:bg-navy group-hover:text-white`}
                 >
                   +
                 </span>

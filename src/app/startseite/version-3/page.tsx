@@ -10,16 +10,17 @@ import { Loesung } from "@/components/home/story/Loesung";
 
 export const metadata: Metadata = { title: "Startseite – Version 3" };
 
-// Version 3 – NUR der Hero ist zentriert, der Rest der Seite linksbündig. Story wie Version 2.
+// Version 3 – NUR der Hero ist zentriert, der Rest linksbündig. Varianten: Ausgangslage ohne Box,
+// Lösung als Gleichung, Einstieg als Nummernkarten, Akkordeon grau ohne Kante.
 export default function StartseiteVersion3() {
   return (
     <>
       <Hero layout="centered" />
-      <Ausgangslage />
-      <Loesung />
+      <Ausgangslage variant="plain" />
+      <Loesung variant="equation" />
       <ClaimBand />
-      <Einstieg />
-      <PraxisAccordion />
+      <Einstieg variant="cards" />
+      <PraxisAccordion look="fill" />
       <DownloadSection />
       <ContactPeople />
     </>

@@ -81,8 +81,8 @@ export default function StartseiteVersion5() {
       </section>
 
       <ClaimBand />
-      <Einstieg />
-      <PraxisAccordion />
+      <Einstieg variant="timeline" />
+      <PraxisAccordion look="edge" />
       <DownloadSection />
       <ContactPeople />
     </>
