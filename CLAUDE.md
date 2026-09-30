@@ -20,4 +20,6 @@
 - Keine blassen, transparenten Farbflächen, die billig wirken.
 - Haupt-CTA im Hero führt in die nächste Sektion (Nutzen zuerst), nicht direkt zum Klärungsgespräch.
 - Interaktive Elemente müssen als solche erkennbar sein (UX/UI), Akkordeons standardmäßig geschlossen.
+- Akkordeons: immer nur ein Eintrag gleichzeitig offen – beim Öffnen schließt sich der andere
+  (alle `<details>` einer Gruppe bekommen dasselbe `name`-Attribut).
 - `/archiv/*` ist eingefroren und wird nicht angepasst.

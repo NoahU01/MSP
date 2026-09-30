@@ -3,6 +3,7 @@ import { cases } from "@/lib/content";
 
 // Praxisbeispiele nach empiria-Muster „Formate“: Text links, Akkordeon rechts.
 // Einträge grau hinterlegt mit dunkelblauer Kante, Plus-Symbol als klares Akkordeon-Signal.
+// name="praxis": Es ist immer nur ein Eintrag geöffnet (natives exklusives Akkordeon).
 export function PraxisAccordion() {
   return (
     <section id="praxis" className="bg-white py-24 sm:py-32">
@@ -20,7 +21,7 @@ export function PraxisAccordion() {
 
         <div className="space-y-3">
           {cases.map((c) => (
-            <details key={c.topic} className="group rounded-2xl border-l-4 border-navy bg-paper">
+            <details key={c.topic} name="praxis" className="group rounded-2xl border-l-4 border-navy bg-paper">
               <summary className="flex cursor-pointer list-none items-center gap-5 px-6 py-5 sm:px-7 [&::-webkit-details-marker]:hidden">
                 <span className="flex-1">
                   <span className="block text-[15px] font-light text-muted">{c.topic}</span>
