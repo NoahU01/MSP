@@ -263,13 +263,47 @@ export default function StoryboardPage() {
 
       <section className="bg-white pb-24 pt-16 sm:pt-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <p className="t-eyebrow text-brand">Storyboard</p>
-          <h1 className="t-h2 mt-4 max-w-3xl text-navy">Der rote Faden der neuen Startseite.</h1>
-          <p className="t-lead mt-6 max-w-2xl text-muted">
-            Von oben nach unten: was der Besucher sieht, was er versteht – und wie er am Ende den Kontakt sucht.
+          {/* Einleitung nach dem Muster empiria „Erfolgsfaktor“ (Sprint Landingpage), übertragen auf MSP */}
+          <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+            <div>
+              <p className="t-eyebrow text-brand">Storyboard</p>
+              <h1 className="t-h2 mt-4 text-navy">
+                So funktioniert die neue Startseite <span className="u-accent">optimal.</span>
+              </h1>
+              <div className="t-body mt-8 space-y-4 text-muted">
+                <p>
+                  Viele Unternehmensseiten sind ein Sammelsurium an Themen – Leistungen, Methoden, Team, Referenzen.
+                  Besucher müssen sich zurechtfinden und selbst suchen, was für sie relevant ist.
+                </p>
+                <p>
+                  Die neue MSP-Startseite funktioniert wie eine Landingpage: Sie richtet sich an Entscheider in
+                  Unternehmen, benennt ein zentrales Problem – mehr erreichen mit den Menschen, die man hat – und führt
+                  zielgerichtet zur Lösung und zum Gespräch. Schon im Header muss der Besucher spüren: Hier bin ich
+                  richtig, hier finde ich einen Partner, der mein Thema versteht.
+                </p>
+              </div>
+            </div>
+            <ul className="space-y-3 self-center">
+              {[
+                "Eine Zielgruppe, ein Problem, eine Lösung – zwei Bausteine statt eines Leistungskatalogs",
+                "Ansprache und Argumente auf Entscheider zugeschnitten: Businesslogik statt Wohlfühlthemen",
+                "Nie der Anspruch, alles zu erklären – Details liegen eine Ebene tiefer, in Pop-ups und Unterseiten",
+                "Ein klares Ziel: das Klärungsgespräch – oder der Download mit echtem Mehrwert",
+              ].map((t) => (
+                <li key={t} className="flex gap-4 rounded-2xl bg-paper px-6 py-5 text-[17px] leading-snug text-ink">
+                  <span className="mt-2 size-2 shrink-0 rounded-full bg-brand" />
+                  {t}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <h2 className="t-h3 mt-24 text-navy">Grundlegende Struktur der Startseite</h2>
+          <p className="t-body mt-2 max-w-2xl text-muted">
+            Strukturbild und Kernaussagen jeder Sektion – von oben nach unten, so wie der Besucher sie erlebt.
           </p>
 
-          <div className="mt-16">
+          <div className="mt-12">
             {rows.map((r, i) => {
               const first = i === 0;
               const last = i === rows.length - 1;
