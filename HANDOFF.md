@@ -112,11 +112,12 @@ Assets vor Verwendung mit Daniel abstimmen (Qualität/Aktualität, ggf. neue Fot
 
 ## Offene Punkte für den Start mit Daniel
 
-- [ ] Tech-Stack festlegen (Vorschlag: Next.js + Tailwind, Deploy über Vercel)
-- [ ] Seitenstruktur / Sitemap der neuen Seite
-- [ ] Design-Richtung (Farben beibehalten oder weiterentwickeln?)
-- [ ] Umgang mit Kunden-Login / Mitgliederbereich
-- [ ] Zweisprachigkeit DE/EN ja/nein
-- [ ] Texte: übernehmen, überarbeiten oder neu schreiben?
-- [ ] Kontaktweg (Formular, Telefon, E-Mail, Terminbuchung?)
+- [x] Tech-Stack: Next.js 16 (App Router) + Tailwind 4, Deploy über Vercel
+- [x] Seitenstruktur: Onepager-Startseite + 4 Leistungs-Unterseiten + Impressum/Datenschutz
+- [x] Design-Richtung: Türkis `#009aa3` als Markenfarbe beibehalten, moderner Look (erste Version, Feedback offen)
+- [x] Kunden-Login: vorerst extern, im Footer auf msphr.de/customer-login/ verlinkt
+- [ ] Zweisprachigkeit: zunächst nur DE, EN später
+- [x] Texte: von alter Seite übernommen und gestrafft (`src/lib/content.ts`)
+- [x] Kontaktweg: Telefon, E-Mail + Formular (Resend; Env-Variablen noch setzen)
+- [ ] Datenschutzerklärung (Entwurf) juristisch prüfen lassen
 - [ ] noindex nach erstem Deploy per `curl -sI` verifizieren
