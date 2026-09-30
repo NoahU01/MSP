@@ -21,7 +21,6 @@ export default function StartseiteVersion6() {
       <VariantSwitcher
         name="Header"
         variants={[
-          { label: "Version 2", node: <Hero layout="split" /> },
           { label: "Version 3", node: <Hero layout="centered" /> },
           { label: "Version 4", node: <Hero /> },
           { label: "Version 5", node: <HeroPeople /> },
