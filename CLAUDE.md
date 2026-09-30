@@ -6,6 +6,7 @@
 - Entwickelt wird **immer auf dem Branch `daniel`**. Commits und Pushes gehen nach `origin/daniel`.
 - Nach `main` wird **nur auf ausdrücklichen Hinweis von Daniel** übernommen (Merge `daniel` → `main`).
   `main` ist die Live-Version (https://msp-empiria-gmb-h.vercel.app).
+- Vorschau des Branches `daniel`: https://msp-git-daniel-empiria-gmb-h.vercel.app
 
 ## Qualitätsschleife vor JEDEM Push
 1. `npm run lint` und `npm run build` müssen fehlerfrei sein.
