@@ -26,7 +26,7 @@ export function DownloadTeaser() {
         <p className="font-semibold text-brand">{download.kicker}</p>
         <h2 className="mt-3 text-3xl font-semibold leading-tight tracking-tight sm:text-4xl lg:text-[2.75rem]">
           {download.title}{" "}
-          <span className="relative z-0 inline box-decoration-clone rounded bg-brand px-1.5 leading-[1.35]">
+          <span className="u-accent">
             {download.highlight}
           </span>
         </h2>

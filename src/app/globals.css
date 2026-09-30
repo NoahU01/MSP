@@ -36,21 +36,46 @@ body {
   color: #fff;
 }
 
-/* Laufband (Marquee) für Startseiten-Varianten */
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+/* ------------------------------------------------------------------
+   Typo-System (verbindlich für alle neuen Sektionen)
+   Nur zwei Schnitte: Light 300 (Text) und Semibold 600 (Überschriften).
+   Fünf Stufen: H1 (Hero) · H2 · H3 · Lead · Body. Keine Versalien-Überzeilen, keine Trennlinien.
+   ------------------------------------------------------------------ */
+@utility t-eyebrow {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 600;
 }
-.animate-marquee {
-  animation: marquee 40s linear infinite;
+@utility t-h2 {
+  font-size: clamp(2rem, 1.5rem + 1.6vw, 3rem);
+  line-height: 1.12;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
 }
-@media (prefers-reduced-motion: reduce) {
-  .animate-marquee { animation: none; }
+@utility t-h3 {
+  font-size: 1.5rem;
+  line-height: 1.3;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+@utility t-lead {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  font-weight: 300;
+}
+@utility t-body {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  font-weight: 300;
 }
 
-/* Textmarker-Highlight (Idee aus empiria), in MSP-Türkis */
-.hl-marker {
-  background-image: linear-gradient(transparent 58%, rgb(0 154 163 / 0.28) 58%, rgb(0 154 163 / 0.28) 92%, transparent 92%);
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
+/* Einziger Hervorhebungs-Stil: dünne türkise Unterstreichung (wie im Störer von Version 1).
+   Keine Marker, keine hinterlegten Flächen. */
+@utility u-accent {
+  text-decoration-line: underline;
+  text-decoration-color: var(--color-brand);
+  text-decoration-thickness: 4px;
+  text-underline-offset: 8px;
+  text-decoration-skip-ink: none;
 }

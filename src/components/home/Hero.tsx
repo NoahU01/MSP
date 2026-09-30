@@ -1,53 +1,57 @@
 import Image from "next/image";
-import Link from "next/link";
 import { company } from "@/lib/content";
-
-type Cta = { href: string; label: string };
+import { IconArrowDown } from "./Icons";
 
 // Hero der Startseite – Subheadline, Headline und Text unverändert aus Version 1.0.
+// Der Button führt in die nächste Sektion (Nutzen zuerst), nicht direkt zum Klärungsgespräch.
 export function Hero({
-  primary = { href: "#kontakt", label: "Gespräch vereinbaren" },
-  secondary = { href: "#leistungen", label: "Unsere Leistungen" },
+  next = { href: "#ausgangslage", label: "Was Sie davon haben" },
+  centered = false,
 }: {
-  primary?: Cta;
-  secondary?: Cta;
+  next?: { href: string; label: string };
+  centered?: boolean;
 }) {
   return (
-  <section className="relative overflow-hidden bg-white">
-    <Image
-      src="/images/fingerprint.jpg"
-      alt=""
-      width={1280}
-      height={818}
-      priority
-      className="pointer-events-none absolute -right-40 top-0 h-full w-auto max-w-none opacity-80 mix-blend-multiply sm:-right-20 lg:right-0"
-    />
-    <div className="relative mx-auto max-w-6xl px-4 pb-20 pt-16 sm:px-6 sm:pb-32 sm:pt-28">
-      <p className="text-sm font-semibold uppercase tracking-widest text-brand">
-        Zukunftsfaktor Mensch · seit {company.since}
-      </p>
-      <h1 className="mt-5 max-w-3xl text-4xl font-semibold leading-[1.1] tracking-tight text-balance text-navy sm:text-6xl">
-        Ihr HR Businesspartner für Führungs-, Entwicklungs- und Veränderungsprozesse
-      </h1>
-      <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">
-        Wir begleiten Unternehmen individuell, ganzheitlich und nachhaltig – als Berater, Trainer
-        und Moderatoren für KMU und Großunternehmen in ganz Deutschland.
-      </p>
-      <div className="mt-10 flex flex-wrap gap-4">
-        <Link
-          href={primary.href}
-          className="rounded-full bg-brand px-7 py-3.5 font-semibold text-white transition hover:bg-brand-dark"
+    <section className="relative overflow-hidden bg-white">
+      <Image
+        src="/images/fingerprint.jpg"
+        alt=""
+        width={1280}
+        height={818}
+        priority
+        className={
+          centered
+            ? "pointer-events-none absolute left-1/2 top-1/2 w-[900px] max-w-none -translate-x-1/2 -translate-y-1/2 opacity-40 mix-blend-multiply"
+            : "pointer-events-none absolute -right-40 top-0 h-full w-auto max-w-none opacity-80 mix-blend-multiply sm:-right-20 lg:right-0"
+        }
+      />
+      <div
+        className={`relative mx-auto px-4 pb-16 pt-20 sm:px-6 sm:pb-20 sm:pt-32 ${
+          centered ? "max-w-4xl text-center" : "max-w-6xl"
+        }`}
+      >
+        <p className="t-eyebrow text-brand">Zukunftsfaktor Mensch · seit {company.since}</p>
+        <h1
+          className={`mt-6 text-4xl font-semibold leading-[1.1] tracking-tight text-balance text-navy sm:text-6xl ${
+            centered ? "" : "max-w-3xl"
+          }`}
         >
-          {primary.label}
-        </Link>
-        <Link
-          href={secondary.href}
-          className="rounded-full border border-navy/20 bg-white/70 px-7 py-3.5 font-semibold text-navy transition hover:border-brand hover:text-brand"
+          Ihr HR Businesspartner für Führungs-, Entwicklungs- und Veränderungsprozesse
+        </h1>
+        <p className={`t-lead mt-8 text-muted sm:text-[1.375rem] ${centered ? "mx-auto max-w-2xl" : "max-w-2xl"}`}>
+          Wir begleiten Unternehmen individuell, ganzheitlich und nachhaltig – als Berater, Trainer
+          und Moderatoren für KMU und Großunternehmen in ganz Deutschland.
+        </p>
+        <a
+          href={next.href}
+          className="group mt-12 inline-flex items-center gap-3 rounded-full bg-brand py-3.5 pl-7 pr-3.5 font-semibold text-white transition hover:bg-brand-dark"
         >
-          {secondary.label}
-        </Link>
+          {next.label}
+          <span className="flex size-8 items-center justify-center rounded-full bg-white/20 transition group-hover:translate-y-0.5">
+            <IconArrowDown className="size-4" />
+          </span>
+        </a>
       </div>
-    </div>
-  </section>
+    </section>
   );
 }

@@ -4,14 +4,14 @@ import { Section } from "@/components/Section";
 export function Stoerer() {
   return (
   <Section tone="ink">
-    <div className="grid gap-12 md:grid-cols-5 md:items-center">
-      <p className="text-3xl font-semibold leading-tight tracking-tight text-balance sm:text-4xl md:col-span-2">
+    <div className="grid gap-12 md:grid-cols-2 md:items-center md:gap-20">
+      <p className="t-h2 !text-[clamp(1.75rem,1.2rem+1.5vw,2.5rem)] !leading-[1.25] text-white">
         Damit sich der Zukunftsfaktor Mensch optimal entwickelt{" "}
-        <span className="underline decoration-brand decoration-4 underline-offset-8">
+        <span className="u-accent">
           und gezielt zum Unternehmenserfolg beiträgt.
         </span>
       </p>
-      <div className="space-y-5 text-lg leading-relaxed text-white/80 md:col-span-3">
+      <div className="t-lead space-y-5 text-white/80">
         <p>
           Unternehmenserfolg steht und fällt mit den Menschen, die dafür arbeiten und
           Verantwortung tragen. Deshalb ist Personal- und Organisationsentwicklung für uns kein

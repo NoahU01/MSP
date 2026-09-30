@@ -6,7 +6,7 @@ export function ContactPeople() {
   return (
     <section id="kontakt" className="bg-deep py-20 text-center text-white sm:py-28">
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
-        <p className="text-sm font-semibold uppercase tracking-widest text-white/70">Kontakt</p>
+        <p className="t-eyebrow text-white/70">Kontakt</p>
         <h2 className="mt-3 text-3xl font-semibold tracking-tight text-balance sm:text-5xl">
           Lassen Sie uns über Ihre Situation sprechen.
         </h2>
@@ -23,7 +23,7 @@ export function ContactPeople() {
               </div>
               <p className="mt-5 text-lg font-semibold">{p.name}</p>
               <p className="mt-1 font-semibold text-brand">{p.role}</p>
-              <p className="mt-0.5 text-xs uppercase tracking-widest text-white/55">{p.baustein}</p>
+              <p className="mt-0.5 text-sm font-light text-white/60">{p.baustein}</p>
               <a
                 href={p.linkedin}
                 target="_blank"

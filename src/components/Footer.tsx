@@ -3,7 +3,7 @@ import { company, services } from "@/lib/content";
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-deep text-white/80">
+    <footer className="bg-deep text-white/80">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-3">
         <div>
           <p className="font-semibold text-white">{company.name}</p>
@@ -58,7 +58,7 @@ export function Footer() {
           </ul>
         </div>
       </div>
-      <div className="border-t border-white/10">
+      <div>
         <p className="mx-auto max-w-6xl px-4 py-6 text-xs text-white/50 sm:px-6">
           © {company.since}–{new Date().getFullYear()} {company.name} · Ihr Partner für Führungs- und
           Veränderungsprozesse

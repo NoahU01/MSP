@@ -30,7 +30,7 @@ const pillars = [
 export default function StartseiteVersion1() {
   return (
     <>
-      <Hero />
+      <Hero next={{ href: "#leistungen", label: "Was Sie davon haben" }} />
 
       {/* Leistungen */}
       <Section id="leistungen" eyebrow="Unsere Leistungen" title="Vier Hebel für Ihren Unternehmenserfolg">
