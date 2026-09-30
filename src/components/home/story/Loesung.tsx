@@ -110,24 +110,28 @@ function CardsVariant() {
   );
 }
 
-/* ---------- V3: Gleichung ---------- */
+/* ---------- V3: Gleichung ----------
+   Ausrichtung per Subgrid: Icon, Headline, Subheadline, grauer Bereich, Bullets und Link
+   stehen in beiden Baustein-Karten exakt auf gleicher Höhe; die Farbköpfe sind gleich hoch. */
 function EquationVariant() {
   return (
     <>
       <Head>
         <ModelButton />
       </Head>
-      <div className="mt-16 grid items-stretch gap-4 lg:grid-cols-[1fr_auto_1fr_auto_0.7fr]">
+      <div className="mt-16 grid gap-4 lg:grid-cols-[1fr_auto_1fr_auto_0.7fr] lg:grid-rows-[auto_auto_auto_1fr] lg:gap-x-4 lg:gap-y-0">
         {bausteine.map((b, i) => {
           const hrbp = b.key === "hrbp";
           const I = iconFor(b);
           return (
             <FragmentWithOperator key={b.key} operator={i === 0 ? "+" : "="}>
-              <article className="flex flex-col overflow-hidden rounded-[28px] bg-paper">
-                <div className={`p-8 text-white ${hrbp ? "bg-navy" : "bg-brand"}`}>
-                  <I className="size-10" />
-                  <h3 className="mt-6 text-[2rem] font-semibold leading-tight tracking-tight">{b.name}</h3>
-                  <p className="mt-1 text-lg font-light text-white/90">{b.claim}</p>
+              <article className="flex flex-col overflow-hidden rounded-[28px] bg-paper lg:row-span-4 lg:grid lg:grid-rows-subgrid">
+                <div className={`text-white lg:row-span-3 lg:grid lg:grid-rows-subgrid ${hrbp ? "bg-navy" : "bg-brand"}`}>
+                  <div className="px-8 pt-8">
+                    <I className="size-10" />
+                  </div>
+                  <h3 className="px-8 pt-6 text-[2rem] font-semibold leading-tight tracking-tight">{b.name}</h3>
+                  <p className="px-8 pb-8 pt-1 text-lg font-light text-white/90">{b.claim}</p>
                 </div>
                 <div className="flex flex-1 flex-col p-8">
                   <ul className="space-y-3">
@@ -146,7 +150,7 @@ function EquationVariant() {
             </FragmentWithOperator>
           );
         })}
-        <div className="flex flex-col justify-center rounded-[28px] bg-deep p-8 text-white">
+        <div className="flex flex-col justify-center rounded-[28px] bg-deep p-8 text-white lg:row-span-4">
           <IconTarget className="size-10 text-brand" />
           <p className="mt-6 text-[1.75rem] font-semibold leading-tight">Unternehmens&shy;erfolg</p>
           <p className="mt-2 text-lg font-light text-white/80">spür- und messbar</p>
@@ -162,7 +166,7 @@ function FragmentWithOperator({ children, operator }: { children: ReactNode; ope
       {children}
       <span
         aria-hidden="true"
-        className="mx-auto flex size-14 items-center justify-center self-center rounded-full bg-white text-3xl font-light text-navy shadow-[0_10px_30px_rgba(24,42,54,0.12)]"
+        className="mx-auto flex size-14 items-center justify-center self-center rounded-full bg-white text-3xl font-light text-navy shadow-[0_10px_30px_rgba(24,42,54,0.12)] lg:row-span-4"
       >
         {operator}
       </span>
