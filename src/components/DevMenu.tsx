@@ -46,9 +46,10 @@ export function DevMenu() {
         aria-expanded={open}
         aria-controls="dev-menu"
         onClick={() => setOpen((o) => (isDesktop() && ref.current?.matches(":hover") ? true : !o))}
-        className={`inline-flex items-center gap-1.5 whitespace-nowrap text-[15px] transition-colors hover:text-ink ${open ? "text-ink" : "text-muted"}`}
+        className={`inline-flex items-center gap-1 whitespace-nowrap text-[13px] sm:gap-1.5 sm:text-[15px] transition-colors hover:text-ink ${open ? "text-ink" : "text-muted"}`}
       >
-        / Entwicklung /
+        <span className="hidden sm:inline">/ Entwicklung /</span>
+        <span className="sm:hidden">/ Entw. /</span>
         <svg viewBox="0 0 12 12" aria-hidden="true" className={`size-3 transition-transform ${open ? "rotate-180" : ""}`}>
           <path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
