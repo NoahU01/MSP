@@ -8,11 +8,13 @@ export function InfoModal({
   title,
   children,
   buttonClassName = "font-semibold text-brand hover:underline underline-offset-4",
+  wide = false,
 }: {
   label: string;
   title: string;
   children: ReactNode;
   buttonClassName?: string;
+  wide?: boolean;
 }) {
   const ref = useRef<HTMLDialogElement>(null);
   return (
@@ -23,7 +25,7 @@ export function InfoModal({
       <dialog
         ref={ref}
         onClick={(e) => e.target === ref.current && ref.current?.close()}
-        className="m-auto w-[min(640px,calc(100vw-32px))] rounded-3xl bg-white p-0 text-ink shadow-2xl backdrop:bg-deep/50 backdrop:backdrop-blur-sm"
+        className={`m-auto ${wide ? "w-[min(1040px,calc(100vw-32px))]" : "w-[min(640px,calc(100vw-32px))]"} rounded-3xl bg-white p-0 text-ink shadow-2xl backdrop:bg-deep/50 backdrop:backdrop-blur-sm`}
       >
         <div className="max-h-[80vh] overflow-auto p-7 sm:p-10">
           <div className="flex items-start justify-between gap-6">

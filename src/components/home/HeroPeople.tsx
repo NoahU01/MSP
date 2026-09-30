@@ -1,10 +1,9 @@
 import Image from "next/image";
-import { bausteine, company, team } from "@/lib/content";
+import { company, team } from "@/lib/content";
 import { IconArrowDown } from "./Icons";
 
-// Hero-Varianten mit den beiden Ansprechpartnern (Version 5).
+// Hero mit den beiden Ansprechpartnern (Version 5, Variante „Duo“).
 // Texte unverändert aus Version 1.0; Headline bewusst kleiner, damit Text und Personen im Gleichgewicht sind.
-export type HeroPeopleVariant = "a" | "b" | "c";
 
 const h1 = "text-[2.125rem] font-semibold leading-[1.12] tracking-tight text-balance text-navy sm:text-5xl";
 const lead = "Wir begleiten Unternehmen individuell, ganzheitlich und nachhaltig – als Berater, Trainer und Moderatoren für KMU und Großunternehmen in ganz Deutschland.";
@@ -31,70 +30,8 @@ function Portrait({ src, alt, size }: { src: string; alt: string; size: string }
   );
 }
 
-export function HeroPeople({ variant }: { variant: HeroPeopleVariant }) {
+export function HeroPeople() {
   const [mark, kathrin] = team;
-
-  if (variant === "b") {
-    return (
-      <section className="bg-white">
-        <div className="mx-auto max-w-4xl px-4 pb-16 pt-20 text-center sm:px-6 sm:pb-20 sm:pt-28">
-          <p className="t-eyebrow text-brand">Zukunftsfaktor Mensch · seit {company.since}</p>
-          <h1 className={`${h1} mt-6`}>Ihr HR Businesspartner für Führungs-, Entwicklungs- und Veränderungsprozesse</h1>
-          <p className="t-lead mx-auto mt-8 max-w-2xl text-muted">{lead}</p>
-          <div className="mt-12">
-            <Cta />
-          </div>
-          <ul className="mt-20 flex flex-wrap justify-center gap-x-14 gap-y-8">
-            {team.map((p) => (
-              <li key={p.name} className="flex items-center gap-4 text-left">
-                <Portrait src={p.image} alt={p.name} size="size-20" />
-                <div>
-                  <p className="text-[17px] font-semibold text-navy">{p.name}</p>
-                  <p className="text-[15px] font-light text-muted">
-                    {p.role} · {p.baustein}
-                  </p>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-    );
-  }
-
-  if (variant === "c") {
-    return (
-      <section className="bg-white">
-        <div className="mx-auto grid max-w-6xl items-center gap-14 px-4 pb-16 pt-20 sm:px-6 sm:pb-20 sm:pt-28 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
-          <div>
-            <p className="t-eyebrow text-brand">Zukunftsfaktor Mensch · seit {company.since}</p>
-            <h1 className={`${h1} mt-6`}>Ihr HR Businesspartner für Führungs-, Entwicklungs- und Veränderungsprozesse</h1>
-            <p className="t-lead mt-8 max-w-xl text-muted">{lead}</p>
-            <div className="mt-12">
-              <Cta />
-            </div>
-          </div>
-          <ul className="space-y-4">
-            {team.map((p, i) => (
-              <li key={p.name} className="flex items-center gap-6 rounded-[28px] bg-paper p-6 sm:p-7">
-                <Portrait src={p.image} alt={p.name} size="size-24" />
-                <div>
-                  <p className="flex items-center gap-2 text-[15px] font-light text-muted">
-                    <span className={`size-2.5 rounded-full ${i === 0 ? "bg-navy" : "bg-brand"}`} />
-                    {bausteine[i].name}
-                  </p>
-                  <p className="mt-1 text-lg font-semibold leading-snug text-navy">{bausteine[i].slogan}</p>
-                  <p className="mt-2 text-[15px] font-light text-muted">
-                    {p.name} · {p.role}
-                  </p>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-    );
-  }
 
   // Variante A: Duo rechts
   return (
