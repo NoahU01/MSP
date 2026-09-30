@@ -99,7 +99,10 @@ export function getService(slug: string) {
 }
 
 export type CaseStudy = {
-  title: string;
+  /** Kurzes Thema (Überzeile / linke Spalte) */
+  topic: string;
+  /** Kernaussage */
+  headline: string;
   /** Was vorlag */
   situation: string;
   /** Business-Kontext: warum der Kunde das wollte */
@@ -112,7 +115,8 @@ export type CaseStudy = {
 // Quelle: Praxisbeispiele msphr.de. Das "Warum" ist daraus abgeleitet – von MSP inhaltlich bestätigen lassen.
 export const cases: CaseStudy[] = [
   {
-    title: "Nachfolge im Familienunternehmen: Führungskräfte kommen mit Lösungen statt mit Problemen",
+    topic: "Unternehmensnachfolge",
+    headline: "Führungskräfte kommen mit Lösungen statt mit Problemen",
     situation:
       "In einem Familienunternehmen haben die Kinder als geschäftsführende Gesellschafter übernommen. Bislang landeten Probleme aus dem Alltag ungefiltert bei der Geschäftsführung.",
     why: "Die neue Generation braucht Freiraum für die strategische Weiterentwicklung des Unternehmens. Wenn jede Entscheidung über ihren Tisch geht, wird die Geschäftsführung zum Engpass und das Unternehmen verliert Tempo. Eigenverantwortliche Führungskräfte sind die Voraussetzung dafür, dass der Generationenwechsel gelingt.",
@@ -121,14 +125,16 @@ export const cases: CaseStudy[] = [
     question: "Sie stehen vor derselben Herausforderung?",
   },
   {
-    title: "Führung in der Produktion: Schichtleiter gezielt entwickeln",
+    topic: "Führung in der Produktion",
+    headline: "Schichtleiter gezielt entwickeln",
     situation:
       "Eine Mitarbeiterumfrage zeigt hohe Unzufriedenheit mit der Führung auf Schichtleiterebene – vor allem bei den sozialen Kompetenzen.",
     why: "Schichtleiter führen die Menschen, die täglich produzieren. Wo Führung dort nicht funktioniert, leiden Motivation, Zusammenarbeit und Qualität – und gute Mitarbeitende gehen. Standort- und Personalleitung wollten deshalb kein einmaliges Training, sondern ein nachhaltiges Entwicklungskonzept.",
     question: "Ähnliche Rückmeldungen aus Ihrer Mitarbeiterumfrage?",
   },
   {
-    title: "Mitarbeiterjahresgespräch: vom Pflichttermin zum Führungsinstrument",
+    topic: "Mitarbeiterjahresgespräch",
+    headline: "Vom Pflichttermin zum Führungsinstrument",
     situation:
       "Ein Mittelständler führte bereits Jahresgespräche – die Umsetzungsqualität entsprach aber nicht der ursprünglichen Zielsetzung.",
     why: "Gut geführte Jahresgespräche sind eines der wirksamsten Führungsinstrumente: Ziele vereinbaren, Leistung einordnen, Entwicklung planen. Als lästige Pflicht verschenkt ein Unternehmen genau diesen Hebel.",
@@ -137,7 +143,8 @@ export const cases: CaseStudy[] = [
     question: "Sie interessieren sich für unser Vorgehen?",
   },
   {
-    title: "Zwei Produktionsstandorte: Kommunikationskultur stärken, Führungstalente binden",
+    topic: "Zwei Produktionsstandorte",
+    headline: "Kommunikationskultur stärken, Führungstalente binden",
     situation:
       "Zwei Produktionsstandorte eines internationalen Konzerns wollen den Umgang miteinander neu ausrichten und junge Talente strategisch auf eine mögliche Führungsaufgabe vorbereiten.",
     why: "Führungsnachwuchs aus den eigenen Reihen sichert die Nachfolge und bindet Talente ans Unternehmen, statt sie an den Wettbewerb zu verlieren. Eine offene Kommunikationskultur ist dafür die Grundlage.",
@@ -146,7 +153,8 @@ export const cases: CaseStudy[] = [
     question: "Kommunikationskultur und Talentförderung sind auch bei Ihnen Thema?",
   },
   {
-    title: "Nach der Restrukturierung: neu zusammengesetzte Teams schnell arbeitsfähig machen",
+    topic: "Nach der Restrukturierung",
+    headline: "Neu formierte Teams schnell arbeitsfähig machen",
     situation:
       "Die Auslagerung einer Produktlinie führt zu personellen Umverteilungen. Mehrere Teams werden neu zusammengesetzt.",
     why: "Nach einer Restrukturierung zählt, dass die Teams schnell wieder effizient und effektiv arbeiten. Unklare Rollen und Verunsicherung kosten sonst über Monate Leistung.",
@@ -155,7 +163,8 @@ export const cases: CaseStudy[] = [
     question: "Interesse an Team- und Persönlichkeitsanalysen?",
   },
   {
-    title: "Vertriebsleitung entlasten: eine Teamleiterstruktur aufbauen",
+    topic: "Vertrieb",
+    headline: "Leitung entlasten mit einer Teamleiterstruktur",
     situation:
       "Der Vertriebsleiter (Prokurist) eines mittelständischen Unternehmens trägt einen Großteil der Verantwortung allein.",
     why: "Er will sich entlasten und die internen Vertriebsprozesse optimieren. Eine Teamleiterstruktur verteilt Verantwortung, beschleunigt Entscheidungen und macht den Vertrieb unabhängiger von einer einzelnen Person.",
@@ -164,7 +173,8 @@ export const cases: CaseStudy[] = [
     question: "Organisatorische Veränderungen stehen an?",
   },
   {
-    title: "Kandidaten-Check: teure Fehlbesetzungen vermeiden",
+    topic: "Kandidaten-Check",
+    headline: "Teure Fehlbesetzungen vermeiden",
     situation:
       "Ein Maschinenbauer hat innerhalb kurzer Zeit mehrere Personalentscheidungen getroffen, die sich als Enttäuschung herausstellten.",
     why: "Fehlbesetzungen sind teuer: Einarbeitung, Produktivitätsverlust, erneute Suche und Unruhe im Team. Gesucht war deshalb ein Weg, Personalentscheidungen systematisch abzusichern.",
