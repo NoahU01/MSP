@@ -235,3 +235,82 @@ export const download = {
   size: null as string | null, // z. B. "1,2 MB"
   href: null as string | null, // z. B. "/downloads/MSP-Leitfaden-Zukunftsfaktor-Mensch.pdf"
 };
+
+// Die zwei Bausteine von MSP – einzeln buchbar oder kombiniert.
+// Vorläufige Texte auf Basis von Daniels Briefing; mit dem Word-Dokument abgleichen.
+export type Baustein = {
+  key: "hrbp" | "lernwelt";
+  name: string;
+  claim: string;
+  question: string;
+  text: string;
+  focus: string[];
+  details: { title: string; items: string[]; href?: string }[];
+};
+
+export const bausteine: Baustein[] = [
+  {
+    key: "hrbp",
+    name: "HR Business Partner",
+    claim: "Struktur und Steuerbarkeit",
+    question: "Geht es um Strategie, Struktur, Prozesse, Rollen und Klarheit?",
+    text: "Wir schaffen die Rahmenbedingungen, in denen Menschen ihre Leistung entfalten können: klare Verantwortlichkeiten, tragfähige Strukturen und Führung, die steuert. Langfristig aufgebaut und an Ihren Unternehmenszielen ausgerichtet.",
+    focus: ["Strategie & Struktur", "Rollen & Verantwortung", "Prozesse & Schnittstellen", "Führung & Nachfolge"],
+    details: [
+      {
+        title: "Organisationsentwicklung",
+        items: ["Unternehmens- und Führungsnachfolge", "Neue Organisationsformen und Strukturen", "Rollen und Anforderungsprofile", "Schnittstellenmanagement und Prozessentwicklung"],
+        href: "/leistungen/organisationsentwicklung",
+      },
+      {
+        title: "Führungskräfteentwicklung",
+        items: ["Entwicklung von Führungsteams", "Karriere- und Talentprogramme", "Transfersicherung"],
+        href: "/leistungen/fuehrungskraefteentwicklung",
+      },
+      {
+        title: "Personalentwicklung",
+        items: ["Strategische PE-Konzepte", "Mitarbeiterbindung", "Karriere- und Nachfolgeplanung", "Beurteilungssysteme und Bildungscontrolling"],
+        href: "/leistungen/personalentwicklung",
+      },
+      {
+        title: "Teamentwicklung",
+        items: ["Teamanalysen", "Konfliktklärung und Mediation", "Entwicklung einer Teamkultur"],
+        href: "/leistungen/teamentwicklung",
+      },
+    ],
+  },
+  {
+    key: "lernwelt",
+    name: "Lernwelt",
+    claim: "Wissen und soziale Kompetenz",
+    question: "Geht es um Weiterentwicklung, Training und Coaching?",
+    text: "Wir erweitern gezielt Wissen und soziale Kompetenzen – praxisnah und direkt anwendbar. Trainings, Workshops und Coachings, die im Arbeitsalltag ankommen und dort Wirkung zeigen.",
+    focus: ["Trainings & Workshops", "Coaching", "Soziale Kompetenz", "Transfer in den Alltag"],
+    details: [
+      {
+        title: "Trainings & Workshops",
+        items: ["Maßgeschneidert auf Ihre Situation", "Führungskompetenz und Persönlichkeitsentwicklung", "Alle Bereiche der sozialen Kompetenz"],
+      },
+      {
+        title: "Coaching",
+        items: ["Führungskräfte-Coaching", "Begleitung in neuen Rollen", "Reflexion im Team"],
+      },
+      {
+        title: "Wirkung sichern",
+        items: ["Bildungsbedarfs- und Persönlichkeitsanalysen vorab", "Transfersicherung im Arbeitsalltag", "Nachbetreuung, damit Gelerntes bleibt"],
+      },
+    ],
+  },
+];
+
+// Schneller Einstieg – egal, welcher Baustein am Ende der richtige ist.
+export const quickStart = [
+  {
+    title: "Klärungsgespräch",
+    text: "Wir tauschen uns aus, stellen die richtigen Fragen und finden gemeinsam heraus, wo in Ihrem Unternehmen der größte Hebel liegt.",
+  },
+  {
+    title: "Konkreter Vorschlag",
+    text: "Sie erhalten einen umsetzbaren Vorschlag für das weitere Vorgehen – klar strukturiert, damit Sie schnell entscheiden können.",
+  },
+];

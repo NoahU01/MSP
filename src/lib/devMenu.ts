@@ -5,7 +5,8 @@ export type DevLink = { href: string; tag: string; title: string; note: string; 
 
 export const devMenu: { unterseiten: DevLink[]; archiv: DevLink[] } = {
   unterseiten: [
-    { href: "/", tag: "⌂", title: "Startseite", note: "Aktuelle Version in Arbeit" },
+    { href: "/startseite/version-1", tag: "V1", title: "Startseite – Version 1", note: "Leistungen, Haltung, 6 Schritte (aktuell unter /)" },
+    { href: "/startseite/version-2", tag: "V2", title: "Startseite – Version 2", note: "Grundproblem, zwei Bausteine, Einstieg in 2 Schritten" },
     { href: "/leistungen/organisationsentwicklung", tag: "OE", title: "Organisationsentwicklung", note: "Leistung" },
     { href: "/leistungen/fuehrungskraefteentwicklung", tag: "FE", title: "Führungskräfteentwicklung", note: "Leistung" },
     { href: "/leistungen/personalentwicklung", tag: "PE", title: "Personalentwicklung", note: "Leistung" },
