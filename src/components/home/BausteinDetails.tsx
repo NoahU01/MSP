@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Baustein } from "@/lib/content";
+import { devTools } from "@/lib/flags";
 
 // Detail-Inhalte eines Bausteins (für Pop-up oder Aufklapper).
 export function BausteinDetails({ baustein: b }: { baustein: Baustein }) {
@@ -11,7 +12,7 @@ export function BausteinDetails({ baustein: b }: { baustein: Baustein }) {
         {b.details.map((d) => (
           <div key={d.title}>
             <p className="font-semibold text-ink">
-              {d.href ? (
+              {d.href && devTools ? (
                 <Link href={d.href} className="hover:text-brand">
                   {d.title} →
                 </Link>

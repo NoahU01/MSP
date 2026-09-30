@@ -1,13 +1,18 @@
 import Link from "next/link";
 import { company, services } from "@/lib/content";
+import { devTools } from "@/lib/flags";
 
 export function Footer() {
   return (
     <footer className="bg-deep text-white/80">
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-3">
+      <div
+        className={`mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 ${devTools ? "md:grid-cols-3" : "md:grid-cols-2"}`}
+      >
         <div>
           <p className="font-semibold text-white">{company.name}</p>
-          <p className="mt-1 text-sm font-semibold text-brand">{company.slogan}</p>
+          <p className="mt-1 text-sm font-semibold text-brand">
+            {company.slogan}
+          </p>
           <p className="mt-3 text-sm leading-relaxed">
             {company.street}
             <br />
@@ -24,24 +29,34 @@ export function Footer() {
           </p>
         </div>
 
-        <div>
-          <p className="font-semibold text-white">Leistungen</p>
-          <ul className="mt-3 space-y-2 text-sm">
-            {services.map((s) => (
-              <li key={s.slug}>
-                <Link href={`/leistungen/${s.slug}`} className="hover:text-white">
-                  {s.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+        {/* Leistungs-Unterseiten gibt es nur in der Entwicklungsumgebung */}
+        {devTools && (
+          <div>
+            <p className="font-semibold text-white">Leistungen</p>
+            <ul className="mt-3 space-y-2 text-sm">
+              {services.map((s) => (
+                <li key={s.slug}>
+                  <Link
+                    href={`/leistungen/${s.slug}`}
+                    className="hover:text-white"
+                  >
+                    {s.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
 
         <div>
           <p className="font-semibold text-white">Service</p>
           <ul className="mt-3 space-y-2 text-sm">
             <li>
-              <a href={company.customerLoginUrl} className="hover:text-white" rel="noopener">
+              <a
+                href={company.customerLoginUrl}
+                className="hover:text-white"
+                rel="noopener"
+              >
                 Kunden-Login
               </a>
             </li>
@@ -60,8 +75,8 @@ export function Footer() {
       </div>
       <div>
         <p className="mx-auto max-w-6xl px-4 py-6 text-xs text-white/50 sm:px-6">
-          © {company.since}–{new Date().getFullYear()} {company.name} · Ihr Partner für Führungs- und
-          Veränderungsprozesse
+          © {company.since}–{new Date().getFullYear()} {company.name} · Ihr
+          Partner für Führungs- und Veränderungsprozesse
         </p>
       </div>
     </footer>
