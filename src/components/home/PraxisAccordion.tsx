@@ -2,54 +2,62 @@ import Link from "next/link";
 import { Section } from "@/components/Section";
 import { cases } from "@/lib/content";
 
-// Praxisbeispiele als schlichtes Akkordeon (FAQ-Stil).
+// Praxisbeispiele als ruhiges Akkordeon (FAQ-Stil):
+// eine Schriftgröße, ein Schnitt pro Zeile – Hierarchie nur über Farbe. Keine Großbuchstaben, keine Zweizeiler.
 export function PraxisAccordion({ tone }: { tone?: "white" | "paper" }) {
   return (
-  <Section
-    id="praxis"
+    <Section
+      id="praxis"
       tone={tone}
-    eyebrow="Anliegen von Geschäftspartnern"
-    title="Aus unserem Tagesgeschäft"
-    intro="Gemeinsam mit unseren Geschäftspartnern konkretisieren wir die Ziele, vereinbaren passende Maßnahmen und fokussieren uns auf die Umsetzung – konsequent und Schritt für Schritt."
-  >
-    <div className="mt-12 border-t border-line">
-      {cases.map((c) => (
-        <details key={c.topic} className="group border-b border-line">
-          <summary className="grid cursor-pointer list-none grid-cols-[1fr_auto] items-center gap-x-6 gap-y-1 py-5 transition hover:text-brand md:grid-cols-[15rem_1fr_auto] [&::-webkit-details-marker]:hidden">
-              <span className="text-xs font-semibold uppercase tracking-widest text-brand md:text-[13px]">{c.topic}</span>
-              <span className="col-start-1 row-start-2 text-lg font-semibold leading-snug text-navy md:col-start-2 md:row-start-1">
-                {c.headline}
+      eyebrow="Anliegen von Geschäftspartnern"
+      title="Aus unserem Tagesgeschäft"
+      intro="Gemeinsam mit unseren Geschäftspartnern konkretisieren wir die Ziele, vereinbaren passende Maßnahmen und fokussieren uns auf die Umsetzung – konsequent und Schritt für Schritt."
+    >
+      <div className="mt-12 border-t border-line">
+        {cases.map((c) => (
+          <details key={c.topic} className="group border-b border-line">
+            <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-6 text-[17px] font-semibold leading-snug [&::-webkit-details-marker]:hidden">
+              <span>
+                <span className="whitespace-nowrap text-muted">
+                  {c.topic}
+                  <span aria-hidden="true" className="px-2 text-line">
+                    /
+                  </span>
+                </span>{" "}
+                <span className="text-navy transition group-hover:text-brand">{c.headline}</span>
               </span>
-              <span
+              <svg
+                viewBox="0 0 16 16"
                 aria-hidden="true"
-                className="relative col-start-2 row-span-2 row-start-1 size-4 shrink-0 text-navy before:absolute before:inset-x-0 before:top-1/2 before:h-0.5 before:-translate-y-1/2 before:bg-current after:absolute after:inset-y-0 after:left-1/2 after:w-0.5 after:-translate-x-1/2 after:bg-current after:transition group-open:after:rotate-90 group-open:after:opacity-0 md:col-start-3 md:row-span-1"
-              />
+                className="size-4 shrink-0 text-navy transition-transform duration-200 group-open:rotate-180"
+              >
+                <path d="M3.5 6 8 10.5 12.5 6" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
             </summary>
-          <div className="max-w-3xl space-y-4 pb-7 leading-relaxed text-muted md:ml-[calc(15rem+1.5rem)]">
-            <p>
-              <strong className="font-semibold text-ink">Ausgangslage: </strong>
-              {c.situation}
-            </p>
-            <p>
-              <strong className="font-semibold text-ink">Warum es dem Kunden wichtig war: </strong>
-              {c.why}
-            </p>
-            {c.assignment && (
-              <p>
-                <strong className="font-semibold text-ink">Der Auftrag: </strong>
-                {c.assignment}
+
+            <div className="pb-8">
+              <dl className="grid max-w-4xl gap-x-10 gap-y-4 md:grid-cols-[10rem_1fr]">
+                <dt className="text-muted">Ausgangslage</dt>
+                <dd className="leading-relaxed text-ink">{c.situation}</dd>
+                <dt className="text-muted">Warum</dt>
+                <dd className="leading-relaxed text-ink">{c.why}</dd>
+                {c.assignment && (
+                  <>
+                    <dt className="text-muted">Auftrag</dt>
+                    <dd className="leading-relaxed text-ink">{c.assignment}</dd>
+                  </>
+                )}
+              </dl>
+              <p className="mt-6 leading-relaxed text-ink md:ml-[calc(10rem+2.5rem)]">
+                {c.question}{" "}
+                <Link href="#kontakt" className="font-semibold text-brand underline-offset-4 hover:underline">
+                  Sprechen Sie uns an →
+                </Link>
               </p>
-            )}
-            <p className="font-semibold text-ink">
-              {c.question}{" "}
-              <Link href="#kontakt" className="text-brand underline-offset-4 hover:underline">
-                Sprechen Sie uns an →
-              </Link>
-            </p>
-          </div>
-        </details>
-      ))}
-    </div>
-  </Section>
+            </div>
+          </details>
+        ))}
+      </div>
+    </Section>
   );
 }
