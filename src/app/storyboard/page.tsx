@@ -70,7 +70,7 @@ const rows: Row[] = [
     ),
     content: (
       <dl className="space-y-2">
-        <Field k="Headline">Mehr erreichen – mit den Menschen, die Sie haben.</Field>
+        <Field k="Headline">Mehr erreichen – mit den richtigen Menschen am richtigen Platz.</Field>
         <Field k="Druck von außen">Märkte werden enger · Kosten steigen · Fachkräfte fehlen</Field>
         <Field k="Folgen">{pains.map((p) => p.title).join(" · ")}</Field>
         <Field k="Kernfrage">Die Frage ist nicht, ob Sie in Ihre Menschen investieren – sondern wo es am meisten bewirkt.</Field>
@@ -277,7 +277,7 @@ export default function StoryboardPage() {
                 </p>
                 <p>
                   Die neue MSP-Startseite funktioniert wie eine Landingpage: Sie richtet sich an Entscheider in
-                  Unternehmen, benennt ein zentrales Problem – mehr erreichen mit den Menschen, die man hat – und führt
+                  Unternehmen, benennt ein zentrales Problem – mit begrenzten Ressourcen mehr erreichen, und dafür die richtigen Menschen am richtigen Platz haben – und führt
                   zielgerichtet zur Lösung und zum Gespräch. Schon im Header muss der Besucher spüren: Hier bin ich
                   richtig, hier finde ich einen Partner, der mein Thema versteht.
                 </p>
