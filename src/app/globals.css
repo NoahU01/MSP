@@ -79,3 +79,10 @@ body {
   text-underline-offset: 8px;
   text-decoration-skip-ink: none;
 }
+
+/* Dekor (z. B. Fingerabdruck) darf über Sektionsgrenzen laufen: liegt über den Hintergründen (z-index 5),
+   Inhalte der Sektionen liegen immer darüber. */
+#inhalt section > div {
+  position: relative;
+  z-index: 10;
+}
