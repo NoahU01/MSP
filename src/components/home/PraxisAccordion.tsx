@@ -1,9 +1,11 @@
 import Link from "next/link";
 import { cases } from "@/lib/content";
+import { FadeScroll } from "./FadeScroll";
 
 // Praxisbeispiele nach empiria-Muster „Formate“: Text links, Akkordeon rechts.
 // Einträge grau hinterlegt mit dunkelblauer Kante, Plus-Symbol als klares Akkordeon-Signal.
 // name="praxis": Es ist immer nur ein Eintrag geöffnet (natives exklusives Akkordeon).
+// Nur vier Einträge sichtbar, der fünfte läuft transparent aus – der Rest ist per Scrollen erreichbar.
 // look: "edge" = grau mit dunkelblauer Kante links, "fill" = nur hellgrau hinterlegt, "outline" = dünner hellgrauer Rand.
 const looks = {
   edge: "rounded-2xl border-l-4 border-navy bg-paper",
@@ -26,7 +28,8 @@ export function PraxisAccordion({ look = "edge" }: { look?: keyof typeof looks }
           </p>
         </div>
 
-        <div className="space-y-3">
+        <FadeScroll visible={4}>
+        <div className="space-y-3 pb-2">
           {cases.map((c) => (
             <details key={c.topic} name="praxis" className={`group ${looks[look]}`}>
               <summary className="flex cursor-pointer list-none items-center gap-5 px-6 py-5 sm:px-7 [&::-webkit-details-marker]:hidden">
@@ -66,6 +69,7 @@ export function PraxisAccordion({ look = "edge" }: { look?: keyof typeof looks }
             </details>
           ))}
         </div>
+        </FadeScroll>
       </div>
     </section>
   );

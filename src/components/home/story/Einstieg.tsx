@@ -48,63 +48,69 @@ export function Einstieg({ variant = "timeline" }: { variant?: "band" | "cards" 
         {variant === "cards" && (
           <>
             <Head />
+            {/* Schritt 1 hervorgehoben (türkis) mit CTA – dort steigen wir ein. Alle Karten gleich aufgebaut. */}
             <div className="mt-14 grid gap-6 md:grid-cols-3">
-              {steps.slice(0, 2).map((s, i) => {
+              {steps.map((s, i) => {
                 const I = s.icon;
+                const first = i === 0;
                 return (
-                  <div key={s.title} className="rounded-[28px] bg-paper p-8 sm:p-10">
-                    <div className="flex items-start justify-between">
-                      <span className="text-7xl font-light leading-none text-brand">{i + 1}</span>
-                      <I className="size-10 text-navy" />
+                  <div
+                    key={s.title}
+                    className={`flex flex-col rounded-[28px] p-8 sm:p-10 ${first ? "bg-brand text-white shadow-[0_24px_60px_rgba(0,154,163,0.3)]" : "bg-paper"}`}
+                  >
+                    <div className="flex h-20 items-start justify-between">
+                      <span className={`text-7xl font-light leading-none ${first ? "text-white" : "text-brand"}`}>{i + 1}</span>
+                      <I className={`size-10 ${first ? "text-white" : "text-navy"}`} />
                     </div>
-                    <h3 className="t-h3 mt-12 text-navy">{s.title}</h3>
-                    <p className="mt-2 text-lg font-light text-muted">{s.short}</p>
+                    <h3 className={`t-h3 mt-10 ${first ? "text-white" : "text-navy"}`}>{s.title}</h3>
+                    <p className={`mt-2 text-lg font-light ${first ? "text-white/90" : "text-muted"}`}>{s.short}</p>
+                    {first && (
+                      <div className="mt-auto pt-8">
+                        <Link
+                          href="#kontakt"
+                          className="inline-flex whitespace-nowrap rounded-full bg-white px-6 py-3.5 font-semibold text-brand-dark transition hover:bg-paper"
+                        >
+                          {cta}
+                        </Link>
+                      </div>
+                    )}
                   </div>
                 );
               })}
-              <div className="flex flex-col rounded-[28px] bg-brand p-8 text-white sm:p-10">
-                <IconArrowRight className="size-10" />
-                <h3 className="t-h3 mt-auto pt-12">Danach: Umsetzung</h3>
-                <p className="mt-2 text-lg font-light text-white/90">Mit dem Baustein, der passt.</p>
-                <Link
-                  href="#kontakt"
-                  className="mt-8 inline-flex self-start whitespace-nowrap rounded-full bg-white px-6 py-3.5 font-semibold text-brand-dark transition hover:bg-paper"
-                >
-                  {cta}
-                </Link>
-              </div>
             </div>
           </>
         )}
 
         {variant === "timeline" && (
           <>
-            <Head>
-              <Link href="#kontakt" className="rounded-full bg-brand px-7 py-3.5 font-semibold text-white transition hover:bg-brand-dark">
-                {cta}
-              </Link>
-            </Head>
+            <Head />
+            {/* Schritt 1 hervorgehoben, CTA zentriert direkt unter dem Ablauf als nächster Schritt. */}
             <ol className="relative mt-14 grid gap-12 rounded-[32px] bg-paper p-8 sm:p-12 md:grid-cols-3 md:gap-10">
-              <span aria-hidden="true" className="absolute left-[16%] right-[16%] top-[5.5rem] hidden h-0.5 bg-brand md:block" />
+              <span aria-hidden="true" className="absolute left-[16%] right-[16%] top-[5.5rem] hidden h-0.5 bg-brand/40 md:block" />
               {steps.map((s, i) => {
                 const I = s.icon;
-                const last = i === steps.length - 1;
+                const first = i === 0;
                 return (
                   <li key={s.title} className="relative flex flex-col items-start md:items-center md:text-center">
                     <span
-                      className={`flex size-20 items-center justify-center rounded-full shadow-[0_12px_30px_rgba(24,42,54,0.12)] ${
-                        last ? "bg-brand text-white" : "bg-white text-navy"
+                      className={`flex size-20 items-center justify-center rounded-full ${
+                        first ? "bg-brand text-white shadow-[0_14px_34px_rgba(0,154,163,0.4)] ring-8 ring-brand/15" : "bg-white text-navy shadow-[0_12px_30px_rgba(24,42,54,0.12)]"
                       }`}
                     >
                       <I className="size-9" />
                     </span>
-                    <p className="mt-6 text-[15px] font-semibold text-brand">{last ? "Danach" : `Schritt ${i + 1}`}</p>
+                    <p className="mt-6 text-[15px] font-semibold text-brand">{i === 2 ? "Danach" : `Schritt ${i + 1}`}</p>
                     <h3 className="t-h3 mt-1 text-navy">{s.title}</h3>
                     <p className="mt-2 text-lg font-light text-muted">{s.short}</p>
                   </li>
                 );
               })}
             </ol>
+            <div className="mt-10 text-center">
+              <Link href="#kontakt" className="inline-flex rounded-full bg-brand px-8 py-4 text-lg font-semibold text-white transition hover:bg-brand-dark">
+                {cta}
+              </Link>
+            </div>
           </>
         )}
       </div>

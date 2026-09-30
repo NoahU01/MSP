@@ -2,13 +2,24 @@
 
 # Arbeitsregeln für dieses Projekt (verbindlich)
 
+## Branches
+- Entwickelt wird **immer auf dem Branch `daniel`**. Commits und Pushes gehen nach `origin/daniel`.
+- Nach `main` wird **nur auf ausdrücklichen Hinweis von Daniel** übernommen (Merge `daniel` → `main`).
+  `main` ist die Live-Version (https://msp-empiria-gmb-h.vercel.app).
+- Vorschau des Branches `daniel`: https://msp-git-daniel-empiria-gmb-h.vercel.app
+- Entwicklungswerkzeuge sind per Build-Schalter vom Live-Stand getrennt (`next.config.ts`, `src/lib/flags.ts`):
+  Auf `main` gibt es kein Menü „/ Entwicklung /“, keine Links auf Leistungs-Unterseiten, und
+  `/storyboard`, `/startseite/*`, `/leistungen/*`, `/archiv/*` liefern 404. Deshalb darf `daniel` komplett nach `main` gemergt werden.
+  Neue Entwicklungsseiten in einen dieser Ordner legen oder mit `DevOnly` absichern.
+  Lokal wie main testen: `VERCEL_GIT_COMMIT_REF=main npm run build`.
+
 ## Qualitätsschleife vor JEDEM Push
 1. `npm run lint` und `npm run build` müssen fehlerfrei sein.
 2. Produktions-Build lokal starten (`npx next start -p 3001`) und **jede geänderte Seite in Chrome ansehen**:
    Screenshots Desktop (1440 px) und schmal (500 px) per Headless-Chrome, Screenshots **selbst prüfen**.
 3. Prüfen gegen die Gestaltungsregeln unten. Auffälligkeiten korrigieren und Schritt 2 wiederholen,
    bis nichts mehr auffällt. Erst dann committen und pushen.
-4. Nach dem Deploy die Live-URL (https://msp-empiria-gmb-h.vercel.app) kurz gegenprüfen.
+4. Nach dem Deploy die zugehörige Vercel-URL gegenprüfen (Branch-Vorschau für `daniel`, Live-URL nur nach Merge in `main`).
 
 ## Gestaltungsregeln (Feedback Daniel)
 - Schlicht und professionell, viel Weiß. Lieber weniger Elemente, dafür sauber.
