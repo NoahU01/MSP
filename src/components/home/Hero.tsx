@@ -20,7 +20,7 @@ export function Hero({
   const centered = layout === "centered";
   const eyebrow = <p className="t-eyebrow text-brand">Zukunftsfaktor Mensch · seit {company.since}</p>;
   const h1 = (
-    <h1 className="mt-5 text-4xl font-semibold leading-[1.1] tracking-tight text-balance text-navy sm:text-[3.5rem]">
+    <h1 className="mt-5 text-[2.125rem] font-semibold leading-[1.1] tracking-tight text-balance text-navy sm:text-[3.5rem]">
       Ihr HR Businesspartner für Führungs-, Entwicklungs- und Veränderungsprozesse
     </h1>
   );

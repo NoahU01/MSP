@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import { ContactPeople } from "@/components/ContactPeople";
 import { ClaimBand } from "@/components/home/ClaimBand";
 import { DownloadSection } from "@/components/home/DownloadSection";
-import { HebelFinder } from "@/components/home/HebelFinder";
 import { Hero } from "@/components/home/Hero";
 import { PraxisAccordion } from "@/components/home/PraxisAccordion";
 import { Ausgangslage } from "@/components/home/story/Ausgangslage";
 import { Einstieg } from "@/components/home/story/Einstieg";
+import { HebelSection } from "@/components/home/story/HebelSection";
 import { Loesung } from "@/components/home/story/Loesung";
 
 export const metadata: Metadata = { title: "Startseite – Version 4" };
@@ -18,22 +18,7 @@ export default function StartseiteVersion4() {
       <Hero />
       <Ausgangslage />
 
-      <section id="hebel" className="bg-white py-24 sm:py-32">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <div className="max-w-3xl">
-            <p className="t-eyebrow text-brand">Hebel-Finder</p>
-            <h2 className="t-h2 mt-4 text-navy">
-              Wo liegt Ihr größter Hebel – <span className="u-accent">Struktur oder Kompetenz?</span>
-            </h2>
-            <p className="t-lead mt-8 text-muted">
-              Probieren Sie es aus: Wählen Sie, was auf Ihr Unternehmen zutrifft, und erhalten Sie sofort eine erste Einordnung.
-            </p>
-          </div>
-          <div className="mt-14">
-            <HebelFinder />
-          </div>
-        </div>
-      </section>
+      <HebelSection />
 
       <Loesung variant="hover" />
       <ClaimBand />

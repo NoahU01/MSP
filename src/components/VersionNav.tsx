@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 // Schnellumschalter zwischen den Startseiten-Varianten (nur in der Entwicklungsphase).
-const versions = [1, 2, 3, 4, 5];
+const versions = [1, 2, 3, 4, 5, 6];
 
 export function VersionNav() {
   const pathname = usePathname();
@@ -18,7 +18,7 @@ export function VersionNav() {
             <Link
               href={href}
               aria-current={active ? "page" : undefined}
-              className={`block whitespace-nowrap rounded-full px-2 py-1.5 text-[13px] font-semibold transition sm:px-3.5 sm:text-sm ${
+              className={`block whitespace-nowrap rounded-full px-1.5 py-1.5 text-[13px] font-semibold transition sm:px-3.5 sm:text-sm ${
                 active ? "bg-navy text-white" : "text-muted hover:bg-paper hover:text-navy"
               }`}
             >
