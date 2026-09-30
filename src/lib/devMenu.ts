@@ -15,6 +15,7 @@ export const startseitenVarianten: DevLink[] = [
 
 export const devMenu: { unterseiten: DevLink[]; archiv: DevLink[] } = {
   unterseiten: [
+    { href: "/storyboard", tag: "SB", title: "Storyboard", note: "Struktur und Kernaussagen der Startseite" },
     { href: "/leistungen/organisationsentwicklung", tag: "OE", title: "Organisationsentwicklung", note: "Leistung" },
     { href: "/leistungen/fuehrungskraefteentwicklung", tag: "FE", title: "Führungskräfteentwicklung", note: "Leistung" },
     { href: "/leistungen/personalentwicklung", tag: "PE", title: "Personalentwicklung", note: "Leistung" },
