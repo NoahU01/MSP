@@ -4,6 +4,8 @@ export const company = {
   name: "MSP human resources GmbH",
   shortName: "MSP",
   claim: "Ihr HR Businesspartner für Führungs-, Entwicklungs- und Veränderungsprozesse",
+  // Übergreifender Slogan (wie auf LinkedIn)
+  slogan: "Entwicklung wird im Unternehmen spür- und messbar.",
   since: 2002,
   ceo: "Mark Schweitzer-Pullar",
   street: "Untere Gasse 64",
@@ -242,6 +244,8 @@ export type Baustein = {
   key: "hrbp" | "lernwelt";
   name: string;
   claim: string;
+  /** Slogan wie auf LinkedIn */
+  slogan: string;
   question: string;
   text: string;
   focus: string[];
@@ -253,6 +257,7 @@ export const bausteine: Baustein[] = [
     key: "hrbp",
     name: "HR Business Partner",
     claim: "Struktur und Steuerbarkeit",
+    slogan: "Strukturen, die tragen. Führung, die wirkt.",
     question: "Geht es um Strategie, Struktur, Prozesse, Rollen und Klarheit?",
     text: "Wir schaffen die Rahmenbedingungen, in denen Menschen ihre Leistung entfalten können: klare Verantwortlichkeiten, tragfähige Strukturen und Führung, die steuert. Langfristig aufgebaut und an Ihren Unternehmenszielen ausgerichtet.",
     focus: ["Strategie & Struktur", "Rollen & Verantwortung", "Prozesse & Schnittstellen", "Führung & Nachfolge"],
@@ -283,6 +288,7 @@ export const bausteine: Baustein[] = [
     key: "lernwelt",
     name: "Lernwelt",
     claim: "Wissen und soziale Kompetenz",
+    slogan: "Damit Entwicklung im Alltag wirklich ankommt.",
     question: "Geht es um Weiterentwicklung, Training und Coaching?",
     text: "Wir erweitern gezielt Wissen und soziale Kompetenzen – praxisnah und direkt anwendbar. Trainings, Workshops und Coachings, die im Arbeitsalltag ankommen und dort Wirkung zeigen.",
     focus: ["Trainings & Workshops", "Coaching", "Soziale Kompetenz", "Transfer in den Alltag"],

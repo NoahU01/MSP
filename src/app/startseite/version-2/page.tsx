@@ -6,7 +6,7 @@ import { Hero } from "@/components/home/Hero";
 import { PraxisAccordion } from "@/components/home/PraxisAccordion";
 import { Stoerer } from "@/components/home/Stoerer";
 import { Section } from "@/components/Section";
-import { bausteine, quickStart, type Baustein } from "@/lib/content";
+import { bausteine, company, quickStart, type Baustein } from "@/lib/content";
 
 export const metadata: Metadata = { title: "Startseite – Version 2" };
 
@@ -81,8 +81,8 @@ export default function StartseiteVersion2() {
         id="bausteine"
         tone="paper"
         eyebrow="Unsere Lösung"
-        title="Zwei Bausteine. Ein Ziel: Ihr Unternehmenserfolg."
-        intro="Je nachdem, wo Ihr größter Hebel liegt, setzen wir an der Struktur an, an der Kompetenz – oder an beidem."
+        title={company.slogan}
+        intro="Mit zwei Bausteinen und einem Ziel: Ihrem Unternehmenserfolg. Je nachdem, wo Ihr größter Hebel liegt, setzen wir an der Struktur an, an der Kompetenz – oder an beidem."
       >
         <div className="mt-12 grid gap-6 lg:grid-cols-2">
           {bausteine.map((b, i) => (
@@ -138,9 +138,11 @@ function BausteinCard({ baustein: b, index }: { baustein: Baustein; index: numbe
     <article className="flex flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-line">
       <div className={`h-1.5 ${accent}`} />
       <div className="flex flex-1 flex-col p-7 sm:p-9">
-        <p className="text-sm font-semibold uppercase tracking-widest text-muted">Baustein {index}</p>
+        <p className="text-sm font-semibold uppercase tracking-widest text-muted">
+          Baustein {index} · {b.claim}
+        </p>
         <h3 className={`mt-2 text-3xl font-semibold tracking-tight ${text}`}>{b.name}</h3>
-        <p className="mt-1 text-lg text-ink">{b.claim}</p>
+        <p className="mt-3 text-xl font-semibold leading-snug text-ink">{b.slogan}</p>
 
         <p className="mt-6 rounded-xl bg-paper px-5 py-4 font-semibold leading-snug text-ink">{b.question}</p>
         <p className="mt-6 leading-relaxed text-muted">{b.text}</p>

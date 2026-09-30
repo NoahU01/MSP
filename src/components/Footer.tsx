@@ -7,6 +7,7 @@ export function Footer() {
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-3">
         <div>
           <p className="font-semibold text-white">{company.name}</p>
+          <p className="mt-1 text-sm font-semibold text-brand">{company.slogan}</p>
           <p className="mt-3 text-sm leading-relaxed">
             {company.street}
             <br />
