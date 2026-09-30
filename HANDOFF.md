@@ -120,4 +120,4 @@ Assets vor Verwendung mit Daniel abstimmen (Qualität/Aktualität, ggf. neue Fot
 - [x] Texte: von alter Seite übernommen und gestrafft (`src/lib/content.ts`)
 - [x] Kontaktweg: Telefon, E-Mail + Formular (Resend; Env-Variablen noch setzen)
 - [ ] Datenschutzerklärung (Entwurf) juristisch prüfen lassen
-- [ ] noindex nach erstem Deploy per `curl -sI` verifizieren
+- [x] noindex nach erstem Deploy verifiziert (Header + Meta-Tag) – Vercel-URL: https://msp-empiria-gmb-h.vercel.app
