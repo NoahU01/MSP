@@ -26,10 +26,10 @@ export default async function ServicePage(props: PageProps<"/leistungen/[slug]">
     <>
       <section className="bg-paper">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
-          <Link href="/#leistungen" className="text-sm font-medium text-muted hover:text-brand">
+          <Link href="/#leistungen" className="text-sm font-semibold text-muted hover:text-brand">
             ← Alle Leistungen
           </Link>
-          <h1 className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl">{service.title}</h1>
+          <h1 className="mt-6 text-4xl font-semibold tracking-tight sm:text-5xl">{service.title}</h1>
           {service.subtitle && <p className="mt-2 text-lg text-muted">{service.subtitle}</p>}
           <p className="mt-6 max-w-2xl text-xl leading-relaxed text-muted">{service.teaser}</p>
         </div>
@@ -37,7 +37,7 @@ export default async function ServicePage(props: PageProps<"/leistungen/[slug]">
 
       <section className="mx-auto grid max-w-6xl gap-12 px-4 py-16 sm:px-6 sm:py-24 md:grid-cols-2 md:gap-16">
         <div>
-          <h2 className="text-2xl font-bold tracking-tight">Was wir für Sie tun</h2>
+          <h2 className="text-2xl font-semibold tracking-tight">Was wir für Sie tun</h2>
           <ul className="mt-6 space-y-4">
             {service.items.map((item) => (
               <li key={item} className="flex gap-4 border-b border-line pb-4 text-lg">
@@ -63,9 +63,9 @@ export default async function ServicePage(props: PageProps<"/leistungen/[slug]">
         </div>
       </section>
 
-      <section className="bg-ink text-white">
+      <section className="bg-navy text-white">
         <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-14 sm:px-6 md:flex-row md:items-center md:justify-between">
-          <p className="text-2xl font-bold tracking-tight">Klingt nach Ihrer Situation?</p>
+          <p className="text-2xl font-semibold tracking-tight">Klingt nach Ihrer Situation?</p>
           <div className="flex flex-wrap gap-4">
             <Link
               href="/#kontakt"

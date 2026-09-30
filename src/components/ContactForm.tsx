@@ -42,23 +42,23 @@ export function ContactForm() {
 
   return (
     <form onSubmit={onSubmit} className="grid gap-5 sm:grid-cols-2">
-      <label className="text-sm font-medium text-white/80">
+      <label className="text-sm font-semibold text-white/80">
         Name *
         <input name="name" required autoComplete="name" className={field} />
       </label>
-      <label className="text-sm font-medium text-white/80">
+      <label className="text-sm font-semibold text-white/80">
         Unternehmen
         <input name="company" autoComplete="organization" className={field} />
       </label>
-      <label className="text-sm font-medium text-white/80">
+      <label className="text-sm font-semibold text-white/80">
         E-Mail *
         <input name="email" type="email" required autoComplete="email" className={field} />
       </label>
-      <label className="text-sm font-medium text-white/80">
+      <label className="text-sm font-semibold text-white/80">
         Telefon
         <input name="phone" type="tel" autoComplete="tel" className={field} />
       </label>
-      <label className="text-sm font-medium text-white/80 sm:col-span-2">
+      <label className="text-sm font-semibold text-white/80 sm:col-span-2">
         Ihr Anliegen *
         <textarea name="message" required rows={5} className={field} />
       </label>

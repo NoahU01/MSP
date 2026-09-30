@@ -13,6 +13,8 @@ export const company = {
   phoneHref: "tel:+497951278970",
   email: "info@msphr.de",
   vatId: "DE 2230 74168",
+  registerCourt: "Amtsgericht Ulm", // lt. CD-Handbuch 2018 – aktuell halten
+  registerNumber: "HRB 671366",
   customerLoginUrl: "https://msphr.de/customer-login/",
   brochureUrl: "/downloads/MSP-Imagebroschuere-Zukunftsfaktor-Mensch.pdf",
 };
@@ -126,7 +128,7 @@ export function getService(slug: string) {
 export type CaseStudy = {
   title: string;
   situation: string;
-  cta: string;
+  question: string;
 };
 
 export const cases: CaseStudy[] = [
@@ -134,43 +136,43 @@ export const cases: CaseStudy[] = [
     title: "Eigenverantwortung stärken",
     situation:
       "In einem Familienunternehmen steht die Nachfolge an. Die Kinder haben als geschäftsführende Gesellschafter übernommen und fragen: „Wie gelingt es, dass unsere Führungskräfte nicht mehr mit Problemen, sondern mit Lösungsvorschlägen zu uns kommen?“",
-    cta: "Sie stehen vor derselben Herausforderung? Kontaktieren Sie uns.",
+    question: "Sie stehen vor derselben Herausforderung?",
   },
   {
     title: "Schichtleiter entwickeln",
     situation:
       "Eine Mitarbeiterumfrage zeigt hohe Unzufriedenheit mit der Führungsleistung – insbesondere den sozialen Kompetenzen – auf Schichtleiterebene. Standort- und Personalleitung wünschen sich ein nachhaltiges Entwicklungskonzept.",
-    cta: "Ähnliche Rückmeldungen aus Ihrer Mitarbeiterumfrage? Gerne stellen wir Ihnen unser Vorgehen vor.",
+    question: "Ähnliche Rückmeldungen aus Ihrer Mitarbeiterumfrage?",
   },
   {
     title: "Mitarbeiterjahresgespräch nachhaltig etablieren",
     situation:
       "Ein Mittelständler will das Jahresgespräch neu aufsetzen, weil die Umsetzungsqualität nicht den Zielen entsprach. Der Prozess wird analysiert – und die Führungskräfte gestalten den neuen Prozess von Anfang an mit.",
-    cta: "Sie interessieren sich für unser Vorgehen? Sprechen Sie uns an.",
+    question: "Sie interessieren sich für unser Vorgehen?",
   },
   {
     title: "Führungstalente fordern und fördern",
     situation:
       "Zwei Produktionsstandorte eines internationalen Konzerns wollen ihre Kommunikationskultur neu ausrichten und junge Talente strategisch auf Führungsaufgaben vorbereiten – und so ans Unternehmen binden.",
-    cta: "Sprechen Sie mit uns über Kommunikationskultur und Talentförderung.",
+    question: "Kommunikationskultur und Talentförderung sind auch bei Ihnen Thema?",
   },
   {
     title: "Teamanalysen samt Handlungsempfehlungen",
     situation:
       "Nach einer Restrukturierung wünschen sich Geschäftsleitung und HR Teamanalysen für die betroffenen Bereiche. Leitfrage: „Was kann ich als Teammitglied tun, um das neue Team effizient und effektiv weiterzuentwickeln?“ – ergänzt um Empfehlungen für die Führungskräfte.",
-    cta: "Interesse an Team- und Persönlichkeitsanalysen? Gehen Sie mit uns in den Austausch.",
+    question: "Interesse an Team- und Persönlichkeitsanalysen?",
   },
   {
     title: "Teamleiterstruktur etablieren",
     situation:
       "Der Vertriebsleiter eines Mittelständlers will Verantwortung abgeben und eine neue Teamstruktur aufbauen. MSP begleitet den gesamten Strukturwandel – inklusive Auswahl geeigneter Teamleiter und erster Trainings für die neue Rolle.",
-    cta: "Organisatorische Veränderungen stehen an? Melden Sie sich.",
+    question: "Organisatorische Veränderungen stehen an?",
   },
   {
     title: "Kandidaten-Check",
     situation:
       "Nach mehreren enttäuschenden Personalentscheidungen sucht ein Maschinenbauer ein Tool, das die Passung zwischen Kandidat:innen und Position systematisch analysiert – und das sich auch in Personal- und Teamentwicklung sowie bei Konflikten einsetzen lässt.",
-    cta: "Sie wollen Personalentscheidungen absichern? Sprechen Sie uns an.",
+    question: "Sie wollen Personalentscheidungen absichern?",
   },
 ];
 

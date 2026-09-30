@@ -28,6 +28,15 @@ export default function ImpressumPage() {
         E-Mail: <a href={`mailto:${company.email}`}>{company.email}</a>
       </p>
 
+      <h2>Registereintrag</h2>
+      <p>
+        Eintragung im Handelsregister
+        <br />
+        Registergericht: {company.registerCourt}
+        <br />
+        Registernummer: {company.registerNumber}
+      </p>
+
       <h2>Umsatzsteuer-ID</h2>
       <p>Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz: {company.vatId}</p>
 

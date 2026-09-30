@@ -1,16 +1,22 @@
 @import "tailwindcss";
 
+/* Farben und Schrift gemäß MSP Corporate Design Handbuch (Stand 07.06.2018) */
 @theme {
-  --color-brand: #009aa3;
-  --color-brand-dark: #007a82;
-  --color-brand-soft: #e3f4f5;
-  --color-navy: #005482;
-  --color-ink: #182a36;
-  --color-muted: #5b6b76;
-  --color-line: #e3e8eb;
-  --color-paper: #f6f8f9;
+  /* Hausfarben */
+  --color-brand: #009aa3; /* Türkis – Pantone 7467 C */
+  --color-navy: #005482; /* Dunkelblau – Pantone 7469 C */
+  --color-ink: #000000; /* Schwarz – Pantone Black */
 
-  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  /* Abgeleitete Web-Töne (Hover, Flächen, Linien) */
+  --color-brand-dark: #00838b;
+  --color-brand-soft: #e5f5f6;
+  --color-navy-dark: #00466c;
+  --color-muted: #555555;
+  --color-line: #e3e8eb;
+  --color-paper: #f5f8f9;
+
+  /* Hausschrift Open Sans: Light (300) für Fließtext, Semibold (600) für Headlines */
+  --font-sans: var(--font-open-sans), Arial, Helvetica, sans-serif;
 }
 
 html {
@@ -21,6 +27,7 @@ html {
 body {
   background: #ffffff;
   color: var(--color-ink);
+  font-weight: 300;
 }
 
 ::selection {
