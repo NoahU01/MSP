@@ -29,7 +29,7 @@ export function Ausgangslage({ variant = "box" }: { variant?: "box" | "plain" })
           <div>
             <p className="t-eyebrow text-brand">Die Ausgangslage</p>
             <h2 className="t-h2 mt-4 text-navy">
-              Mehr erreichen – <span className="u-accent">mit den Menschen, die Sie haben.</span>
+              Mehr erreichen – <span className="u-accent">mit den richtigen Menschen am richtigen Platz.</span>
             </h2>
           </div>
           <div className="rounded-[28px] bg-navy p-8 text-white shadow-[0_30px_70px_rgba(0,84,130,0.25)] sm:p-10">
@@ -59,7 +59,7 @@ export function Ausgangslage({ variant = "box" }: { variant?: "box" | "plain" })
           <div className="max-w-3xl">
             <p className="t-eyebrow text-brand">Die Ausgangslage</p>
             <h2 className="t-h2 mt-4 text-navy">
-              Mehr erreichen – mit den Menschen, die Sie haben.
+              Mehr erreichen – mit den richtigen Menschen am richtigen Platz.
             </h2>
           </div>
           <ul className="mt-10 flex flex-wrap gap-2.5">
