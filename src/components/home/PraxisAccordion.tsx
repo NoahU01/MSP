@@ -18,11 +18,11 @@ export function PraxisAccordion({ tone = "white", centered = false }: { tone?: "
         {cases.map((c) => (
           <details key={c.topic} className={`group rounded-2xl px-6 sm:px-8 ${tone === "paper" ? "bg-white" : "bg-paper"}`}>
             <summary className="flex cursor-pointer list-none items-center gap-6 py-6 [&::-webkit-details-marker]:hidden">
-              <span className="flex-1 text-[17px] font-semibold leading-snug text-navy transition group-hover:text-brand">
-                {c.headline}
-              </span>
-              <span className={`hidden shrink-0 rounded-full px-4 py-1.5 text-sm font-light text-muted md:inline ${tone === "paper" ? "bg-paper" : "bg-white"}`}>
-                {c.topic}
+              <span className="flex-1">
+                <span className="block text-[15px] font-light text-muted">{c.topic}</span>
+                <span className="mt-1 block text-[17px] font-semibold leading-snug text-navy transition group-hover:text-brand">
+                  {c.headline}
+                </span>
               </span>
               <svg
                 viewBox="0 0 16 16"
@@ -35,8 +35,6 @@ export function PraxisAccordion({ tone = "white", centered = false }: { tone?: "
 
             <div className="pb-8">
               <dl className="grid max-w-4xl gap-x-10 gap-y-4 md:grid-cols-[10rem_1fr]">
-                <dt className="text-muted md:hidden">Thema</dt>
-                <dd className="leading-relaxed text-ink md:hidden">{c.topic}</dd>
                 <dt className="text-muted">Ausgangslage</dt>
                 <dd className="leading-relaxed text-ink">{c.situation}</dd>
                 <dt className="text-muted">Warum</dt>

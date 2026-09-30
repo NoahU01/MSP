@@ -6,7 +6,7 @@ import { IconArrowDown } from "./Icons";
 // Texte unverändert aus Version 1.0; Headline bewusst kleiner, damit Text und Personen im Gleichgewicht sind.
 export type HeroPeopleVariant = "a" | "b" | "c";
 
-const h1 = "text-[2.5rem] font-semibold leading-[1.12] tracking-tight text-balance text-navy sm:text-5xl";
+const h1 = "text-[2.125rem] font-semibold leading-[1.12] tracking-tight text-balance text-navy sm:text-5xl";
 const lead = "Wir begleiten Unternehmen individuell, ganzheitlich und nachhaltig – als Berater, Trainer und Moderatoren für KMU und Großunternehmen in ganz Deutschland.";
 
 function Cta() {
@@ -108,14 +108,14 @@ export function HeroPeople({ variant }: { variant: HeroPeopleVariant }) {
             <Cta />
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-6 rounded-[32px] bg-paper px-6 py-10 sm:px-10">
+        <div className="grid min-w-0 grid-cols-2 gap-4 rounded-[32px] bg-paper px-5 py-10 sm:gap-6 sm:px-10">
           {[mark, kathrin].map((p) => (
             <div key={p.name} className="flex flex-col items-center text-center">
-              <Portrait src={p.image} alt={p.name} size="size-32 sm:size-40" />
+              <Portrait src={p.image} alt={p.name} size="size-28 sm:size-40" />
               {/* Vor- und Nachname bewusst zweizeilig, damit nichts am Bindestrich umbricht */}
-              <p className="mt-5 text-[17px] font-semibold leading-tight text-navy">
+              <p className="mt-5 text-base font-semibold leading-tight text-navy sm:text-[17px]">
                 <span className="block">{p.name.split(" ")[0]}</span>
-                <span className="block whitespace-nowrap">{p.name.split(" ").slice(1).join(" ")}</span>
+                <span className="block">{p.name.split(" ").slice(1).join(" ").replace("-", "\u2011")}</span>
               </p>
               <p className="mt-1 text-[15px] font-light text-muted">{p.role}</p>
             </div>

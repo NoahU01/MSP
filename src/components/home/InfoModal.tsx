@@ -32,7 +32,7 @@ export function InfoModal({
               type="button"
               aria-label="Schließen"
               onClick={() => ref.current?.close()}
-              className="-mr-2 -mt-1 flex size-10 shrink-0 items-center justify-center rounded-full text-2xl text-muted hover:bg-paper"
+              className="-mr-2 -mt-1 flex size-10 shrink-0 items-center justify-center rounded-full text-2xl text-muted outline-none hover:bg-paper focus-visible:ring-2 focus-visible:ring-brand"
             >
               ×
             </button>
