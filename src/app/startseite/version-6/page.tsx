@@ -12,7 +12,7 @@ import { VariantSwitcher } from "@/components/home/VariantSwitcher";
 
 export const metadata: Metadata = { title: "Startseite – Version 6 (Baukasten)" };
 
-// Version 6 „Baukasten“: Header (V3–V5) und Ausgangslage (V2/V3) per Pfeil umschaltbar.
+// Version 6 „Baukasten“: Header (V5, V4, V3) und Ausgangslage (V2/V3) per Pfeil umschaltbar.
 // Lösung fest aus Version 5 (mit Gesichtern), Zwei Schritte fest aus Version 5.
 // Reihenfolge: Header → Ausgangslage → Hebel-Finder → Lösung → Claim-Band → Zwei Schritte → Download → Kontakt.
 export default function StartseiteVersion6() {
@@ -21,9 +21,9 @@ export default function StartseiteVersion6() {
       <VariantSwitcher
         name="Header"
         variants={[
-          { label: "Version 3", node: <Hero layout="centered" /> },
-          { label: "Version 4", node: <Hero overlap /> },
           { label: "Version 5", node: <HeroPeople /> },
+          { label: "Version 4", node: <Hero overlap /> },
+          { label: "Version 3", node: <Hero layout="centered" /> },
         ]}
       />
       <VariantSwitcher
