@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState, type CSSProperties } from "react";
-import { devMenu, startseitenVarianten, type DevLink } from "@/lib/devMenu";
+import { devMenu, startseitenVarianten, storyboard, type DevLink } from "@/lib/devMenu";
 
 const SUB_W = 280;
 
@@ -92,6 +92,9 @@ export function DevMenu() {
         </p>
 
         <Group label="Startseite" />
+        <div onMouseEnter={() => isDesktop() && setSub(false)}>
+          <Item link={storyboard} current={pathname === storyboard.href} onNavigate={close} />
+        </div>
         <button
           ref={itemRef}
           type="button"

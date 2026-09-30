@@ -4,6 +4,8 @@
 export type DevLink = { href: string; tag: string; title: string; note: string; indent?: boolean };
 
 // Kategorie "Startseite": ein Eintrag mit zweiter Ebene (alle Startseiten-Varianten).
+export const storyboard: DevLink = { href: "/storyboard", tag: "SB", title: "Storyboard", note: "Struktur und Kernaussagen der Startseite" };
+
 export const startseitenVarianten: DevLink[] = [
   { href: "/startseite/version-1", tag: "V1", title: "Version 1", note: "Leistungen, Haltung, 6 Schritte" },
   { href: "/startseite/version-2", tag: "V2", title: "Version 2", note: "Geteilter Header, Farbkarten" },
@@ -15,7 +17,6 @@ export const startseitenVarianten: DevLink[] = [
 
 export const devMenu: { unterseiten: DevLink[]; archiv: DevLink[] } = {
   unterseiten: [
-    { href: "/storyboard", tag: "SB", title: "Storyboard", note: "Struktur und Kernaussagen der Startseite" },
     { href: "/leistungen/organisationsentwicklung", tag: "OE", title: "Organisationsentwicklung", note: "Leistung" },
     { href: "/leistungen/fuehrungskraefteentwicklung", tag: "FE", title: "Führungskräfteentwicklung", note: "Leistung" },
     { href: "/leistungen/personalentwicklung", tag: "PE", title: "Personalentwicklung", note: "Leistung" },
