@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>MSP One-Pager – fünf Varianten</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&display=block" rel="stylesheet">
+<style>
+/* Fünf eigenständige One-Pager (A4) im Look der neuen MSP-Startseite.
+   Regeln wie auf der Website: nur Open Sans Light 300 und Semibold 600,
+   keine Versalien-Überzeilen, Hervorhebung nur mit der türkisen Unterstreichung,
+   keine Trennlinien, keine blassen Transparenzflächen. */
+@page { size: A4; margin: 0; }
+:root {
+  --brand: #009aa3; --brand-dark: #00838b; --brand-soft: #e5f5f6;
+  --navy: #005482; --deep: #182a36; --ink: #111;
+  --muted: #555; --paper: #f5f8f9; --line: #e3e8eb;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #9aa4ab; }
+body { font-family: "Open Sans", Arial, sans-serif; font-weight: 300; color: var(--ink);
+       -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.page { width: 210mm; height: 297mm; position: relative; overflow: hidden; background: #fff;
+        page-break-after: always; break-after: page; margin: 0 auto; }
+.page:last-child { page-break-after: auto; break-after: auto; }
+@media screen { .page { margin: 10mm auto; box-shadow: 0 10px 40px rgba(0,0,0,.25); } }
+
+b, strong, h1, h2, h3, h4, .sb { font-weight: 600; }
+.eyebrow { color: var(--brand); font-weight: 600; font-size: 9.5pt; }
+.acc { text-decoration: underline; text-decoration-color: var(--brand);
+       text-decoration-thickness: 1.6pt; text-underline-offset: 3.2pt; text-decoration-skip-ink: none; }
+.logo { height: 11mm; display: block; }
+.navy { color: var(--navy); }
+.muted { color: var(--muted); }
+.round { border-radius: 50%; object-fit: cover; display: block; }
+ul.dash { list-style: none; }
+ul.dash li { position: relative; padding-left: 4.2mm; }
+ul.dash li::before { content: ""; position: absolute; left: 0; top: .62em; width: 2.2mm; height: .9pt;
+                     background: var(--brand); }
+ul.check { list-style: none; }
+ul.check li { position: relative; padding-left: 5mm; }
+ul.check li::before { content: ""; position: absolute; left: .3mm; top: .38em; width: 2.6mm; height: 1.3mm;
+                      border-left: 1.1pt solid var(--brand); border-bottom: 1.1pt solid var(--brand);
+                      transform: rotate(-45deg); }
+.fuss { position: absolute; left: 16mm; right: 16mm; bottom: 9mm; display: flex; justify-content: space-between;
+        font-size: 7.4pt; color: var(--muted); }
+.fuss b { color: var(--navy); }
+
+/* =================== Variante 1: Wie die Startseite =================== */
+.v1 { padding: 14mm 16mm 0; }
+.v1 .kopf { display: grid; grid-template-columns: 1fr 62mm; gap: 9mm; align-items: center; margin-top: 6mm; }
+.v1 h1 { font-size: 22pt; line-height: 1.12; letter-spacing: -.02em; color: var(--navy); margin-top: 2.5mm; }
+.v1 .lead { font-size: 10pt; line-height: 1.55; color: var(--muted); margin-top: 4mm; }
+.v1 .koepfe { background: var(--paper); border-radius: 6mm; padding: 6mm 4mm 5mm; display: grid;
+              grid-template-columns: 1fr 1fr; gap: 3mm; text-align: center; }
+.v1 .koepfe img { width: 22mm; height: 22mm; margin: 0 auto 2.4mm; }
+.v1 .koepfe b { display: block; font-size: 8.4pt; color: var(--navy); line-height: 1.25; }
+.v1 .koepfe span { font-size: 7.4pt; color: var(--muted); }
+.v1 .lage { display: grid; grid-template-columns: 1fr 98mm; gap: 8mm; align-items: center; margin-top: 7mm; }
+.v1 .lage h2 { font-size: 15pt; line-height: 1.25; color: var(--navy); letter-spacing: -.01em; margin-top: 2mm; }
+.v1 .panel { background: var(--navy); color: #fff; border-radius: 5mm; padding: 6mm; }
+.v1 .chips { display: flex; flex-wrap: wrap; gap: 1.6mm; }
+.v1 .chips span { background: #1a6a93; border-radius: 99px; padding: 1mm 3mm; font-size: 7.6pt; }
+.v1 .panel ul { margin-top: 4mm; font-size: 8.6pt; line-height: 1.5; }
+.v1 .panel ul li::before { background: #7fd3d8; }
+.v1 .panel .frage { background: #fff; color: var(--navy); border-radius: 3mm; padding: 3mm 3.5mm; margin-top: 4mm;
+                    font-size: 8.6pt; line-height: 1.4; font-weight: 600; }
+.v1 .loesung { text-align: center; margin-top: 7mm; }
+.v1 .loesung h2 { font-size: 16pt; color: var(--navy); letter-spacing: -.01em; margin-top: 1.5mm; }
+.v1 .loesung p:not(.eyebrow) { font-size: 9pt; color: var(--muted); margin-top: 2mm; }
+.v1 .karten { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; margin-top: 5mm; }
+.v1 .karte { background: var(--paper); border-radius: 5mm; overflow: hidden; display: flex; flex-direction: column; }
+.v1 .karte .innen { padding: 5mm 5.5mm 4mm; flex: 1; }
+.v1 .karte h3 { font-size: 11.5pt; color: var(--navy); }
+.v1 .karte .slogan { font-size: 8.6pt; color: var(--muted); margin-top: 1mm; }
+.v1 .karte ul { margin-top: 3mm; font-size: 8.4pt; line-height: 1.6; }
+.v1 .karte .person { display: flex; align-items: center; gap: 3mm; padding: 3mm 5.5mm; color: #fff; }
+.v1 .karte .person img { width: 9mm; height: 9mm; }
+.v1 .karte .person b { font-size: 8.2pt; display: block; }
+.v1 .karte .person span { font-size: 7.2pt; opacity: .85; }
+.v1 .band { position: absolute; left: 0; right: 0; bottom: 0; height: 52mm; background: var(--deep); color: #fff;
+            padding: 8mm 16mm 0; display: grid; grid-template-columns: 1fr 66mm; gap: 10mm; }
+.v1 .band h3 { font-size: 11.5pt; line-height: 1.35; }
+.v1 .schritte { display: flex; gap: 2mm; margin-top: 4mm; font-size: 8pt; }
+.v1 .schritte div { flex: 1; background: #22394a; border-radius: 3mm; padding: 2.6mm 3mm; }
+.v1 .schritte b { display: block; color: #7fd3d8; font-size: 7.4pt; }
+.v1 .kontakt { font-size: 8.4pt; line-height: 1.7; }
+.v1 .kontakt .btn { display: inline-block; background: var(--brand); color: #fff; border-radius: 99px;
+                    padding: 1.8mm 4.5mm; font-weight: 600; margin-top: 2mm; }
+.v1 .band .fusszeile { position: absolute; left: 16mm; right: 16mm; bottom: 6mm; font-size: 7pt; color: #9fb2bf;
+                       display: flex; justify-content: space-between; }
+
+/* =================== Variante 2: Drei Kapitel mit Seitenleiste =================== */
+.v2 { display: grid; grid-template-columns: 1fr 64mm; }
+.v2 .haupt { padding: 15mm 10mm 0 16mm; }
+.v2 h1 { font-size: 23pt; line-height: 1.12; letter-spacing: -.02em; color: var(--navy); margin-top: 11mm; }
+.v2 .lead { font-size: 9.8pt; line-height: 1.55; color: var(--muted); margin-top: 4mm; }
+.v2 .kapitel { display: grid; grid-template-columns: 11mm 1fr; gap: 2mm; margin-top: 9mm; }
+.v2 .nr { font-size: 15pt; color: var(--brand); font-weight: 600; line-height: 1.1; }
+.v2 .kapitel h2 { font-size: 12pt; color: var(--navy); }
+.v2 .kapitel p { font-size: 8.8pt; line-height: 1.55; color: var(--muted); margin-top: 1.5mm; }
+.v2 .drei { display: flex; gap: 2mm; margin-top: 2.5mm; }
+.v2 .drei span { background: var(--paper); border-radius: 99px; padding: .9mm 3mm; font-size: 7.6pt; color: var(--navy); font-weight: 600; }
+.v2 .kapitel ul { margin-top: 2.5mm; font-size: 8.6pt; line-height: 1.6; }
+.v2 .bs { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; margin-top: 3mm; }
+.v2 .bs > div { background: var(--paper); border-radius: 4mm; padding: 4mm; }
+.v2 .bs h3 { font-size: 10pt; color: var(--navy); }
+.v2 .bs .slogan { font-size: 8pt; color: var(--muted); margin-top: .8mm; }
+.v2 .bs ul { margin-top: 2mm; font-size: 8pt; line-height: 1.55; }
+.v2 .bs .tag { display: inline-block; margin-top: 2.5mm; font-size: 7pt; white-space: nowrap; font-weight: 600; color: #fff;
+               border-radius: 99px; padding: .7mm 2.6mm; }
+.v2 .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3mm; margin-top: 3mm; }
+.v2 .steps div { font-size: 8pt; line-height: 1.45; color: var(--muted); }
+.v2 .steps b { display: block; color: var(--navy); font-size: 8.8pt; }
+.v2 .steps i { font-style: normal; display: inline-flex; width: 6mm; height: 6mm; border-radius: 50%; background: var(--brand);
+               color: #fff; align-items: center; justify-content: center; font-weight: 600; font-size: 7.6pt; margin-bottom: 1.5mm; }
+.v2 .seite { background: var(--paper); padding: 15mm 9mm 0; position: relative; }
+.v2 .seite .fp { position: absolute; right: -24mm; top: -6mm; width: 70mm; opacity: .5; mix-blend-mode: multiply; }
+.v2 .seite h4 { font-size: 9pt; color: var(--brand); margin-top: 30mm; position: relative; }
+.v2 .person { margin-top: 5mm; position: relative; }
+.v2 .person img { width: 24mm; height: 24mm; }
+.v2 .person b { display: block; font-size: 9.4pt; color: var(--navy); margin-top: 2mm; }
+.v2 .person span { font-size: 7.8pt; color: var(--muted); display: block; }
+.v2 .zahlen { margin-top: 9mm; }
+.v2 .zahlen div { margin-top: 3.5mm; }
+.v2 .zahlen b { font-size: 18pt; color: var(--navy); display: block; line-height: 1; letter-spacing: -.02em; }
+.v2 .zahlen span { font-size: 7.8pt; color: var(--muted); display: block; line-height: 1.4; margin-top: 1mm; }
+.v2 .kontakt { position: absolute; left: 9mm; right: 9mm; bottom: 14mm; background: var(--navy); color: #fff;
+               border-radius: 4mm; padding: 5mm; font-size: 8.2pt; line-height: 1.6; }
+.v2 .kontakt b { font-size: 9.6pt; display: block; margin-bottom: 1.5mm; }
+
+/* =================== Variante 3: Dunkler Auftakt =================== */
+.v3 .oben { background: var(--deep); color: #fff; height: 128mm; padding: 15mm 16mm 0; position: relative; overflow: hidden; }
+.v3 .oben .fp { position: absolute; right: -30mm; top: 14mm; width: 125mm; opacity: .16; filter: invert(1); mix-blend-mode: screen; }
+.v3 .oben .eyebrow { color: #59c3c9; margin-top: 15mm; position: relative; }
+.v3 .oben h1 { font-size: 27pt; line-height: 1.1; letter-spacing: -.02em; margin-top: 3mm; position: relative; max-width: 140mm; }
+.v3 .oben .lead { font-size: 10.4pt; line-height: 1.55; color: #c7d3db; margin-top: 4.5mm; max-width: 125mm; position: relative; }
+.v3 .fakten { position: absolute; left: 16mm; right: 16mm; bottom: 10mm; display: grid; grid-template-columns: repeat(3, 1fr); gap: 6mm; }
+.v3 .fakten b { font-size: 22pt; display: block; line-height: 1; letter-spacing: -.02em; }
+.v3 .fakten span { font-size: 8pt; color: #a9bac6; }
+.v3 .unten { padding: 10mm 16mm 0; }
+.v3 .frage { font-size: 13.5pt; line-height: 1.35; color: var(--navy); font-weight: 600; letter-spacing: -.01em; max-width: 160mm; }
+.v3 .drei { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5mm; margin-top: 5mm; font-size: 8.4pt; line-height: 1.5; color: var(--muted); }
+.v3 .drei b { display: block; color: var(--ink); font-size: 8.8pt; margin-bottom: .8mm; }
+.v3 .bs { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; margin-top: 8mm; }
+.v3 .bs > div { display: grid; grid-template-columns: 19mm 1fr; gap: 4mm; align-items: start; }
+.v3 .bs img { width: 19mm; height: 19mm; }
+.v3 .bs h3 { font-size: 11pt; color: var(--navy); }
+.v3 .bs .slogan { font-size: 8.4pt; color: var(--muted); margin-top: .6mm; }
+.v3 .bs ul { margin-top: 2.2mm; font-size: 8.2pt; line-height: 1.55; }
+.v3 .bs .wer { font-size: 7.6pt; color: var(--brand); font-weight: 600; margin-top: 2mm; }
+.v3 .start { margin-top: 8mm; background: var(--paper); border-radius: 5mm; padding: 5mm 6mm; display: grid;
+             grid-template-columns: 1fr 58mm; gap: 6mm; align-items: center; }
+.v3 .start h3 { font-size: 10.5pt; color: var(--navy); }
+.v3 .start ol { list-style: none; display: flex; gap: 2.5mm; margin-top: 2.5mm; font-size: 8pt; }
+.v3 .start ol li { flex: 1; background: #fff; border-radius: 3mm; padding: 2.4mm 3mm; color: var(--muted); }
+.v3 .start ol b { display: block; color: var(--navy); }
+.v3 .start .k { font-size: 8.4pt; line-height: 1.7; }
+.v3 .start .k b { color: var(--navy); }
+
+/* =================== Variante 4: Zwei Köpfe, zwei Bausteine =================== */
+.v4 { padding: 14mm 16mm 0; }
+.v4 .eyebrow { margin-top: 9mm; }
+.v4 h1 { font-size: 22pt; line-height: 1.14; letter-spacing: -.02em; color: var(--navy); margin-top: 2.5mm; max-width: 165mm; }
+.v4 .lead { font-size: 9.8pt; line-height: 1.55; color: var(--muted); margin-top: 3.5mm; max-width: 160mm; }
+.v4 .spalten { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; margin-top: 9mm; }
+.v4 .sp { border-radius: 6mm; color: #fff; padding: 7mm 6mm 7mm; position: relative; }
+.v4 .sp.a { background: var(--navy); }
+.v4 .sp.b { background: var(--brand-dark); }
+.v4 .sp .kopf { display: flex; align-items: center; gap: 4mm; }
+.v4 .sp img { width: 21mm; height: 21mm; box-shadow: 0 0 0 1.2mm rgba(255,255,255,.95); }
+.v4 .sp .kopf b { font-size: 9.4pt; display: block; }
+.v4 .sp .kopf span { font-size: 7.8pt; color: #d5e6ee; }
+.v4 .sp h2 { font-size: 15pt; margin-top: 6mm; letter-spacing: -.01em; }
+.v4 .sp .slogan { font-size: 9.2pt; margin-top: 1mm; color: #e3f0f4; }
+.v4 .sp .frage { background: #fff; border-radius: 3mm; padding: 3mm 3.5mm; margin-top: 4.5mm; font-size: 8.4pt; line-height: 1.45; font-weight: 600; }
+.v4 .sp.a .frage { color: var(--navy); }
+.v4 .sp.b .frage { color: var(--brand-dark); }
+.v4 .sp p.text { font-size: 8.4pt; line-height: 1.55; margin-top: 4mm; color: #eef6f8; }
+.v4 .sp ul { margin-top: 3.5mm; font-size: 8.4pt; line-height: 1.65; }
+.v4 .sp ul li::before { border-color: #fff; }
+.v4 .kombi { margin-top: 9mm; display: grid; grid-template-columns: 1fr 1fr; gap: 8mm; align-items: start; }
+.v4 .kombi h3 { font-size: 11pt; color: var(--navy); }
+.v4 .kombi p { font-size: 8.4pt; line-height: 1.55; color: var(--muted); margin-top: 1.5mm; }
+.v4 .kombi ol { list-style: none; counter-reset: s; font-size: 8.4pt; line-height: 1.5; margin-top: 1.5mm; }
+.v4 .kombi ol li { counter-increment: s; display: grid; grid-template-columns: 6mm 1fr; margin-top: 1.4mm; color: var(--muted); }
+.v4 .kombi ol li::before { content: counter(s); color: var(--brand); font-weight: 600; }
+.v4 .kombi ol b { color: var(--navy); }
+
+/* =================== Variante 5: Hebel-Check =================== */
+.v5 { padding: 14mm 16mm 0; }
+.v5 .kopfzeile { display: flex; justify-content: space-between; align-items: center; }
+.v5 .kopfzeile .eyebrow { font-size: 8.6pt; }
+.v5 h1 { font-size: 21pt; line-height: 1.14; letter-spacing: -.02em; color: var(--navy); margin-top: 10mm; max-width: 160mm; }
+.v5 .lead { font-size: 9.6pt; line-height: 1.55; color: var(--muted); margin-top: 3mm; max-width: 165mm; }
+.v5 .check { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; margin-top: 7mm; }
+.v5 .feld { border-radius: 5mm; padding: 5mm 5.5mm; }
+.v5 .feld.a { background: var(--paper); }
+.v5 .feld.b { background: var(--brand-soft); }
+.v5 .feld h3 { font-size: 11pt; color: var(--navy); }
+.v5 .feld .zu { font-size: 7.8pt; color: var(--brand-dark); font-weight: 600; margin-top: .6mm; }
+.v5 .feld .box { display: grid; grid-template-columns: 5.2mm 1fr; gap: 2.5mm; align-items: start; margin-top: 3mm;
+                 background: #fff; border-radius: 2.5mm; padding: 2.4mm 3mm; font-size: 8.4pt; line-height: 1.4; }
+.v5 .feld .box i { width: 4.4mm; height: 4.4mm; border-radius: 1.2mm; box-shadow: inset 0 0 0 .9pt #9aa8b1; display: block; margin-top: .3mm; }
+.v5 .ergebnis { margin-top: 5mm; display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; }
+.v5 .ergebnis div { font-size: 8pt; line-height: 1.45; color: var(--muted); }
+.v5 .ergebnis b { display: block; color: var(--navy); font-size: 8.8pt; margin-bottom: .6mm; }
+.v5 .praxis { margin-top: 8mm; }
+.v5 .praxis h2 { font-size: 12pt; color: var(--navy); }
+.v5 .praxis .liste { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8mm 6mm; margin-top: 3mm; }
+.v5 .praxis .liste div { font-size: 8.2pt; line-height: 1.35; }
+.v5 .praxis .liste span { display: block; font-size: 7.4pt; color: var(--brand-dark); font-weight: 600; }
+.v5 .schluss { position: absolute; left: 16mm; right: 16mm; bottom: 18mm; background: var(--deep); color: #fff; border-radius: 5mm;
+               padding: 5.5mm 6mm; display: grid; grid-template-columns: 1fr 1fr 1fr 1.25fr; gap: 4mm; align-items: center; }
+.v5 .schluss .s { font-size: 7.8pt; color: #b8c7d1; line-height: 1.4; }
+.v5 .schluss .s b { display: block; color: #fff; font-size: 8.6pt; }
+.v5 .schluss .s i { font-style: normal; color: #59c3c9; font-weight: 600; font-size: 7.4pt; display: block; }
+.v5 .schluss .k { font-size: 8.2pt; line-height: 1.6; }
+.v5 .schluss .k b { font-size: 9pt; }
+</style>
+</head>
+<body>
+
+<!-- ================================================================
+     Variante 1 – Wie die Startseite: Hero mit Köpfen, Ausgangslage,
+     zwei Bausteine, dunkles Band mit Start und Kontakt
+     ================================================================ -->
+<section class="page v1">
+  <img class="logo" src="../../public/images/logo-msp.png" alt="MSP">
+  <div class="kopf">
+    <div>
+      <p class="eyebrow">Zukunftsfaktor Mensch · seit 2002</p>
+      <h1>Ihr HR Businesspartner für Führungs-, Entwicklungs- und Veränderungsprozesse</h1>
+      <p class="lead">Wir begleiten Unternehmen individuell, ganzheitlich und nachhaltig – als Berater, Trainer und Moderatoren für KMU und Großunternehmen in ganz Deutschland.</p>
+    </div>
+    <div class="koepfe">
+      <div><img class="round" src="../../public/images/team/mark-schweitzer-pullar.jpg" alt=""><b>Mark<br>Schweitzer-Pullar</b><span>Strukturarchitekt</span></div>
+      <div><img class="round" src="../../public/images/team/kathrin-strohmeier.jpg" alt=""><b>Kathrin<br>Strohmeier</b><span>Praxisübersetzerin</span></div>
+    </div>
+  </div>
+
+  <div class="lage">
+    <div>
+      <p class="eyebrow">Die Ausgangslage</p>
+      <h2>Mehr erreichen – mit den <span class="acc">richtigen Menschen</span> am <span class="acc">richtigen Platz.</span></h2>
+    </div>
+    <div class="panel">
+      <div class="chips"><span>Märkte werden enger</span><span>Kosten steigen</span><span>Fachkräfte fehlen</span></div>
+      <ul class="dash">
+        <li>Leistung versickert in unklaren Strukturen.</li>
+        <li>Führung wird vorausgesetzt statt entwickelt.</li>
+        <li>Weiterbildung findet statt, aber sie wirkt nicht.</li>
+      </ul>
+      <p class="frage">Die Frage ist nicht, ob Sie in Ihre Menschen investieren – sondern wo es am meisten bewirkt.</p>
+    </div>
+  </div>
+
+  <div class="loesung">
+    <p class="eyebrow">Unsere Lösung</p>
+    <h2>Entwicklung wird im Unternehmen spür- und messbar.</h2>
+    <p>Zwei Bausteine, zwei Perspektiven, zwei Menschen, die dafür stehen. Einzeln buchbar – stark in Kombination.</p>
+  </div>
+  <div class="karten">
+    <div class="karte">
+      <div class="innen">
+        <h3>HR Business Partner</h3>
+        <p class="slogan">Strukturen, die tragen. Führung, die wirkt.</p>
+        <ul class="check"><li>Strategie &amp; Struktur</li><li>Rollen &amp; Verantwortung</li><li>Prozesse &amp; Schnittstellen</li><li>Führung &amp; Nachfolge</li></ul>
+      </div>
+      <div class="person" style="background: var(--navy)"><img class="round" src="../../public/images/team/mark-schweitzer-pullar.jpg" alt=""><div><b>Mark Schweitzer-Pullar</b><span>Strukturarchitekt</span></div></div>
+    </div>
+    <div class="karte">
+      <div class="innen">
+        <h3>Lernwelt</h3>
+        <p class="slogan">Damit Entwicklung im Alltag wirklich ankommt.</p>
+        <ul class="check"><li>Trainings &amp; Workshops</li><li>Coaching</li><li>Soziale Kompetenz</li><li>Transfer in den Alltag</li></ul>
+      </div>
+      <div class="person" style="background: var(--brand-dark)"><img class="round" src="../../public/images/team/kathrin-strohmeier.jpg" alt=""><div><b>Kathrin Strohmeier</b><span>Praxisübersetzerin</span></div></div>
+    </div>
+  </div>
+
+  <div class="band">
+    <div>
+      <h3>Damit sich der Zukunftsfaktor Mensch optimal entwickelt und <span class="acc">gezielt zum Unternehmenserfolg beiträgt.</span></h3>
+      <div class="schritte">
+        <div><b>Schritt 1</b>Klärungsgespräch</div>
+        <div><b>Schritt 2</b>Konkreter Vorschlag</div>
+        <div><b>Danach</b>Umsetzung</div>
+      </div>
+    </div>
+    <div class="kontakt">
+      <b>Lassen Sie uns über Ihre Situation sprechen.</b><br>
+      +49 79 51 27 89 70<br>info@msphr.de<br>
+      <span class="btn">Klärungsgespräch vereinbaren</span>
+    </div>
+    <div class="fusszeile"><span>MSP human resources GmbH · Untere Gasse 64 · 74564 Crailsheim</span><span>20+ Jahre · 2 Bausteine · deutschlandweit</span></div>
+  </div>
+</section>
+
+<!-- ================================================================
+     Variante 2 – Drei Kapitel mit Seitenleiste: links die Geschichte
+     (Ausgangslage, Lösung, Start), rechts Köpfe, Zahlen, Kontakt
+     ================================================================ -->
+<section class="page v2">
+  <div class="haupt">
+    <img class="logo" src="../../public/images/logo-msp.png" alt="MSP">
+    <h1>Entwicklung wird im Unternehmen <span class="acc">spür- und messbar.</span></h1>
+    <p class="lead">MSP human resources begleitet Unternehmen seit 2002 bei Führungs-, Entwicklungs- und Veränderungsprozessen – individuell, ganzheitlich und nachhaltig.</p>
+
+    <div class="kapitel">
+      <span class="nr">01</span>
+      <div>
+        <h2>Die Ausgangslage</h2>
+        <div class="drei"><span>Märkte werden enger</span><span>Kosten steigen</span><span>Fachkräfte fehlen</span></div>
+        <ul class="dash">
+          <li>Leistung versickert in unklaren Strukturen.</li>
+          <li>Führung wird vorausgesetzt statt entwickelt.</li>
+          <li>Weiterbildung findet statt, aber sie wirkt nicht.</li>
+        </ul>
+        <p>Die Frage ist nicht, ob Sie in Ihre Menschen investieren – sondern <b class="navy">wo es am meisten bewirkt.</b></p>
+      </div>
+    </div>
+
+    <div class="kapitel">
+      <span class="nr">02</span>
+      <div>
+        <h2>Unsere Lösung: zwei Bausteine</h2>
+        <p>Einzeln buchbar – stark in Kombination.</p>
+        <div class="bs">
+          <div>
+            <h3>HR Business Partner</h3>
+            <p class="slogan">Strukturen, die tragen. Führung, die wirkt.</p>
+            <ul class="check"><li>Strategie &amp; Struktur</li><li>Rollen &amp; Verantwortung</li><li>Prozesse &amp; Schnittstellen</li><li>Führung &amp; Nachfolge</li></ul>
+            <span class="tag" style="background: var(--navy)">Struktur und Steuerbarkeit</span>
+          </div>
+          <div>
+            <h3>Lernwelt</h3>
+            <p class="slogan">Damit Entwicklung im Alltag wirklich ankommt.</p>
+            <ul class="check"><li>Trainings &amp; Workshops</li><li>Coaching</li><li>Soziale Kompetenz</li><li>Transfer in den Alltag</li></ul>
+            <span class="tag" style="background: var(--brand-dark)">Wissen und soziale Kompetenz</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="kapitel">
+      <span class="nr">03</span>
+      <div>
+        <h2>So starten wir</h2>
+        <div class="steps">
+          <div><i>1</i><b>Klärungsgespräch</b>Wo liegt Ihr größter Hebel?</div>
+          <div><i>2</i><b>Konkreter Vorschlag</b>Umsetzbar und entscheidungsreif.</div>
+          <div><i>3</i><b>Umsetzung</b>Mit dem Baustein, der passt.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <aside class="seite">
+    <img class="fp" src="../../public/images/fingerprint.jpg" alt="">
+    <h4>Zwei Menschen, die dafür stehen</h4>
+    <div class="person"><img class="round" src="../../public/images/team/mark-schweitzer-pullar.jpg" alt=""><b>Mark Schweitzer-Pullar</b><span>Strukturarchitekt</span><span>MSP HR Business Partner</span></div>
+    <div class="person"><img class="round" src="../../public/images/team/kathrin-strohmeier.jpg" alt=""><b>Kathrin Strohmeier</b><span>Praxisübersetzerin</span><span>MSP Lernwelt</span></div>
+    <div class="zahlen">
+      <div><b>20+</b><span>Jahre Erfahrung – seit 2002</span></div>
+      <div><b>2</b><span>Bausteine – einzeln oder kombiniert</span></div>
+      <div><b>DE</b><span>deutschlandweit für KMU und Großunternehmen</span></div>
+    </div>
+    <div class="kontakt">
+      <b>Sprechen wir über Ihre Situation.</b>
+      +49 79 51 27 89 70<br>info@msphr.de<br>Untere Gasse 64<br>74564 Crailsheim
+    </div>
+  </aside>
+</section>
+
+<!-- ================================================================
+     Variante 3 – Dunkler Auftakt: Claim und Zahlen oben auf Dunkelblau,
+     darunter Frage, Bausteine mit Köpfen und der Einstieg
+     ================================================================ -->
+<section class="page v3">
+  <div class="oben">
+    <img class="fp" src="../../public/images/fingerprint.jpg" alt="">
+    <img class="logo" src="../../public/images/logo-msp.png" alt="MSP" style="filter: brightness(0) invert(1); position: relative;">
+    <p class="eyebrow">Zukunftsfaktor Mensch</p>
+    <h1>Damit Entwicklung zum <span class="acc">Erfolgsfaktor</span> wird.</h1>
+    <p class="lead">Wir sorgen dafür, dass sich der Zukunftsfaktor Mensch in Ihrem Unternehmen optimal entwickelt und gezielt zum Unternehmenserfolg beiträgt – als Berater, Trainer und Moderatoren für KMU und Großunternehmen.</p>
+    <div class="fakten">
+      <div><b>20+</b><span>Jahre Erfahrung – seit 2002</span></div>
+      <div><b>2</b><span>Bausteine – einzeln oder kombiniert</span></div>
+      <div><b>DE</b><span>deutschlandweit tätig</span></div>
+    </div>
+  </div>
+  <div class="unten">
+    <p class="frage">Die Frage ist nicht, ob Sie in Ihre Menschen investieren – sondern <span class="acc">wo es am meisten bewirkt.</span></p>
+    <div class="drei">
+      <div><b>Leistung versickert in unklaren Strukturen.</b>Verantwortlichkeiten sind nicht geklärt, Schnittstellen reiben, Entscheidungen bleiben liegen.</div>
+      <div><b>Führung wird vorausgesetzt statt entwickelt.</b>Fachlich Starke rücken in Führungsrollen – ohne das Handwerkszeug dafür.</div>
+      <div><b>Weiterbildung findet statt, aber sie wirkt nicht.</b>Ohne Bezug zu den Unternehmenszielen verpufft die Investition.</div>
+    </div>
+    <div class="bs">
+      <div>
+        <img class="round" src="../../public/images/team/mark-schweitzer-pullar.jpg" alt="">
+        <div>
+          <h3>HR Business Partner</h3>
+          <p class="slogan">Strukturen, die tragen. Führung, die wirkt.</p>
+          <ul class="dash"><li>Organisations- und Führungskräfteentwicklung</li><li>Rollen, Prozesse und Schnittstellen</li><li>Nachfolge und neue Strukturen</li></ul>
+          <p class="wer">Mark Schweitzer-Pullar · Strukturarchitekt</p>
+        </div>
+      </div>
+      <div>
+        <img class="round" src="../../public/images/team/kathrin-strohmeier.jpg" alt="">
+        <div>
+          <h3>Lernwelt</h3>
+          <p class="slogan">Damit Entwicklung im Alltag wirklich ankommt.</p>
+          <ul class="dash"><li>Maßgeschneiderte Trainings und Workshops</li><li>Coaching für Führungskräfte und Teams</li><li>Transfer, damit Gelerntes bleibt</li></ul>
+          <p class="wer">Kathrin Strohmeier · Praxisübersetzerin</p>
+        </div>
+      </div>
+    </div>
+    <div class="start">
+      <div>
+        <h3>Zwei Schritte bis zur Entscheidung.</h3>
+        <ol>
+          <li><b>Klärungsgespräch</b>Wo liegt Ihr größter Hebel?</li>
+          <li><b>Konkreter Vorschlag</b>Umsetzbar und entscheidungsreif.</li>
+          <li><b>Umsetzung</b>Mit dem Baustein, der passt.</li>
+        </ol>
+      </div>
+      <div class="k"><b>MSP human resources GmbH</b><br>Untere Gasse 64 · 74564 Crailsheim<br>+49 79 51 27 89 70<br>info@msphr.de</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     Variante 4 – Zwei Köpfe, zwei Bausteine: die beiden Menschen
+     tragen die Seite, darunter Kombination und Einstieg
+     ================================================================ -->
+<section class="page v4">
+  <img class="logo" src="../../public/images/logo-msp.png" alt="MSP">
+  <p class="eyebrow">Unsere Lösung</p>
+  <h1>Zwei Bausteine, zwei Menschen – <span class="acc">einzeln buchbar, stark in Kombination.</span></h1>
+  <p class="lead">Märkte werden enger, Kosten steigen, Fachkräfte fehlen. Damit Ihre Investition in Menschen dort ankommt, wo sie am meisten bewirkt, verbinden wir Struktur und Kompetenz.</p>
+  <div class="spalten">
+    <div class="sp a">
+      <div class="kopf"><img class="round" src="../../public/images/team/mark-schweitzer-pullar.jpg" alt=""><div><b>Mark Schweitzer-Pullar</b><span>Strukturarchitekt</span></div></div>
+      <h2>HR Business Partner</h2>
+      <p class="slogan">Strukturen, die tragen. Führung, die wirkt.</p>
+      <p class="frage">Geht es um Strategie, Struktur, Prozesse, Rollen und Klarheit?</p>
+      <p class="text">Wir schaffen die Rahmenbedingungen, in denen Menschen ihre Leistung entfalten können: klare Verantwortlichkeiten, tragfähige Strukturen und Führung, die steuert.</p>
+      <ul class="check"><li>Organisationsentwicklung</li><li>Führungskräfteentwicklung</li><li>Personalentwicklung</li><li>Teamentwicklung</li></ul>
+    </div>
+    <div class="sp b">
+      <div class="kopf"><img class="round" src="../../public/images/team/kathrin-strohmeier.jpg" alt=""><div><b>Kathrin Strohmeier</b><span>Praxisübersetzerin</span></div></div>
+      <h2>Lernwelt</h2>
+      <p class="slogan">Damit Entwicklung im Alltag wirklich ankommt.</p>
+      <p class="frage">Geht es um Weiterentwicklung, Training und Coaching?</p>
+      <p class="text">Wir erweitern gezielt Wissen und soziale Kompetenzen – praxisnah und direkt anwendbar. Trainings, Workshops und Coachings, die im Alltag Wirkung zeigen.</p>
+      <ul class="check"><li>Trainings &amp; Workshops</li><li>Coaching</li><li>Soziale Kompetenz</li><li>Transfer in den Alltag</li></ul>
+    </div>
+  </div>
+  <div class="kombi">
+    <div>
+      <h3>Warum beides zusammengehört</h3>
+      <p>Neue Rollen und Abläufe wirken erst, wenn die Menschen sie ausfüllen können. Und Trainings wirken erst, wenn die Struktur sie trägt. Seit 2002 begleiten wir KMU und Großunternehmen in ganz Deutschland genau an dieser Stelle.</p>
+    </div>
+    <div>
+      <h3>So starten wir</h3>
+      <ol>
+        <li><span><b>Klärungsgespräch</b> – wo liegt Ihr größter Hebel?</span></li>
+        <li><span><b>Konkreter Vorschlag</b> – umsetzbar und entscheidungsreif.</span></li>
+        <li><span><b>Umsetzung</b> – mit dem Baustein, der passt.</span></li>
+      </ol>
+    </div>
+  </div>
+  <div class="fuss"><span><b>MSP human resources GmbH</b> · Untere Gasse 64 · 74564 Crailsheim</span><span>+49 79 51 27 89 70 · info@msphr.de</span></div>
+</section>
+
+<!-- ================================================================
+     Variante 5 – Hebel-Check zum Ankreuzen: der Hebel-Finder der
+     Startseite auf Papier, dazu Praxisthemen und Einstieg
+     ================================================================ -->
+<section class="page v5">
+  <div class="kopfzeile"><img class="logo" src="../../public/images/logo-msp.png" alt="MSP"><span class="eyebrow">Hebel-Check zum Ankreuzen</span></div>
+  <h1>Wo liegt Ihr größter Hebel – <span class="acc">Struktur oder Kompetenz?</span></h1>
+  <p class="lead">Kreuzen Sie an, was auf Ihr Unternehmen zutrifft. Die Antwort zeigt, wo Ihre Investition in Menschen am meisten bewirkt – und welcher unserer zwei Bausteine passt.</p>
+  <div class="check">
+    <div class="feld a">
+      <h3>Struktur</h3>
+      <p class="zu">Baustein HR Business Partner · Mark Schweitzer-Pullar</p>
+      <div class="box"><i></i>Zuständigkeiten und Rollen sind nicht klar geregelt.</div>
+      <div class="box"><i></i>Eine Nachfolge oder Umstrukturierung steht an.</div>
+      <div class="box"><i></i>Abläufe und Schnittstellen kosten zu viel Zeit.</div>
+    </div>
+    <div class="feld b">
+      <h3>Kompetenz</h3>
+      <p class="zu">Baustein Lernwelt · Kathrin Strohmeier</p>
+      <div class="box"><i></i>Führungskräften fehlt Handwerkszeug für ihre Rolle.</div>
+      <div class="box"><i></i>Konflikte oder Kommunikation bremsen die Zusammenarbeit.</div>
+      <div class="box"><i></i>Weiterbildung findet statt, kommt aber im Alltag nicht an.</div>
+    </div>
+  </div>
+  <div class="ergebnis">
+    <div><b>Mehr Kreuze links</b>Ihr Hebel liegt in der Struktur: klare Rollen, tragfähige Strukturen, Abläufe, die funktionieren.</div>
+    <div><b>Mehr Kreuze rechts</b>Ihr Hebel liegt in der Kompetenz: Führungskräfte und Teams befähigen, Transfer in den Alltag sichern.</div>
+    <div><b>Kreuze auf beiden Seiten</b>Ihr Hebel liegt in der Kombination: Struktur klären und Menschen befähigen – aufeinander abgestimmt.</div>
+  </div>
+  <div class="praxis">
+    <h2>Anliegen aus unserem Tagesgeschäft</h2>
+    <div class="liste">
+      <div><span>Unternehmensnachfolge</span>Führungskräfte kommen mit Lösungen statt mit Problemen</div>
+      <div><span>Führung in der Produktion</span>Schichtleiter gezielt entwickeln</div>
+      <div><span>Mitarbeiterjahresgespräch</span>Vom Pflichttermin zum Führungsinstrument</div>
+      <div><span>Zwei Produktionsstandorte</span>Kommunikationskultur stärken, Führungstalente binden</div>
+      <div><span>Nach der Restrukturierung</span>Neu formierte Teams schnell arbeitsfähig machen</div>
+      <div><span>Vertrieb</span>Leitung entlasten mit einer Teamleiterstruktur</div>
+      <div><span>Kandidaten-Check</span>Teure Fehlbesetzungen vermeiden</div>
+    </div>
+  </div>
+  <div class="schluss">
+    <div class="s"><i>Schritt 1</i><b>Klärungsgespräch</b>Wo liegt Ihr größter Hebel?</div>
+    <div class="s"><i>Schritt 2</i><b>Konkreter Vorschlag</b>Umsetzbar und entscheidungsreif.</div>
+    <div class="s"><i>Danach</i><b>Umsetzung</b>Mit dem Baustein, der passt.</div>
+    <div class="k"><b>Ihr Ergebnis besprechen?</b><br>+49 79 51 27 89 70<br>info@msphr.de</div>
+  </div>
+  <div class="fuss"><span><b>MSP human resources GmbH</b> · Untere Gasse 64 · 74564 Crailsheim · seit 2002</span><span>Zukunftsfaktor Mensch</span></div>
+</section>
+
+</body>
+</html>

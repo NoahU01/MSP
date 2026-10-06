@@ -250,6 +250,14 @@ export const download = {
   href: null as string | null, // z. B. "/downloads/MSP-Leitfaden-Zukunftsfaktor-Mensch.pdf"
 };
 
+// Entwurf zur Auswahl: fünf One-Pager-Varianten (Quelle: entwurf/onepager/onepager-varianten.html).
+// Nur außerhalb von main verlinkt (devTools) – live bleibt der Download „in Vorbereitung“.
+export const downloadEntwurf = {
+  pages: "5 Varianten",
+  size: "1 MB",
+  href: "/downloads/MSP-Onepager-Varianten.pdf",
+};
+
 // Die zwei Bausteine von MSP – einzeln buchbar oder kombiniert.
 // Vorläufige Texte auf Basis von Daniels Briefing; mit dem Word-Dokument abgleichen.
 export type Baustein = {
