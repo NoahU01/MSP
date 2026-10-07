@@ -253,9 +253,11 @@ export const download = {
 // Entwurf zur Auswahl: fünf One-Pager-Varianten (Quelle: entwurf/onepager/onepager-varianten.html).
 // Nur außerhalb von main verlinkt (devTools) – live bleibt der Download „in Vorbereitung“.
 export const downloadEntwurf = {
-  pages: "5 Varianten",
+  pages: "4 Varianten",
   size: "1 MB",
   href: "/downloads/MSP-Onepager-Varianten.pdf",
+  // Vorschau im Download-Block: vorne die erste Seite, dahinter der Hebel-Check
+  vorschau: ["/images/onepager/seite-1.jpg", "/images/onepager/hebel-check.jpg"],
 };
 
 // Die zwei Bausteine von MSP – einzeln buchbar oder kombiniert.
