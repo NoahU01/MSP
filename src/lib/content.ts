@@ -253,8 +253,8 @@ export const download = {
 // Entwurf zur Auswahl: fünf One-Pager-Varianten (Quelle: entwurf/onepager/onepager-varianten.html).
 // Nur außerhalb von main verlinkt (devTools) – live bleibt der Download „in Vorbereitung“.
 export const downloadEntwurf = {
-  pages: "5 Varianten",
-  size: "1 MB",
+  pages: "7 Varianten",
+  size: "1,7 MB",
   href: "/downloads/MSP-Onepager-Varianten.pdf",
 };
 
