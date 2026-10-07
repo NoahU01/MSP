@@ -221,45 +221,13 @@ ul.check li::before { content: ""; position: absolute; left: .3mm; top: .38em; w
 /* Seite 3 unten: Aufbau wie Seite 5 (Kasten + Fusszeile), aber hell, weil oben schon dunkel ist */
 .v3 { position: relative; }
 .schluss-hell { position: absolute; left: 16mm; right: 16mm; bottom: 18mm; background: var(--paper); border-radius: 5mm;
-                padding: 5.5mm 6mm; display: grid; grid-template-columns: 1fr 1fr 1fr 1.25fr; gap: 4mm; align-items: center; }
+                padding: 5.5mm 6mm; display: grid; grid-template-columns: 1fr 1fr 1fr 1.25fr; gap: 4mm; align-items: start; }
 .schluss-hell .s { font-size: 7.8pt; color: var(--muted); line-height: 1.4; }
 .schluss-hell .s b { display: block; color: var(--navy); font-size: 8.6pt; }
 .schluss-hell .s i { font-style: normal; color: var(--brand); font-weight: 600; font-size: 7.4pt; display: block; }
 .schluss-hell .k { font-size: 8.2pt; line-height: 1.6; color: var(--ink); }
 .schluss-hell .k b { font-size: 9pt; color: var(--navy); }
 
-/* Stoerer auf Seite 4 (Hebel-Check): Hinweis fuer die Auswahl, kein Teil des One-Pagers */
-.stoerer { position: absolute; right: 12mm; top: 216mm; width: 70mm; transform: rotate(-6deg);
-           background: rgba(0,154,163,.93); color: #fff; border-radius: 4mm; padding: 4.5mm 5mm;
-           font-size: 8.6pt; line-height: 1.45; box-shadow: 0 6mm 14mm rgba(0,0,0,.18); z-index: 5; }
-.stoerer b { display: block; font-size: 11pt; margin-bottom: 1mm; }
-
-/* =================== Variante 6: Unternehmensprofil =================== */
-.v6 { padding: 14mm 16mm 0; }
-.v6 .kopfzeile { display: flex; justify-content: space-between; align-items: center; }
-.v6 h1 { font-size: 22pt; line-height: 1.13; letter-spacing: -.02em; color: var(--navy); margin-top: 9mm; max-width: 165mm; }
-.v6 .lead { font-size: 9.6pt; line-height: 1.6; color: var(--muted); margin-top: 3.5mm; max-width: 170mm; }
-.v6 .fakten { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4mm; margin-top: 7mm; }
-.v6 .fakten div { background: var(--paper); border-radius: 4mm; padding: 4mm; }
-.v6 .fakten b { display: block; font-size: 17pt; color: var(--navy); line-height: 1; letter-spacing: -.02em; }
-.v6 .fakten span { font-size: 7.6pt; color: var(--muted); display: block; margin-top: 1.6mm; line-height: 1.35; }
-.v6 h2 { font-size: 12pt; color: var(--navy); margin-top: 8mm; }
-.v6 .felder { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm 6mm; margin-top: 3mm; }
-.v6 .feld h3 { font-size: 9.6pt; color: var(--ink); }
-.v6 .feld p { font-size: 8pt; line-height: 1.5; color: var(--muted); margin-top: .8mm; }
-.v6 .feld ul { font-size: 7.8pt; line-height: 1.55; margin-top: 1.4mm; }
-.v6 .prozess { display: grid; grid-template-columns: repeat(6, 1fr); gap: 2.5mm; margin-top: 3mm; }
-.v6 .prozess div { font-size: 7.4pt; line-height: 1.4; color: var(--muted); }
-.v6 .prozess i { font-style: normal; display: flex; width: 6.5mm; height: 6.5mm; border-radius: 50%; background: var(--navy);
-                 color: #fff; align-items: center; justify-content: center; font-weight: 600; font-size: 7.6pt; margin-bottom: 1.6mm; }
-.v6 .prozess b { display: block; color: var(--navy); font-size: 8.2pt; margin-bottom: .6mm; }
-.v6 .unten { position: absolute; left: 16mm; right: 16mm; bottom: 18mm; background: var(--navy); color: #fff; border-radius: 5mm;
-             padding: 5mm 6mm; display: grid; grid-template-columns: 1fr 1fr 1.1fr; gap: 5mm; align-items: center; }
-.v6 .unten .p { display: flex; gap: 3mm; align-items: center; font-size: 7.8pt; line-height: 1.4; color: #cfe0ea; }
-.v6 .unten .p img { width: 13mm; height: 13mm; box-shadow: 0 0 0 .8mm #fff; }
-.v6 .unten .p b { display: block; color: #fff; font-size: 8.6pt; }
-.v6 .unten .k { font-size: 8.2pt; line-height: 1.6; }
-.v6 .unten .k b { font-size: 9pt; }
 
 /* =================== Variante 7: Persönlich =================== */
 .v7 { padding: 14mm 16mm 0; }
@@ -289,24 +257,6 @@ ul.check li::before { content: ""; position: absolute; left: .3mm; top: .38em; w
 .v7 .gruss .k { background: var(--brand-dark); color: #fff; border-radius: 4mm; padding: 4mm 6mm; font-size: 8.4pt; line-height: 1.6; }
 .v7 .gruss .k b { font-size: 9.2pt; }
 
-/* =================== Variante 8: Worst Case GmbH =================== */
-.v8 { padding: 14mm 16mm 0; }
-.v8 .kopfzeile { display: flex; justify-content: space-between; align-items: center; }
-.v8 h1 { font-size: 24pt; line-height: 1.13; letter-spacing: -.02em; color: var(--navy); margin-top: 12mm; }
-.v8 .lead { font-size: 9.6pt; line-height: 1.55; color: var(--muted); margin-top: 3mm; max-width: 165mm; }
-.v8 .faelle { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; margin-top: 9mm; }
-.v8 .fall { background: var(--paper); border-radius: 4.5mm; overflow: hidden; }
-.v8 .fall img { width: 100%; height: 47mm; object-fit: cover; display: block; }
-.v8 .fall .t { padding: 3.5mm 4.5mm 4mm; }
-.v8 .fall q { display: block; font-size: 9.2pt; line-height: 1.4; color: var(--navy); font-weight: 600; quotes: "„" "“"; }
-.v8 .fall .a { font-size: 7.8pt; color: var(--muted); margin-top: 2mm; line-height: 1.45; }
-.v8 .fall .a b { color: var(--brand-dark); }
-.v8 .unten { position: absolute; left: 16mm; right: 16mm; bottom: 18mm; background: var(--deep); color: #fff; border-radius: 5mm;
-             padding: 5.5mm 6mm; display: grid; grid-template-columns: 1.4fr 1fr; gap: 6mm; align-items: center; }
-.v8 .unten h3 { font-size: 11pt; line-height: 1.35; }
-.v8 .unten p { font-size: 8pt; color: #b8c7d1; margin-top: 1.5mm; line-height: 1.5; }
-.v8 .unten .k { font-size: 8.4pt; line-height: 1.6; }
-.v8 .unten .k b { font-size: 9pt; }
 </style>
 </head>
 <body>
@@ -558,7 +508,6 @@ ul.check li::before { content: ""; position: absolute; left: .3mm; top: .38em; w
       <div><span>Kandidaten-Check</span>Teure Fehlbesetzungen vermeiden</div>
     </div>
   </div>
-  <div class="stoerer"><b>Idee</b>Der Hebel-Check als zweite Seite des One-Pagers – ein echter Mehrwert zum Ankreuzen und Mitnehmen.</div>
   <div class="schluss">
     <div class="s"><i>Schritt 1</i><b>Klärungsgespräch</b>Wo liegt Ihr größter Hebel?</div>
     <div class="s"><i>Schritt 2</i><b>Konkreter Vorschlag</b>Umsetzbar und entscheidungsreif.</div>
@@ -568,47 +517,6 @@ ul.check li::before { content: ""; position: absolute; left: .3mm; top: .38em; w
   <div class="fuss"><span><b>MSP human resources GmbH</b> · Untere Gasse 64 · 74564 Crailsheim · seit 2002</span><span>Zukunftsfaktor Mensch</span></div>
 </section>
 
-<!-- ================================================================
-     Variante 6 – Unternehmensprofil: wer MSP ist, die vier
-     Handlungsfelder, das Vorgehen in sechs Schritten, Köpfe und Kontakt
-     ================================================================ -->
-<section class="page v6">
-  <div class="kopfzeile"><img class="logo" src="../../public/images/logo-msp.png" alt="MSP"><span class="eyebrow">Unternehmensprofil</span></div>
-  <h1>MSP human resources – <span class="acc">Ihr HR Businesspartner</span> seit 2002.</h1>
-  <p class="lead">Wir begleiten Unternehmen individuell, ganzheitlich und nachhaltig bei Führungs-, Entwicklungs- und Veränderungsprozessen – als Berater, Trainer und Moderatoren für KMU und Großunternehmen in ganz Deutschland. Unser Vorgehen ist geprägt von Erfahrung, Empathie, Fach- und Methodenwissen. Im Mittelpunkt steht der Mensch.</p>
-  <div class="fakten">
-    <div><b>20+</b><span>Jahre Erfahrung – seit 2002</span></div>
-    <div><b>4</b><span>Handlungsfelder rund um Organisation und Mensch</span></div>
-    <div><b>2</b><span>Bausteine – einzeln oder kombiniert</span></div>
-    <div><b>DE</b><span>deutschlandweit für KMU und Großunternehmen</span></div>
-  </div>
-  <h2>Unsere Handlungsfelder</h2>
-  <div class="felder">
-    <div class="feld"><h3>Organisationsentwicklung</h3><p>Strukturen, Rollen und Prozesse so gestalten, dass sie zu Ihren Zielen passen.</p>
-      <ul class="dash"><li>Unternehmens- und Führungsnachfolge</li><li>Neue Organisationsformen und Strukturen</li><li>Schnittstellen und Prozesse</li></ul></div>
-    <div class="feld"><h3>Führungskräfteentwicklung</h3><p>Führungskompetenz gezielt aufbauen, Potenziale früh erkennen, Nachfolge sichern.</p>
-      <ul class="dash"><li>Coaching und Entwicklung von Führungsteams</li><li>Karriere- und Talentprogramme</li><li>Transfersicherung</li></ul></div>
-    <div class="feld"><h3>Personalentwicklung</h3><p>Mitarbeitende binden und weiterentwickeln – systematisch und messbar.</p>
-      <ul class="dash"><li>Strategische PE-Konzepte und Mitarbeiterbindung</li><li>Bildungsbedarfs- und Persönlichkeitsanalysen</li><li>Beurteilungssysteme und Bildungscontrolling</li></ul></div>
-    <div class="feld"><h3>Teamentwicklung</h3><p>Zusammenarbeit stärken, Konflikte klären, eine tragfähige Teamkultur entwickeln.</p>
-      <ul class="dash"><li>Teamanalysen auf allen Ebenen</li><li>Konfliktklärung und Mediation</li><li>Entwicklung einer Teamkultur</li></ul></div>
-  </div>
-  <h2>So arbeiten wir</h2>
-  <div class="prozess">
-    <div><i>1</i><b>Zielsetzung</b>Klar definierte Ziele für klaren Erfolg.</div>
-    <div><i>2</i><b>Analyse</b>Der objektive Blick zeigt, wo Potenzial liegt.</div>
-    <div><i>3</i><b>Briefing</b>Verantwortliche von Anfang an eingebunden.</div>
-    <div><i>4</i><b>Konzepte</b>Maßnahmen exakt auf Sie zugeschnitten.</div>
-    <div><i>5</i><b>Dialog</b>Alle kennen Fortschritte und Ergebnisse.</div>
-    <div><i>6</i><b>Nachbetreuung</b>Damit Neues bleibt – ohne Rückfälle.</div>
-  </div>
-  <div class="unten">
-    <div class="p"><img class="round" src="../../public/images/team/mark-schweitzer-pullar.jpg" alt=""><div><b>Mark Schweitzer-Pullar</b>Strukturarchitekt · HR Business Partner</div></div>
-    <div class="p"><img class="round" src="../../public/images/team/kathrin-strohmeier.jpg" alt=""><div><b>Kathrin Strohmeier</b>Praxisübersetzerin · Lernwelt</div></div>
-    <div class="k"><b>Lernen Sie uns kennen.</b><br>+49 79 51 27 89 70<br>info@msphr.de</div>
-  </div>
-  <div class="fuss"><span><b>MSP human resources GmbH</b> · Untere Gasse 64 · 74564 Crailsheim · seit 2002</span><span>Zukunftsfaktor Mensch</span></div>
-</section>
 
 <!-- ================================================================
      Variante 7 – Persönlich: Leitsatz als Zitat, wer wir sind in
@@ -649,35 +557,6 @@ ul.check li::before { content: ""; position: absolute; left: .3mm; top: .38em; w
   <div class="fuss"><span><b>MSP human resources GmbH</b> · Untere Gasse 64 · 74564 Crailsheim</span><span>Zukunftsfaktor Mensch</span></div>
 </section>
 
-<!-- ================================================================
-     Variante 8 – Kennen Sie die Worst Case GmbH? Die vier Zitate
-     aus der Praxis mit den Illustrationen, je mit der Antwort von MSP
-     ================================================================ -->
-<section class="page v8">
-  <div class="kopfzeile"><img class="logo" src="../../public/images/logo-msp.png" alt="MSP"><span class="eyebrow">Aus der Praxis</span></div>
-  <h1>Kennen Sie die <span class="acc">Worst Case GmbH?</span></h1>
-  <p class="lead">Vier Sätze, die wir in Unternehmen immer wieder hören. Hinter jedem steckt ein Hebel – und genau dort setzen wir an.</p>
-  <div class="faelle">
-    <div class="fall"><img src="bilder/worstcase-organisationsentwicklung.jpg" alt=""><div class="t">
-      <q>In unseren Abteilungen gibt es keine klar definierten Verantwortlichen oder Abläufe.</q>
-      <p class="a"><b>Unsere Antwort: Organisationsentwicklung.</b> Klare Rollen, tragfähige Strukturen, Abläufe, die funktionieren.</p></div></div>
-    <div class="fall"><img src="bilder/worstcase-personalentwicklung.jpg" alt=""><div class="t">
-      <q>Wem unsere Methoden nicht gefallen, der soll halt gehen.</q>
-      <p class="a"><b>Unsere Antwort: Personalentwicklung.</b> Mitarbeitende binden und mit dem Unternehmen weiterentwickeln.</p></div></div>
-    <div class="fall"><img src="bilder/worstcase-fuehrungskraefteentwicklung.jpg" alt=""><div class="t">
-      <q>Wer seinen Job gut macht, wird sich schon irgendwie hocharbeiten.</q>
-      <p class="a"><b>Unsere Antwort: Führungskräfteentwicklung.</b> Potenziale früh erkennen, Führung gezielt entwickeln.</p></div></div>
-    <div class="fall"><img src="bilder/worstcase-teamentwicklung.jpg" alt=""><div class="t">
-      <q>Würden die Anderen ihren Job richtig machen, wäre meine Leistung viel besser.</q>
-      <p class="a"><b>Unsere Antwort: Teamentwicklung.</b> Konflikte klären, Vertrauen aufbauen, Teamkultur entwickeln.</p></div></div>
-  </div>
-  <div class="unten">
-    <div><h3>Damit aus der Worst Case GmbH ein Unternehmen wird, in dem Menschen ihre Leistung entfalten.</h3>
-      <p>MSP human resources – Ihr HR Businesspartner seit 2002. Mit zwei Bausteinen: HR Business Partner und Lernwelt.</p></div>
-    <div class="k"><b>Erkennen Sie sich wieder?</b><br>Mark Schweitzer-Pullar · Kathrin Strohmeier<br>+49 79 51 27 89 70 · info@msphr.de</div>
-  </div>
-  <div class="fuss"><span><b>MSP human resources GmbH</b> · Untere Gasse 64 · 74564 Crailsheim · seit 2002</span><span>Zukunftsfaktor Mensch</span></div>
-</section>
 
 </body>
 </html>
