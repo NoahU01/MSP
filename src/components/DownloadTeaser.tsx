@@ -1,9 +1,11 @@
 import Image from "next/image";
-import { download } from "@/lib/content";
+import { download as downloadLive, downloadEntwurf } from "@/lib/content";
 
 // Download-Block nach Vorbild empiria: PDF-Vorschau links, Text + Pills + Button rechts.
 // Die Vorschau-Seiten sind gezeichnete Platzhalter, bis das echte PDF steht.
 export function DownloadTeaser() {
+  // Der One-Pager (PDF mit vier Varianten) ist freigegeben und liegt auch live hinter dem Button (Daniel, 07.10.2026).
+  const download = { ...downloadLive, ...downloadEntwurf };
   const meta = ["PDF", download.pages, download.size ?? "in Vorbereitung"];
 
   return (
@@ -18,8 +20,8 @@ export function DownloadTeaser() {
       />
 
       <div aria-hidden="true" className="relative h-64 sm:h-80 lg:h-96">
-        <PreviewPage variant="back" />
-        <PreviewPage variant="front" />
+        <PreviewPage variant="back" bild={downloadEntwurf.vorschau[1]} />
+        <PreviewPage variant="front" bild={downloadEntwurf.vorschau[0]} />
       </div>
 
       <div>
@@ -67,17 +69,20 @@ function DownloadIcon() {
   );
 }
 
-function PreviewPage({ variant }: { variant: "front" | "back" }) {
+// Mit "bild" zeigt die Seite eine echte Seite des PDFs, ohne die gezeichnete Platzhalter-Vorschau.
+function PreviewPage({ variant, bild }: { variant: "front" | "back"; bild?: string }) {
   const front = variant === "front";
   return (
     <div
-      className={`absolute left-1/2 top-1/2 flex aspect-[210/297] h-full flex-col overflow-hidden rounded-md bg-white p-[7%] text-deep shadow-[0_26px_56px_rgba(0,0,0,0.45),0_0_0_1px_rgba(255,255,255,0.14)] transition-transform duration-300 ${
+      className={`absolute left-1/2 top-1/2 flex aspect-[210/297] h-full flex-col overflow-hidden rounded-md bg-white ${bild ? "" : "p-[7%]"} text-deep shadow-[0_26px_56px_rgba(0,0,0,0.45),0_0_0_1px_rgba(255,255,255,0.14)] transition-transform duration-300 ${
         front
           ? "-translate-x-[74%] -translate-y-1/2 -rotate-3 group-hover:-translate-x-[82%] group-hover:-rotate-5"
           : "-translate-x-[26%] -translate-y-1/2 rotate-6 group-hover:-translate-x-[16%] group-hover:rotate-8"
       }`}
     >
-      {front ? (
+      {bild ? (
+        <Image src={bild} alt="" fill sizes="(min-width: 768px) 300px, 45vw" className="object-cover" />
+      ) : front ? (
         <>
           <Image src="/images/logo-msp.png" alt="" width={300} height={132} className="w-[38%]" />
           <div className="mt-auto">
