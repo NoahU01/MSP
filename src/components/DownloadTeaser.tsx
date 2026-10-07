@@ -1,12 +1,11 @@
 import Image from "next/image";
 import { download as downloadLive, downloadEntwurf } from "@/lib/content";
-import { devTools } from "@/lib/flags";
 
 // Download-Block nach Vorbild empiria: PDF-Vorschau links, Text + Pills + Button rechts.
 // Die Vorschau-Seiten sind gezeichnete Platzhalter, bis das echte PDF steht.
 export function DownloadTeaser() {
-  // Auf daniel liegt der One-Pager-Entwurf zum Ansehen hinter dem Button, auf main nicht.
-  const download = devTools ? { ...downloadLive, ...downloadEntwurf } : downloadLive;
+  // Der One-Pager (PDF mit vier Varianten) ist freigegeben und liegt auch live hinter dem Button (Daniel, 07.10.2026).
+  const download = { ...downloadLive, ...downloadEntwurf };
   const meta = ["PDF", download.pages, download.size ?? "in Vorbereitung"];
 
   return (
@@ -21,8 +20,8 @@ export function DownloadTeaser() {
       />
 
       <div aria-hidden="true" className="relative h-64 sm:h-80 lg:h-96">
-        <PreviewPage variant="back" bild={devTools ? downloadEntwurf.vorschau[1] : undefined} />
-        <PreviewPage variant="front" bild={devTools ? downloadEntwurf.vorschau[0] : undefined} />
+        <PreviewPage variant="back" bild={downloadEntwurf.vorschau[1]} />
+        <PreviewPage variant="front" bild={downloadEntwurf.vorschau[0]} />
       </div>
 
       <div>

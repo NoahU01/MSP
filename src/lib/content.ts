@@ -250,8 +250,8 @@ export const download = {
   href: null as string | null, // z. B. "/downloads/MSP-Leitfaden-Zukunftsfaktor-Mensch.pdf"
 };
 
-// Entwurf zur Auswahl: fünf One-Pager-Varianten (Quelle: entwurf/onepager/onepager-varianten.html).
-// Nur außerhalb von main verlinkt (devTools) – live bleibt der Download „in Vorbereitung“.
+// One-Pager-PDF (Quelle: entwurf/onepager/onepager-varianten.html, nur auf daniel).
+// Überschreibt im Download-Block Seitenzahl, Größe und Link – auf daniel und live.
 export const downloadEntwurf = {
   pages: "4 Varianten",
   size: "1 MB",
