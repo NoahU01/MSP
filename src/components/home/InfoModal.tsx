@@ -9,12 +9,14 @@ export function InfoModal({
   children,
   buttonClassName = "font-semibold text-brand hover:underline underline-offset-4",
   wide = false,
+  closeLabel = "Schließen",
 }: {
   label: string;
   title: string;
   children: ReactNode;
   buttonClassName?: string;
   wide?: boolean;
+  closeLabel?: string;
 }) {
   const ref = useRef<HTMLDialogElement>(null);
   return (
@@ -32,7 +34,7 @@ export function InfoModal({
             <h3 className="text-2xl font-semibold tracking-tight text-navy">{title}</h3>
             <button
               type="button"
-              aria-label="Schließen"
+              aria-label={closeLabel}
               onClick={() => ref.current?.close()}
               className="-mr-2 -mt-1 flex size-10 shrink-0 items-center justify-center rounded-full text-2xl text-muted outline-none hover:bg-paper focus-visible:ring-2 focus-visible:ring-brand"
             >

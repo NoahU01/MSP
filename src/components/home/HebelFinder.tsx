@@ -2,42 +2,14 @@
 
 import Link from "next/link";
 import { useState, type ReactNode } from "react";
+import { texts, type Locale } from "@/lib/i18n";
 import { IconCheck } from "./Icons";
 
 // Interaktiver „Hebel-Finder“.
-// Die sechs Aussagen sind aus den Handlungsfeldern der beiden Bausteine abgeleitet (je drei pro Baustein)
-// und müssen von MSP fachlich bestätigt werden. Die Auswahlfarbe ist bewusst neutral,
-// damit sie das Ergebnis nicht vorwegnimmt.
-const statements = [
-  { key: "hrbp", text: "Zuständigkeiten und Rollen sind nicht klar geregelt." },
-  { key: "lernwelt", text: "Führungskräften fehlt Handwerkszeug für ihre Rolle." },
-  { key: "hrbp", text: "Eine Nachfolge oder Umstrukturierung steht an." },
-  { key: "lernwelt", text: "Konflikte oder Kommunikation bremsen die Zusammenarbeit." },
-  { key: "hrbp", text: "Abläufe und Schnittstellen kosten zu viel Zeit." },
-  { key: "lernwelt", text: "Weiterbildung findet statt, kommt aber im Alltag nicht an." },
-] as const;
-
-const results = {
-  hrbp: {
-    title: "Ihr größter Hebel liegt in der Struktur.",
-    baustein: "HR Business Partner",
-    text: "Bevor Menschen ihre Leistung entfalten können, braucht es klare Rollen, tragfähige Strukturen und Abläufe, die funktionieren.",
-    steps: ["Rollen und Verantwortlichkeiten klären", "Abläufe und Schnittstellen analysieren", "Nachfolge und Organisation aufstellen"],
-  },
-  lernwelt: {
-    title: "Ihr größter Hebel liegt in der Kompetenz.",
-    baustein: "Lernwelt",
-    text: "Die Struktur trägt – jetzt geht es darum, dass Führungskräfte und Teams das Nötige können und im Alltag anwenden.",
-    steps: ["Kompetenzbedarf gezielt erheben", "Trainings und Coachings zuschneiden", "Transfer in den Alltag sichern"],
-  },
-  beides: {
-    title: "Ihr größter Hebel liegt in der Kombination.",
-    baustein: "HR Business Partner + Lernwelt",
-    text: "Struktur und Kompetenz hängen bei Ihnen zusammen: Neue Rollen und Abläufe wirken erst, wenn die Menschen sie ausfüllen können.",
-    steps: ["Struktur und Rollen klären", "Führungskräfte und Teams befähigen", "Beides aufeinander abstimmen"],
-  },
-};
-
+// Zehn Aussagen, je fünf pro Baustein (Texte in src/lib/i18n.ts), bewusst gemischt angeordnet –
+// links und rechts stehen beide Bausteine, damit das Ergebnis nicht vorweggenommen wird.
+// Die Kartenfarbe bei Auswahl ist neutral; nur das Häkchen zeigt den Baustein an –
+// Dunkelblau für HR Business Partner, Türkis für die Lernwelt (wie der Ergebnisbalken).
 function StepHead({ n, title, hint }: { n: number; title: string; hint: ReactNode }) {
   return (
     <div className="flex min-h-14 items-center gap-4">
@@ -50,7 +22,9 @@ function StepHead({ n, title, hint }: { n: number; title: string; hint: ReactNod
   );
 }
 
-export function HebelFinder() {
+export function HebelFinder({ locale = "de" }: { locale?: Locale }) {
+  const t = texts[locale].hebel;
+  const { statements, results } = t;
   const [picked, setPicked] = useState<number[]>([]);
   const toggle = (i: number) => setPicked((p) => (p.includes(i) ? p.filter((x) => x !== i) : [...p, i]));
 
@@ -68,17 +42,17 @@ export function HebelFinder() {
             <circle cx="16" cy="7" r="2" />
             <circle cx="10" cy="17" r="2" />
           </svg>
-          <p className="text-[17px] font-semibold">Hebel-Finder</p>
-          <span className="rounded-full bg-white/10 px-3 py-1 text-[13px] font-semibold text-white/80">Interaktiv</span>
+          <p className="text-[17px] font-semibold">{t.tool}</p>
+          <span className="rounded-full bg-white/10 px-3 py-1 text-[13px] font-semibold text-white/80">{t.interactive}</span>
         </div>
         <div className="flex items-center gap-4 text-[15px]">
           {picked.length > 0 && (
             <button type="button" onClick={() => setPicked([])} className="font-light text-white/70 underline-offset-4 hover:text-white hover:underline">
-              Zurücksetzen
+              {t.reset}
             </button>
           )}
           <span className="font-semibold" aria-live="polite">
-            {picked.length} von {statements.length} ausgewählt
+            {t.selected(picked.length, statements.length)}
           </span>
         </div>
       </div>
@@ -86,7 +60,7 @@ export function HebelFinder() {
       <div className="grid lg:grid-cols-[1.2fr_0.8fr]">
         {/* Schritt 1 */}
         <div className="p-6 sm:p-10">
-          <StepHead n={1} title="Was trifft auf Ihr Unternehmen zu?" hint="Mehrfachauswahl möglich – einfach anklicken" />
+          <StepHead n={1} title={t.step1} hint={t.step1Hint} />
           <ul className="mt-8 grid gap-3 sm:grid-cols-2">
             {statements.map((s, i) => {
               const on = picked.includes(i);
@@ -105,12 +79,14 @@ export function HebelFinder() {
                     <span
                       aria-hidden="true"
                       className={`flex size-7 shrink-0 items-center justify-center rounded-lg transition ${
-                        on ? "bg-brand text-white" : "bg-white text-transparent shadow-[inset_0_0_0_2px_#9fb0bb]"
+                        on
+                          ? `${s.key === "hrbp" ? "bg-navy" : "bg-brand"} text-white shadow-[0_0_0_1.5px_#ffffff]`
+                          : "bg-white text-transparent shadow-[inset_0_0_0_2px_#9fb0bb]"
                       }`}
                     >
                       <IconCheck className="size-4" />
                     </span>
-                    <span className="text-[17px] leading-snug">{s.text}</span>
+                    <span className="text-[17px] leading-snug text-pretty">{s.text}</span>
                   </button>
                 </li>
               );
@@ -120,15 +96,15 @@ export function HebelFinder() {
 
         {/* Schritt 2 */}
         <div className="flex flex-col bg-paper p-6 sm:p-10" aria-live="polite">
-          <StepHead n={2} title="Ihr Ergebnis" hint={result ? "Erste Einordnung" : "Erscheint nach Ihrer Auswahl"} />
+          <StepHead n={2} title={t.step2} hint={result ? t.step2Hint : t.step2Empty} />
           <div className="mt-8">
             <div className="flex h-3 overflow-hidden rounded-full bg-white">
               <div className="bg-navy transition-all duration-500" style={{ width: `${(hrbp / (picked.length || 1)) * 100}%` }} />
               <div className="bg-brand transition-all duration-500" style={{ width: `${(lern / (picked.length || 1)) * 100}%` }} />
             </div>
             <div className="mt-2 flex justify-between text-[15px] font-light text-muted">
-              <span>Struktur</span>
-              <span>Kompetenz</span>
+              <span>{t.barLeft}</span>
+              <span>{t.barRight}</span>
             </div>
           </div>
 
@@ -145,11 +121,11 @@ export function HebelFinder() {
                 ))}
               </ul>
               <p className="mt-6 text-[15px] font-light text-muted">
-                Passender Baustein: <span className="font-semibold text-navy">{result.baustein}</span>
+                {t.fits} <span className="font-semibold text-navy">{result.baustein}</span>
               </p>
               <div className="mt-auto pt-8">
                 <Link href="#kontakt" className="inline-flex rounded-full bg-brand px-6 py-3.5 font-semibold text-white transition hover:bg-brand-dark">
-                  Ergebnis im Gespräch vertiefen
+                  {t.cta}
                 </Link>
               </div>
             </div>
@@ -158,8 +134,8 @@ export function HebelFinder() {
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="size-10 text-brand">
                 <path d="M9 11V5a1.5 1.5 0 0 1 3 0v5m0-1a1.5 1.5 0 0 1 3 0v1m0-.5a1.5 1.5 0 0 1 3 0V14a6 6 0 0 1-6 6h-.6a5 5 0 0 1-4-2L4.6 14.8a1.5 1.5 0 0 1 2.3-1.9L9 15" />
               </svg>
-              <p className="mt-4 text-lg font-semibold text-navy">Wählen Sie aus, was zutrifft.</p>
-              <p className="mt-1 text-[15px] font-light text-muted">Ihr Ergebnis erscheint hier sofort.</p>
+              <p className="mt-4 text-lg font-semibold text-navy">{t.emptyTitle}</p>
+              <p className="mt-1 text-[15px] font-light text-muted">{t.emptyText}</p>
             </div>
           )}
         </div>

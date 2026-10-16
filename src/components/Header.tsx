@@ -1,14 +1,19 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { HeaderNav } from "@/components/HeaderNav";
+import { homePath, localeFromPath, texts } from "@/lib/i18n";
 
 // Hauptnavigation: Hebel-Finder · Unsere Lösung · Umsetzung · (/ Entwicklung /) · Kontakt
 // (auf dem Storyboard nur Logo + / Entwicklung /, siehe HeaderNav)
 export function Header() {
+  const locale = localeFromPath(usePathname());
   return (
     <header className="sticky top-0 z-40 bg-white/90 backdrop-blur">
       <div className="relative mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4 sm:h-20 sm:px-6">
-        <Link href="/" className="shrink-0" aria-label="Zur Startseite">
+        <Link href={homePath[locale]} className="shrink-0" aria-label={texts[locale].nav.home}>
           <Image
             src="/images/logo-msp.png"
             alt="MSP – HR Business Partner"

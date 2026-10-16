@@ -72,6 +72,37 @@ export const IconPeople = (p: P) => (
   </Icon>
 );
 
+/** Vernetzte Knoten – Komplexität */
+export const IconComplexity = (p: P) => (
+  <Icon {...p}>
+    <circle cx="5" cy="6" r="2" />
+    <circle cx="19" cy="6" r="2" />
+    <circle cx="12" cy="12" r="2" />
+    <circle cx="5" cy="18" r="2" />
+    <circle cx="19" cy="18" r="2" />
+    <path d="M7 6h10M6.5 7.5l4 3M17.5 7.5l-4 3M10.5 13.5l-4 3M13.5 13.5l4 3M19 8v8M5 8v8" />
+  </Icon>
+);
+
+/** Tacho im roten Bereich – Umsetzungsdruck */
+export const IconPressure = (p: P) => (
+  <Icon {...p}>
+    <path d="M3.5 17a8.5 8.5 0 1 1 17 0" />
+    <path d="M12 17l4.5-5" />
+    <circle cx="12" cy="17" r="1.2" />
+    <path d="M6 13.5l1 .6M12 8.5v1.2M18 13.5l-1 .6" />
+  </Icon>
+);
+
+/** Person mit Pfeil nach unten – nachlassende Eigenverantwortung */
+export const IconOwnership = (p: P) => (
+  <Icon {...p}>
+    <circle cx="9" cy="7.5" r="3.5" />
+    <path d="M2.5 20c.6-3.5 3.3-5.5 6.5-5.5 1.6 0 3.1.5 4.2 1.4" />
+    <path d="M18.5 11v9M15.5 17l3 3 3-3" />
+  </Icon>
+);
+
 /** Zielscheibe – Unternehmenserfolg */
 export const IconTarget = (p: P) => (
   <Icon {...p}>

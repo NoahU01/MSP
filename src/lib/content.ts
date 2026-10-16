@@ -224,14 +224,14 @@ export type Person = {
 export const team: Person[] = [
   {
     name: "Mark Schweitzer-Pullar",
-    role: "Strukturarchitekt", // steht für: "Strukturen, die tragen. Führung, die wirkt."
+    role: "Entwicklungsarchitekt", // steht für: "Strukturen, die tragen. Führung, die wirkt."
     baustein: "MSP HR Business Partner",
     image: "/images/team/mark-schweitzer-pullar.jpg",
     linkedin: "https://www.linkedin.com/in/mark-schweitzer-pullar-1ab90914/",
   },
   {
     name: "Kathrin Strohmeier",
-    role: "Praxisübersetzerin", // steht für: "Damit Entwicklung im Alltag wirklich ankommt."
+    role: "Praxisgestalterin", // steht für: "Damit Entwicklung im Alltag wirklich ankommt."
     baustein: "MSP Lernwelt",
     image: "/images/team/kathrin-strohmeier.jpg",
     linkedin: "https://www.linkedin.com/in/kathrin-strohmeier/",
@@ -250,14 +250,11 @@ export const download = {
   href: null as string | null, // z. B. "/downloads/MSP-Leitfaden-Zukunftsfaktor-Mensch.pdf"
 };
 
-// One-Pager-PDF (Quelle: entwurf/onepager/onepager-varianten.html, nur auf daniel).
+// One-Pager-PDF je Sprache (Quelle: entwurf/onepager/onepager.html und onepager-en.html).
 // Überschreibt im Download-Block Seitenzahl, Größe und Link – auf daniel und live.
-export const downloadEntwurf = {
-  pages: "4 Varianten",
-  size: "1 MB",
-  href: "/downloads/MSP-Onepager-Varianten.pdf",
-  // Vorschau im Download-Block: vorne die erste Seite, dahinter der Hebel-Check
-  vorschau: ["/images/onepager/seite-1.jpg", "/images/onepager/hebel-check.jpg"],
+export const onepager = {
+  de: { pages: "1 Seite", size: "0,4 MB", href: "/downloads/MSP-Onepager.pdf", vorschau: "/images/onepager/onepager-de.jpg" },
+  en: { pages: "1 page", size: "0.4 MB", href: "/downloads/MSP-Onepager-EN.pdf", vorschau: "/images/onepager/onepager-en.jpg" },
 };
 
 // Die zwei Bausteine von MSP – einzeln buchbar oder kombiniert.
@@ -272,6 +269,8 @@ export type Baustein = {
   text: string;
   focus: string[];
   details: { title: string; items: string[]; href?: string }[];
+  /** Abschlusssatz unter den Detail-Kategorien (im Pop-up) */
+  closing?: string;
 };
 
 export const bausteine: Baustein[] = [
@@ -286,7 +285,7 @@ export const bausteine: Baustein[] = [
     details: [
       {
         title: "Organisationsentwicklung",
-        items: ["Unternehmens- und Führungsnachfolge", "Neue Organisationsformen und Strukturen", "Rollen und Anforderungsprofile", "Schnittstellenmanagement und Prozessentwicklung"],
+        items: ["Führungsnachfolge", "Neue Organisationsformen und Strukturen", "Rollen und Anforderungsprofile", "Schnittstellenmanagement und Prozessentwicklung"],
         href: "/leistungen/organisationsentwicklung",
       },
       {
@@ -301,7 +300,7 @@ export const bausteine: Baustein[] = [
       },
       {
         title: "Teamentwicklung",
-        items: ["Teamanalysen", "Konfliktklärung und Mediation", "Entwicklung einer Teamkultur"],
+        items: ["Teamanalyseverfahren", "Konfliktklärung und Mediation", "Entwicklung einer Teamkultur"],
         href: "/leistungen/teamentwicklung",
       },
     ],
@@ -313,7 +312,7 @@ export const bausteine: Baustein[] = [
     slogan: "Damit Entwicklung im Alltag wirklich ankommt.",
     question: "Geht es um Weiterentwicklung, Training und Coaching?",
     text: "Wir erweitern gezielt Wissen und soziale Kompetenzen – praxisnah und direkt anwendbar. Trainings, Workshops und Coachings, die im Arbeitsalltag ankommen und dort Wirkung zeigen.",
-    focus: ["Trainings & Workshops", "Coaching", "Soziale Kompetenz", "Transfer in den Alltag"],
+    focus: ["Trainings & Workshops", "Coaching", "Soziale Kompetenz", "Lernwerkzeuge verankern"],
     details: [
       {
         title: "Trainings & Workshops",
@@ -324,10 +323,11 @@ export const bausteine: Baustein[] = [
         items: ["Führungskräfte-Coaching", "Begleitung in neuen Rollen", "Reflexion im Team"],
       },
       {
-        title: "Wirkung sichern",
-        items: ["Bildungsbedarfs- und Persönlichkeitsanalysen vorab", "Transfersicherung im Arbeitsalltag", "Nachbetreuung, damit Gelerntes bleibt"],
+        title: "Lernwerkzeuge verankern",
+        items: ["Bildungsbedarfs- und Persönlichkeitsanalysen vorab", "Anwendungssequenzen für den Arbeitsalltag", "Nachbetreuung, damit Gelerntes bleibt"],
       },
     ],
+    closing: "Bildungsbedarfs- und Persönlichkeitsanalysen helfen, Trainings, Workshops und Coachings gezielt zu gestalten.",
   },
 ];
 

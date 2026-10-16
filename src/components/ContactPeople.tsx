@@ -1,18 +1,19 @@
 import Image from "next/image";
-import { company, team } from "@/lib/content";
+import { content, texts, type Locale } from "@/lib/i18n";
 
 // Kontaktbereich nach Vorbild empiria: Personen im Kreis, Name + Rolle, darunter direkte Kontaktwege.
-export function ContactPeople() {
+export function ContactPeople({ locale = "de" }: { locale?: Locale }) {
+  const { company, team } = content(locale);
+  const t = texts[locale].kontakt;
   return (
     <section id="kontakt" className="bg-deep py-20 text-center text-white sm:py-28">
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
-        <p className="t-eyebrow text-white/70">Kontakt</p>
+        <p className="t-eyebrow text-white/70">{t.eyebrow}</p>
         <h2 className="mt-3 text-3xl font-semibold tracking-tight text-balance sm:text-5xl">
-          Lassen Sie uns über Ihre Situation sprechen.
+          {t.title}
         </h2>
         <p className="mx-auto mt-5 max-w-[46ch] text-lg leading-relaxed text-white/75">
-          Ein erstes Gespräch ist unverbindlich. Wir hören zu, stellen die richtigen Fragen und sagen
-          Ihnen offen, ob und wie wir Sie unterstützen können.
+          {t.lead}
         </p>
 
         <ul className="mt-14 flex flex-wrap justify-center gap-x-14 gap-y-10">
@@ -28,7 +29,7 @@ export function ContactPeople() {
                 href={p.linkedin}
                 target="_blank"
                 rel="noopener"
-                aria-label={`${p.name} auf LinkedIn`}
+                aria-label={t.linkedin(p.name)}
                 className="mt-4 inline-flex items-center gap-2 rounded-full border border-white/25 px-3.5 py-1.5 text-[13px] font-semibold text-white/90 transition hover:border-white hover:bg-white hover:text-deep"
               >
                 <LinkedInIcon />
