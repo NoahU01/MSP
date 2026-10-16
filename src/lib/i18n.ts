@@ -122,7 +122,7 @@ const deText = {
   },
   loesung: {
     eyebrow: "Unsere Lösung",
-    lead: "Zwei Bausteine, zwei Perspektiven, zwei Menschen, die dafür stehen. Einzeln buchbar – stark in Kombination.",
+    lead: "Zwei Bausteine, zwei Perspektiven. Einzeln buchbar\u00a0– stark in Kombination.",
     details: "Details ansehen",
     close: "Schließen",
   },
@@ -143,6 +143,7 @@ const deText = {
     eyebrow: "Anliegen von Geschäftspartnern",
     title: ["Aus unserem ", "Tagesgeschäft."],
     lead: "Gemeinsam mit unseren Geschäftspartnern konkretisieren wir die Ziele, vereinbaren passende Maßnahmen und fokussieren uns auf die Umsetzung – konsequent und Schritt für Schritt.",
+    references: "Gern nennen wir Ihnen auf Anfrage Kunden, die Sie direkt kontaktieren dürfen – so machen Sie sich aus erster Hand ein Bild von unserer Arbeit.",
     situation: "Ausgangslage",
     why: "Warum es dem Kunden wichtig war",
     assignment: "Der Auftrag",
@@ -266,7 +267,7 @@ const enText: Texts = {
   },
   loesung: {
     eyebrow: "Our solution",
-    lead: "Two modules, two perspectives, two people who stand for them. Available individually – strongest in combination.",
+    lead: "Two modules, two perspectives. Available individually\u00a0– strongest in combination.",
     details: "View details",
     close: "Close",
   },
@@ -287,6 +288,7 @@ const enText: Texts = {
     eyebrow: "What our business partners ask of us",
     title: ["From our ", "day\u2011to\u2011day work."],
     lead: "Together with our business partners, we define the goals, agree on suitable measures and focus on implementation – consistently and step by step.",
+    references: "On request, we are happy to name clients you may contact directly – so you can get a first-hand picture of our work.",
     situation: "The situation",
     why: "Why it mattered to the client",
     assignment: "The assignment",

@@ -26,6 +26,7 @@ export function PraxisAccordion({ look = "edge", locale = "de" }: { look?: keyof
             <span className="u-accent">{t.title[1]}</span>
           </h2>
           <p className="t-lead mt-8 text-muted">{t.lead}</p>
+          <p className="t-lead mt-6 text-muted">{t.references}</p>
         </div>
 
         <FadeScroll visible={4}>
