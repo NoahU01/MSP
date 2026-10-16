@@ -153,7 +153,6 @@ const deText = {
     button: "PDF herunterladen",
     soon: "Erscheint in Kürze",
     soonMeta: "in Vorbereitung",
-    language: null as string | null,
   },
   kontakt: {
     eyebrow: "Kontakt",
@@ -298,7 +297,6 @@ const enText: Texts = {
     button: "Download PDF",
     soon: "Coming soon",
     soonMeta: "in preparation",
-    language: "German",
   },
   kontakt: {
     eyebrow: "Contact",

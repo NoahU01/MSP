@@ -250,14 +250,11 @@ export const download = {
   href: null as string | null, // z. B. "/downloads/MSP-Leitfaden-Zukunftsfaktor-Mensch.pdf"
 };
 
-// One-Pager-PDF (Quelle: entwurf/onepager/onepager-varianten.html, nur auf daniel).
+// One-Pager-PDF je Sprache (Quelle: entwurf/onepager/onepager.html und onepager-en.html).
 // Überschreibt im Download-Block Seitenzahl, Größe und Link – auf daniel und live.
-export const downloadEntwurf = {
-  pages: "4 Varianten",
-  size: "1 MB",
-  href: "/downloads/MSP-Onepager-Varianten.pdf",
-  // Vorschau im Download-Block: vorne die erste Seite, dahinter der Hebel-Check
-  vorschau: ["/images/onepager/seite-1.jpg", "/images/onepager/hebel-check.jpg"],
+export const onepager = {
+  de: { pages: "1 Seite", size: "0,4 MB", href: "/downloads/MSP-Onepager.pdf", vorschau: "/images/onepager/onepager-de.jpg" },
+  en: { pages: "1 page", size: "0.4 MB", href: "/downloads/MSP-Onepager-EN.pdf", vorschau: "/images/onepager/onepager-en.jpg" },
 };
 
 // Die zwei Bausteine von MSP – einzeln buchbar oder kombiniert.

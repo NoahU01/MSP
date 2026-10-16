@@ -1,15 +1,14 @@
 import Image from "next/image";
-import { downloadEntwurf } from "@/lib/content";
+import { onepager } from "@/lib/content";
 import { content, texts, type Locale } from "@/lib/i18n";
 
 // Download-Block nach Vorbild empiria: PDF-Vorschau links, Text + Pills + Button rechts.
 // Die Vorschau-Seiten sind gezeichnete Platzhalter, bis das echte PDF steht.
 export function DownloadTeaser({ locale = "de" }: { locale?: Locale }) {
   const t = texts[locale].download;
-  // Der One-Pager (PDF mit vier Varianten) ist freigegeben und liegt auch live hinter dem Button (Daniel, 07.10.2026).
-  // Das PDF gibt es nur auf Deutsch – auf der englischen Seite steht deshalb „German“ statt der Seitenzahl.
-  const download = { ...content(locale).download, ...downloadEntwurf };
-  const meta = ["PDF", t.language ?? download.pages, download.size ?? t.soonMeta];
+  // Der One-Pager ist freigegeben und liegt auch live hinter dem Button (Daniel, 07.10.2026) – auf Deutsch und Englisch.
+  const download = { ...content(locale).download, ...onepager[locale] };
+  const meta = ["PDF", download.pages, download.size ?? t.soonMeta];
 
   return (
     <div
@@ -23,8 +22,7 @@ export function DownloadTeaser({ locale = "de" }: { locale?: Locale }) {
       />
 
       <div aria-hidden="true" className="relative h-64 sm:h-80 lg:h-96">
-        <PreviewPage variant="back" bild={downloadEntwurf.vorschau[1]} />
-        <PreviewPage variant="front" bild={downloadEntwurf.vorschau[0]} />
+        <PreviewPage variant="single" bild={download.vorschau} />
       </div>
 
       <div>
@@ -73,12 +71,14 @@ function DownloadIcon() {
 }
 
 // Mit "bild" zeigt die Seite eine echte Seite des PDFs, ohne die gezeichnete Platzhalter-Vorschau.
-function PreviewPage({ variant, bild }: { variant: "front" | "back"; bild?: string }) {
-  const front = variant === "front";
+function PreviewPage({ variant, bild }: { variant: "front" | "back" | "single"; bild?: string }) {
+  const front = variant !== "back";
   return (
     <div
       className={`absolute left-1/2 top-1/2 flex aspect-[210/297] h-full flex-col overflow-hidden rounded-md bg-white ${bild ? "" : "p-[7%]"} text-deep shadow-[0_26px_56px_rgba(0,0,0,0.45),0_0_0_1px_rgba(255,255,255,0.14)] transition-transform duration-300 ${
-        front
+        variant === "single"
+          ? "-translate-x-1/2 -translate-y-1/2 -rotate-3 group-hover:-translate-y-[52%] group-hover:-rotate-1"
+          : front
           ? "-translate-x-[74%] -translate-y-1/2 -rotate-3 group-hover:-translate-x-[82%] group-hover:-rotate-5"
           : "-translate-x-[26%] -translate-y-1/2 rotate-6 group-hover:-translate-x-[16%] group-hover:rotate-8"
       }`}
