@@ -1,38 +1,37 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { texts, type Locale, type Texts } from "@/lib/i18n";
 import { IconArrowRight, IconCheck, IconProposal, IconTalk } from "../Icons";
 
 // Schneller Einstieg – drei Varianten, jeweils mit einer kurzen Zeile pro Schritt:
 // "band"     dunkles Band mit drei Stationen und CTA (V2)
 // "cards"    große Nummernkarten + CTA-Karte (V3)
 // "timeline" Stationen mit Icon-Kreisen und Verbindungslinie (V4/V5)
-const steps = [
-  { title: "Klärungsgespräch", short: "Wo liegt Ihr größter Hebel?", icon: IconTalk },
-  { title: "Konkreter Vorschlag", short: "Umsetzbar und entscheidungsreif.", icon: IconProposal },
-  { title: "Umsetzung", short: "Mit dem Baustein, der passt.", icon: IconCheck },
-];
+// Texte in src/lib/i18n.ts
+const stepIcons = [IconTalk, IconProposal, IconCheck];
 
-const cta = "Klärungsgespräch vereinbaren";
-
-function Head({ children }: { children?: ReactNode }) {
+function Head({ t, children }: { t: Texts["einstieg"]; children?: ReactNode }) {
   return (
     <div className="flex flex-wrap items-end justify-between gap-8">
       <div className="max-w-2xl">
-        <p className="t-eyebrow text-brand">So starten wir</p>
-        <h2 className="t-h2 mt-4 text-navy">Zwei Schritte bis zur Entscheidung.</h2>
+        <p className="t-eyebrow text-brand">{t.eyebrow}</p>
+        <h2 className="t-h2 mt-4 text-navy">{t.title}</h2>
       </div>
       {children}
     </div>
   );
 }
 
-export function Einstieg({ variant = "timeline" }: { variant?: "band" | "cards" | "timeline" }) {
+export function Einstieg({ variant = "timeline", locale = "de" }: { variant?: "band" | "cards" | "timeline"; locale?: Locale }) {
+  const t = texts[locale].einstieg;
+  const steps = t.steps.map((s, i) => ({ ...s, icon: stepIcons[i] }));
+  const cta = t.cta;
   return (
     <section id="einstieg" className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         {variant === "band" && (
           <>
-            <Head>
+            <Head t={t}>
               <Link href="#kontakt" className="rounded-full bg-brand px-7 py-3.5 font-semibold text-white transition hover:bg-brand-dark">
                 {cta}
               </Link>
@@ -47,7 +46,7 @@ export function Einstieg({ variant = "timeline" }: { variant?: "band" | "cards" 
 
         {variant === "cards" && (
           <>
-            <Head />
+            <Head t={t} />
             {/* Schritt 1 hervorgehoben (türkis) mit CTA – dort steigen wir ein. Alle Karten gleich aufgebaut. */}
             <div className="mt-14 grid gap-6 md:grid-cols-3">
               {steps.map((s, i) => {
@@ -83,7 +82,7 @@ export function Einstieg({ variant = "timeline" }: { variant?: "band" | "cards" 
 
         {variant === "timeline" && (
           <>
-            <Head />
+            <Head t={t} />
             {/* Schritt 1 hervorgehoben, CTA zentriert direkt unter dem Ablauf als nächster Schritt. */}
             <ol className="relative mt-14 grid gap-12 rounded-[32px] bg-paper p-8 sm:p-12 md:grid-cols-3 md:gap-10">
               <span aria-hidden="true" className="absolute left-[16%] right-[16%] top-[5.5rem] hidden h-0.5 bg-brand/40 md:block" />
@@ -99,7 +98,7 @@ export function Einstieg({ variant = "timeline" }: { variant?: "band" | "cards" 
                     >
                       <I className="size-9" />
                     </span>
-                    <p className="mt-6 text-[15px] font-semibold text-brand">{i === 2 ? "Danach" : `Schritt ${i + 1}`}</p>
+                    <p className="mt-6 text-[15px] font-semibold text-brand">{i === 2 ? t.after : `${t.step} ${i + 1}`}</p>
                     <h3 className="t-h3 mt-1 text-navy">{s.title}</h3>
                     <p className="mt-2 text-lg font-light text-muted">{s.short}</p>
                   </li>

@@ -1,12 +1,15 @@
 import Image from "next/image";
-import { download as downloadLive, downloadEntwurf } from "@/lib/content";
+import { downloadEntwurf } from "@/lib/content";
+import { content, texts, type Locale } from "@/lib/i18n";
 
 // Download-Block nach Vorbild empiria: PDF-Vorschau links, Text + Pills + Button rechts.
 // Die Vorschau-Seiten sind gezeichnete Platzhalter, bis das echte PDF steht.
-export function DownloadTeaser() {
+export function DownloadTeaser({ locale = "de" }: { locale?: Locale }) {
+  const t = texts[locale].download;
   // Der One-Pager (PDF mit vier Varianten) ist freigegeben und liegt auch live hinter dem Button (Daniel, 07.10.2026).
-  const download = { ...downloadLive, ...downloadEntwurf };
-  const meta = ["PDF", download.pages, download.size ?? "in Vorbereitung"];
+  // Das PDF gibt es nur auf Deutsch – auf der englischen Seite steht deshalb „German“ statt der Seitenzahl.
+  const download = { ...content(locale).download, ...downloadEntwurf };
+  const meta = ["PDF", t.language ?? download.pages, download.size ?? t.soonMeta];
 
   return (
     <div
@@ -47,12 +50,12 @@ export function DownloadTeaser() {
             rel="noopener"
             className="mt-8 inline-flex items-center gap-2.5 rounded-full bg-white px-6 py-3.5 font-semibold text-deep transition hover:-translate-y-0.5 hover:shadow-[0_12px_28px_rgba(255,255,255,0.15)]"
           >
-            PDF herunterladen
+            {t.button}
             <DownloadIcon />
           </a>
         ) : (
           <span className="mt-8 inline-flex cursor-not-allowed items-center gap-2.5 rounded-full bg-white/15 px-6 py-3.5 font-semibold text-white/80">
-            Erscheint in Kürze
+            {t.soon}
             <DownloadIcon />
           </span>
         )}

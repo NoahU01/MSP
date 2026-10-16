@@ -45,7 +45,7 @@ const rows: Row[] = [
       <dl className="space-y-2">
         <Field k="Subheadline">Zukunftsfaktor Mensch · seit {company.since}</Field>
         <Field k="Headline">{company.claim}</Field>
-        <Field k="Text">Wir begleiten Unternehmen individuell, ganzheitlich und nachhaltig – als Berater, Trainer und Moderatoren für KMU und Großunternehmen in ganz Deutschland.</Field>
+        <Field k="Text">Wir begleiten Unternehmen individuell, ganzheitlich und nachhaltig – als Berater, Trainer und Moderatoren für KMU und Großunternehmen in der DACH-Region.</Field>
         <Field k="Personen">{mark.name} ({mark.role}) und {kathrin.name} ({kathrin.role}) – als Kreise neben dem Text</Field>
         <Field k="Button">„Was Sie davon haben“ – führt zur nächsten Sektion</Field>
       </dl>
@@ -70,10 +70,10 @@ const rows: Row[] = [
     ),
     content: (
       <dl className="space-y-2">
-        <Field k="Headline">Mehr erreichen – mit den richtigen Menschen am richtigen Platz.</Field>
-        <Field k="Druck von außen">Märkte werden enger · Kosten steigen · Fachkräfte fehlen</Field>
+        <Field k="Headline">Mehr erreichen – mit den richtigen Kompetenzen in der richtigen Rolle.</Field>
+        <Field k="Druck von außen">Märkte werden enger · Kosten steigen · Fachkräfte fehlen · Komplexität steigt · Umsetzungsdruck wächst · Nachlassende Eigenverantwortlichkeit</Field>
         <Field k="Folgen">{pains.map((p) => p.title).join(" · ")}</Field>
-        <Field k="Kernfrage">Die Frage ist nicht, ob Sie in Ihre Menschen investieren – sondern wo es am meisten bewirkt.</Field>
+        <Field k="Kernfrage">Die Frage ist nicht, ob Sie in Ihre Menschen investieren – sondern wo und wie es am meisten bewirkt.</Field>
       </dl>
     ),
   },
@@ -102,7 +102,7 @@ const rows: Row[] = [
     ),
     content: (
       <dl className="space-y-2">
-        <Field k="Idee">Interaktives Werkzeug: Besucher klicken an, was auf ihr Unternehmen zutrifft (sechs Aussagen), und erhalten sofort eine erste Einordnung – Struktur, Kompetenz oder die Kombination – samt typischer erster Schritte.</Field>
+        <Field k="Idee">Interaktives Werkzeug: Besucher klicken an, was auf ihr Unternehmen zutrifft (zehn Aussagen), und erhalten sofort eine erste Einordnung – Struktur, Kompetenz oder die Kombination – samt typischer erster Schritte.</Field>
         <Field k="Nutzen">Der Besucher erkennt sich wieder und landet direkt beim passenden Baustein. Das Ergebnis führt zum Klärungsgespräch.</Field>
         <Field k="Zu besprechen">Setzen wir das Werkzeug ein? Falls ja: Die sechs Aussagen und die Auswertung legt MSP fachlich fest.</Field>
       </dl>

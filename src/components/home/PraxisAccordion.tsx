@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { cases } from "@/lib/content";
+import { content, texts, type Locale } from "@/lib/i18n";
 import { FadeScroll } from "./FadeScroll";
 
 // Praxisbeispiele nach empiria-Muster „Formate“: Text links, Akkordeon rechts.
@@ -13,19 +13,19 @@ const looks = {
   outline: "rounded-2xl border border-line bg-white",
 };
 
-export function PraxisAccordion({ look = "edge" }: { look?: keyof typeof looks }) {
+export function PraxisAccordion({ look = "edge", locale = "de" }: { look?: keyof typeof looks; locale?: Locale }) {
+  const { cases } = content(locale);
+  const t = texts[locale].praxis;
   return (
     <section id="praxis" className="bg-white py-24 sm:py-32">
       <div className="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
         <div className="lg:sticky lg:top-32 lg:self-start">
-          <p className="t-eyebrow text-brand">Anliegen von Geschäftspartnern</p>
+          <p className="t-eyebrow text-brand">{t.eyebrow}</p>
           <h2 className="t-h2 mt-4 text-navy">
-            Aus unserem <span className="u-accent">Tagesgeschäft.</span>
+            {t.title[0]}
+            <span className="u-accent">{t.title[1]}</span>
           </h2>
-          <p className="t-lead mt-8 text-muted">
-            Gemeinsam mit unseren Geschäftspartnern konkretisieren wir die Ziele, vereinbaren passende Maßnahmen
-            und fokussieren uns auf die Umsetzung – konsequent und Schritt für Schritt.
-          </p>
+          <p className="t-lead mt-8 text-muted">{t.lead}</p>
         </div>
 
         <FadeScroll visible={4}>
@@ -46,23 +46,23 @@ export function PraxisAccordion({ look = "edge" }: { look?: keyof typeof looks }
               </summary>
               <div className="space-y-5 px-6 pb-7 sm:px-7">
                 <div>
-                  <p className="text-[15px] font-semibold text-navy">Ausgangslage</p>
+                  <p className="text-[15px] font-semibold text-navy">{t.situation}</p>
                   <p className="t-body mt-1 text-ink">{c.situation}</p>
                 </div>
                 <div>
-                  <p className="text-[15px] font-semibold text-navy">Warum es dem Kunden wichtig war</p>
+                  <p className="text-[15px] font-semibold text-navy">{t.why}</p>
                   <p className="t-body mt-1 text-ink">{c.why}</p>
                 </div>
                 {c.assignment && (
                   <div>
-                    <p className="text-[15px] font-semibold text-navy">Der Auftrag</p>
+                    <p className="text-[15px] font-semibold text-navy">{t.assignment}</p>
                     <p className="t-body mt-1 text-ink">{c.assignment}</p>
                   </div>
                 )}
                 <p className="t-body text-ink">
                   {c.question}{" "}
                   <Link href="#kontakt" className="font-semibold text-brand underline-offset-4 hover:underline">
-                    Sprechen Sie uns an →
+                    {t.talk}
                   </Link>
                 </p>
               </div>

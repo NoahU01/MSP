@@ -1,12 +1,14 @@
 import Image from "next/image";
-import { bausteine, company, team } from "@/lib/content";
+import { content, texts, type Locale } from "@/lib/i18n";
 import { BausteinDetails } from "../BausteinDetails";
 import { IconCheck, IconLearning, IconStructure } from "../Icons";
 import { InfoModal } from "../InfoModal";
 
 // Lösung „Menschen & Bausteine“ (Version 5): zentrierter Kopf, zwei Baustein-Karten nebeneinander,
 // jede mit ihrer Ansprechperson (Mark = HR Business Partner, Kathrin = Lernwelt).
-export function LoesungPeople() {
+export function LoesungPeople({ locale = "de" }: { locale?: Locale }) {
+  const { bausteine, company, team } = content(locale);
+  const t = texts[locale].loesung;
   const [mark, kathrin] = team;
   const personFor = { hrbp: mark, lernwelt: kathrin } as const;
 
@@ -14,11 +16,9 @@ export function LoesungPeople() {
   <section id="bausteine" className="bg-white py-24 sm:py-32">
     <div className="mx-auto max-w-6xl px-4 sm:px-6">
       <div className="mx-auto max-w-3xl text-center">
-        <p className="t-eyebrow text-brand">Unsere Lösung</p>
+        <p className="t-eyebrow text-brand">{t.eyebrow}</p>
         <h2 className="t-h2 mt-4 text-navy">{company.slogan}</h2>
-        <p className="t-lead mt-8 text-muted">
-          Zwei Bausteine, zwei Perspektiven, zwei Menschen, die dafür stehen. Einzeln buchbar – stark in Kombination.
-        </p>
+        <p className="t-lead mt-8 text-muted">{t.lead}</p>
       </div>
 
       <div className="mt-16 grid gap-6 md:grid-cols-2">
@@ -52,7 +52,8 @@ export function LoesungPeople() {
                   </div>
                 </div>
                 <InfoModal
-                  label="Details ansehen"
+                  label={t.details}
+                  closeLabel={t.close}
                   title={b.name}
                   buttonClassName={`rounded-full bg-white px-5 py-2.5 text-[15px] font-semibold transition hover:bg-paper ${hrbp ? "text-navy" : "text-brand-dark"}`}
                 >

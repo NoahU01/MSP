@@ -224,14 +224,14 @@ export type Person = {
 export const team: Person[] = [
   {
     name: "Mark Schweitzer-Pullar",
-    role: "Strukturarchitekt", // steht für: "Strukturen, die tragen. Führung, die wirkt."
+    role: "Entwicklungsarchitekt", // steht für: "Strukturen, die tragen. Führung, die wirkt."
     baustein: "MSP HR Business Partner",
     image: "/images/team/mark-schweitzer-pullar.jpg",
     linkedin: "https://www.linkedin.com/in/mark-schweitzer-pullar-1ab90914/",
   },
   {
     name: "Kathrin Strohmeier",
-    role: "Praxisübersetzerin", // steht für: "Damit Entwicklung im Alltag wirklich ankommt."
+    role: "Praxisgestalterin", // steht für: "Damit Entwicklung im Alltag wirklich ankommt."
     baustein: "MSP Lernwelt",
     image: "/images/team/kathrin-strohmeier.jpg",
     linkedin: "https://www.linkedin.com/in/kathrin-strohmeier/",

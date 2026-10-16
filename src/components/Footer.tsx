@@ -1,8 +1,16 @@
-import Link from "next/link";
-import { company, services } from "@/lib/content";
-import { devTools } from "@/lib/flags";
+"use client";
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { services } from "@/lib/content";
+import { devTools } from "@/lib/flags";
+import { content, localeFromPath, texts } from "@/lib/i18n";
+
+// Rechtstexte (Impressum, Datenschutz) gibt es nur auf Deutsch; die englische Seite verlinkt sie.
 export function Footer() {
+  const locale = localeFromPath(usePathname());
+  const { company } = content(locale);
+  const t = texts[locale].footer;
   return (
     <footer className="bg-deep text-white/80">
       <div
@@ -32,7 +40,7 @@ export function Footer() {
         {/* Leistungs-Unterseiten gibt es nur in der Entwicklungsumgebung */}
         {devTools && (
           <div>
-            <p className="font-semibold text-white">Leistungen</p>
+            <p className="font-semibold text-white">{t.services}</p>
             <ul className="mt-3 space-y-2 text-sm">
               {services.map((s) => (
                 <li key={s.slug}>
@@ -49,7 +57,7 @@ export function Footer() {
         )}
 
         <div>
-          <p className="font-semibold text-white">Service</p>
+          <p className="font-semibold text-white">{t.service}</p>
           <ul className="mt-3 space-y-2 text-sm">
             <li>
               <a
@@ -57,17 +65,17 @@ export function Footer() {
                 className="hover:text-white"
                 rel="noopener"
               >
-                Kunden-Login
+                {t.login}
               </a>
             </li>
             <li>
               <Link href="/impressum" className="hover:text-white">
-                Impressum
+                {t.imprint}
               </Link>
             </li>
             <li>
               <Link href="/datenschutz" className="hover:text-white">
-                Datenschutz
+                {t.privacy}
               </Link>
             </li>
           </ul>
@@ -75,8 +83,7 @@ export function Footer() {
       </div>
       <div>
         <p className="mx-auto max-w-6xl px-4 py-6 text-xs text-white/50 sm:px-6">
-          © {company.since}–{new Date().getFullYear()} {company.name} · Ihr
-          Partner für Führungs- und Veränderungsprozesse
+          © {company.since}–{new Date().getFullYear()} {company.name} · {t.copyright}
         </p>
       </div>
     </footer>

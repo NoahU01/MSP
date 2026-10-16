@@ -1,20 +1,19 @@
 import Image from "next/image";
-import { company, team } from "@/lib/content";
+import { content, texts, type Locale } from "@/lib/i18n";
 import { IconArrowDown } from "./Icons";
 
 // Hero mit den beiden Ansprechpartnern (Version 5, Variante „Duo“).
 // Texte unverändert aus Version 1.0; Headline bewusst kleiner, damit Text und Personen im Gleichgewicht sind.
 
 const h1 = "text-[2.125rem] font-semibold leading-[1.12] tracking-tight text-balance text-navy sm:text-5xl";
-const lead = "Wir begleiten Unternehmen individuell, ganzheitlich und nachhaltig – als Berater, Trainer und Moderatoren für KMU und Großunternehmen in ganz Deutschland.";
 
-function Cta() {
+function Cta({ label }: { label: string }) {
   return (
     <a
       href="#ausgangslage"
       className="group inline-flex items-center gap-3 rounded-full bg-brand py-3.5 pl-7 pr-3.5 font-semibold text-white transition hover:bg-brand-dark"
     >
-      Was Sie davon haben
+      {label}
       <span className="flex size-8 items-center justify-center rounded-full bg-white/20 transition group-hover:translate-y-0.5">
         <IconArrowDown className="size-4" />
       </span>
@@ -30,7 +29,9 @@ function Portrait({ src, alt, size }: { src: string; alt: string; size: string }
   );
 }
 
-export function HeroPeople() {
+export function HeroPeople({ locale = "de" }: { locale?: Locale }) {
+  const { company, team } = content(locale);
+  const t = texts[locale].hero;
   const [mark, kathrin] = team;
 
   // Variante A: Duo rechts
@@ -38,11 +39,11 @@ export function HeroPeople() {
     <section className="bg-white">
       <div className="mx-auto grid max-w-6xl items-center gap-14 px-4 pb-16 pt-20 sm:px-6 sm:pb-20 sm:pt-28 lg:grid-cols-[1.2fr_0.8fr] lg:gap-16">
         <div>
-          <p className="t-eyebrow text-brand">Zukunftsfaktor Mensch · seit {company.since}</p>
-          <h1 className={`${h1} mt-6`}>Ihr HR Businesspartner für Führungs-, Entwicklungs- und Veränderungsprozesse</h1>
-          <p className="t-lead mt-8 max-w-xl text-muted">{lead}</p>
+          <p className="t-eyebrow text-brand">{t.eyebrow} {company.since}</p>
+          <h1 className={`${h1} mt-6`}>{t.title}</h1>
+          <p className="t-lead mt-8 max-w-xl text-muted">{t.lead}</p>
           <div className="mt-12">
-            <Cta />
+            <Cta label={t.cta} />
           </div>
         </div>
         <div className="grid min-w-0 grid-cols-2 gap-4 rounded-[32px] bg-paper px-5 py-10 sm:gap-6 sm:px-10">
