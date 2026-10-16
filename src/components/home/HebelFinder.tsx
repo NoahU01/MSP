@@ -8,7 +8,8 @@ import { IconCheck } from "./Icons";
 // Interaktiver „Hebel-Finder“.
 // Zehn Aussagen, je fünf pro Baustein (Texte in src/lib/i18n.ts), bewusst gemischt angeordnet –
 // links und rechts stehen beide Bausteine, damit das Ergebnis nicht vorweggenommen wird.
-// Die Auswahlfarbe ist aus demselben Grund neutral.
+// Die Kartenfarbe bei Auswahl ist neutral; nur das Häkchen zeigt den Baustein an –
+// Dunkelblau für HR Business Partner, Türkis für die Lernwelt (wie der Ergebnisbalken).
 function StepHead({ n, title, hint }: { n: number; title: string; hint: ReactNode }) {
   return (
     <div className="flex min-h-14 items-center gap-4">
@@ -78,7 +79,9 @@ export function HebelFinder({ locale = "de" }: { locale?: Locale }) {
                     <span
                       aria-hidden="true"
                       className={`flex size-7 shrink-0 items-center justify-center rounded-lg transition ${
-                        on ? "bg-brand text-white" : "bg-white text-transparent shadow-[inset_0_0_0_2px_#9fb0bb]"
+                        on
+                          ? `${s.key === "hrbp" ? "bg-navy" : "bg-brand"} text-white shadow-[0_0_0_1.5px_#ffffff]`
+                          : "bg-white text-transparent shadow-[inset_0_0_0_2px_#9fb0bb]"
                       }`}
                     >
                       <IconCheck className="size-4" />
