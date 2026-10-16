@@ -31,6 +31,7 @@ export function BausteinDetails({ baustein: b }: { baustein: Baustein }) {
           </div>
         ))}
       </div>
+      {b.closing && <p className="leading-relaxed text-ink">{b.closing}</p>}
     </div>
   );
 }

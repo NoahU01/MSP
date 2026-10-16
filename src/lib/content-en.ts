@@ -26,7 +26,7 @@ export const bausteine: Baustein[] = [
     details: [
       {
         title: "Organisational development",
-        items: ["Business and leadership succession", "New organisational forms and structures", "Roles and job profiles", "Interface management and process development"],
+        items: ["Leadership succession", "New organisational forms and structures", "Roles and job profiles", "Interface management and process development"],
       },
       {
         title: "Leadership development",
@@ -38,7 +38,7 @@ export const bausteine: Baustein[] = [
       },
       {
         title: "Team development",
-        items: ["Team analyses", "Conflict resolution and mediation", "Developing a team culture"],
+        items: ["Team analysis methods", "Conflict resolution and mediation", "Developing a team culture"],
       },
     ],
   },
@@ -49,7 +49,7 @@ export const bausteine: Baustein[] = [
     slogan: "So that development truly takes hold in everyday work.",
     question: "Is it about further development, training and coaching?",
     text: "We build knowledge and social skills in a targeted way – practical and immediately applicable. Training, workshops and coaching that arrive in everyday work and make a difference there.",
-    focus: ["Training & workshops", "Coaching", "Social skills", "Transfer into daily work"],
+    focus: ["Training & workshops", "Coaching", "Social skills", "Embedding learning tools"],
     details: [
       {
         title: "Training & workshops",
@@ -60,10 +60,11 @@ export const bausteine: Baustein[] = [
         items: ["Executive coaching", "Support in new roles", "Team reflection"],
       },
       {
-        title: "Securing impact",
-        items: ["Training needs and personality analyses upfront", "Transfer assurance in daily work", "Follow-up support so that learning sticks"],
+        title: "Embedding learning tools",
+        items: ["Training needs and personality analyses upfront", "Application sequences for everyday work", "Follow-up support so that learning sticks"],
       },
     ],
+    closing: "Training needs and personality analyses help to design training, workshops and coaching in a targeted way.",
   },
 ];
 

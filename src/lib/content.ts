@@ -272,6 +272,8 @@ export type Baustein = {
   text: string;
   focus: string[];
   details: { title: string; items: string[]; href?: string }[];
+  /** Abschlusssatz unter den Detail-Kategorien (im Pop-up) */
+  closing?: string;
 };
 
 export const bausteine: Baustein[] = [
@@ -286,7 +288,7 @@ export const bausteine: Baustein[] = [
     details: [
       {
         title: "Organisationsentwicklung",
-        items: ["Unternehmens- und Führungsnachfolge", "Neue Organisationsformen und Strukturen", "Rollen und Anforderungsprofile", "Schnittstellenmanagement und Prozessentwicklung"],
+        items: ["Führungsnachfolge", "Neue Organisationsformen und Strukturen", "Rollen und Anforderungsprofile", "Schnittstellenmanagement und Prozessentwicklung"],
         href: "/leistungen/organisationsentwicklung",
       },
       {
@@ -301,7 +303,7 @@ export const bausteine: Baustein[] = [
       },
       {
         title: "Teamentwicklung",
-        items: ["Teamanalysen", "Konfliktklärung und Mediation", "Entwicklung einer Teamkultur"],
+        items: ["Teamanalyseverfahren", "Konfliktklärung und Mediation", "Entwicklung einer Teamkultur"],
         href: "/leistungen/teamentwicklung",
       },
     ],
@@ -313,7 +315,7 @@ export const bausteine: Baustein[] = [
     slogan: "Damit Entwicklung im Alltag wirklich ankommt.",
     question: "Geht es um Weiterentwicklung, Training und Coaching?",
     text: "Wir erweitern gezielt Wissen und soziale Kompetenzen – praxisnah und direkt anwendbar. Trainings, Workshops und Coachings, die im Arbeitsalltag ankommen und dort Wirkung zeigen.",
-    focus: ["Trainings & Workshops", "Coaching", "Soziale Kompetenz", "Transfer in den Alltag"],
+    focus: ["Trainings & Workshops", "Coaching", "Soziale Kompetenz", "Lernwerkzeuge verankern"],
     details: [
       {
         title: "Trainings & Workshops",
@@ -324,10 +326,11 @@ export const bausteine: Baustein[] = [
         items: ["Führungskräfte-Coaching", "Begleitung in neuen Rollen", "Reflexion im Team"],
       },
       {
-        title: "Wirkung sichern",
-        items: ["Bildungsbedarfs- und Persönlichkeitsanalysen vorab", "Transfersicherung im Arbeitsalltag", "Nachbetreuung, damit Gelerntes bleibt"],
+        title: "Lernwerkzeuge verankern",
+        items: ["Bildungsbedarfs- und Persönlichkeitsanalysen vorab", "Anwendungssequenzen für den Arbeitsalltag", "Nachbetreuung, damit Gelerntes bleibt"],
       },
     ],
+    closing: "Bildungsbedarfs- und Persönlichkeitsanalysen helfen, Trainings, Workshops und Coachings gezielt zu gestalten.",
   },
 ];
 
