@@ -27,11 +27,11 @@ export function Footer() {
             {company.zip} {company.city}
           </p>
           <p className="mt-3 text-sm leading-relaxed">
-            <a href={company.phoneHref} className="hover:text-white">
+            <a href={company.phoneHref} className="inline-block py-1 hover:text-white">
               {company.phone}
             </a>
             <br />
-            <a href={`mailto:${company.email}`} className="hover:text-white">
+            <a href={`mailto:${company.email}`} className="inline-block py-1 hover:text-white">
               {company.email}
             </a>
           </p>
@@ -41,12 +41,12 @@ export function Footer() {
         {devTools && (
           <div>
             <p className="font-semibold text-white">{t.services}</p>
-            <ul className="mt-3 space-y-2 text-sm">
+            <ul className="mt-2 space-y-0.5 text-sm">
               {services.map((s) => (
                 <li key={s.slug}>
                   <Link
                     href={`/leistungen/${s.slug}`}
-                    className="hover:text-white"
+                    className="inline-block py-1 hover:text-white"
                   >
                     {s.title}
                   </Link>
@@ -58,23 +58,23 @@ export function Footer() {
 
         <div>
           <p className="font-semibold text-white">{t.service}</p>
-          <ul className="mt-3 space-y-2 text-sm">
+          <ul className="mt-2 space-y-0.5 text-sm">
             <li>
               <a
                 href={company.customerLoginUrl}
-                className="hover:text-white"
+                className="inline-block py-1 hover:text-white"
                 rel="noopener"
               >
                 {t.login}
               </a>
             </li>
             <li>
-              <Link href="/impressum" className="hover:text-white">
+              <Link href="/impressum" className="inline-block py-1 hover:text-white">
                 {t.imprint}
               </Link>
             </li>
             <li>
-              <Link href="/datenschutz" className="hover:text-white">
+              <Link href="/datenschutz" className="inline-block py-1 hover:text-white">
                 {t.privacy}
               </Link>
             </li>

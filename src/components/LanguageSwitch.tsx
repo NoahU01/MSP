@@ -30,7 +30,7 @@ export function LanguageSwitch() {
             lang={l}
             aria-current={active ? "true" : undefined}
             aria-label={l === "de" ? "Deutsch" : "English"}
-            className={`rounded-full px-2.5 py-1 text-[13px] font-semibold transition sm:px-3 sm:py-1.5 ${
+            className={`rounded-full px-3 py-2 text-[13px] font-semibold transition sm:py-1.5 ${
               active ? "bg-white text-navy shadow-[0_2px_8px_rgba(24,42,54,0.12)]" : "text-muted hover:text-navy"
             }`}
           >

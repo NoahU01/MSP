@@ -40,8 +40,8 @@ const deText = {
   },
   hero: {
     eyebrow: "Zukunftsfaktor Mensch · seit",
-    title: "Ihr HR Businesspartner für Führungs-, Entwicklungs- und Veränderungsprozesse",
-    lead: "Wir begleiten Unternehmen individuell, ganzheitlich und nachhaltig – als Berater, Trainer und Moderatoren für KMU und Großunternehmen in der DACH-Region.",
+    title: "Ihr HR Businesspartner für Führungs-, Entwicklungs- und Veränderungs\u00adprozesse",
+    lead: "Wir begleiten Unternehmen individuell, ganzheitlich und nachhaltig – als Berater, Trainer und Moderatoren für KMU und Großunternehmen in der DACH\u2011Region.",
     cta: "Was Sie davon haben",
   },
   ausgangslage: {
@@ -52,8 +52,8 @@ const deText = {
       "Kosten steigen",
       "Fachkräfte fehlen",
       "Komplexität steigt",
-      "Umsetzungsdruck wächst",
-      "Nachlassende Eigen\u00adverantwortlichkeit",
+      "Umsetzungs\u00addruck wächst",
+      "Eigen\u00adverantwort\u00adlichkeit lässt nach",
     ],
     question: ["Die Frage ist nicht, ob Sie in Ihre Menschen investieren – ", "sondern wo und wie es am meisten bewirkt."],
   },
@@ -143,7 +143,7 @@ const deText = {
     eyebrow: "Anliegen von Geschäftspartnern",
     title: ["Aus unserem ", "Tagesgeschäft."],
     lead: "Gemeinsam mit unseren Geschäftspartnern konkretisieren wir die Ziele, vereinbaren passende Maßnahmen und fokussieren uns auf die Umsetzung – konsequent und Schritt für Schritt.",
-    references: "Gern nennen wir Ihnen auf Anfrage Kunden, die Sie direkt kontaktieren dürfen – so machen Sie sich aus erster Hand ein Bild von unserer Arbeit.",
+    references: "Gern nennen wir Ihnen auf Anfrage Geschäftspartner, die Sie direkt kontaktieren dürfen\u00a0– so machen Sie sich aus erster Hand ein Bild von unserer Arbeit.",
     situation: "Ausgangslage",
     why: "Warum es dem Kunden wichtig war",
     assignment: "Der Auftrag",
@@ -157,7 +157,7 @@ const deText = {
   kontakt: {
     eyebrow: "Kontakt",
     title: "Lassen Sie uns über Ihre Situation sprechen.",
-    lead: "Ein erstes Gespräch ist unverbindlich. Wir hören zu, stellen die richtigen Fragen und sagen Ihnen offen, ob und wie wir Sie unterstützen können.",
+    lead: "Wir hören zu, stellen die richtigen Fragen und sagen Ihnen offen, ob und wie wir Sie unterstützen können.",
     linkedin: (name: string) => `${name} auf LinkedIn`,
   },
   footer: {
@@ -287,7 +287,7 @@ const enText: Texts = {
     eyebrow: "What our business partners ask of us",
     title: ["From our ", "day\u2011to\u2011day work."],
     lead: "Together with our business partners, we define the goals, agree on suitable measures and focus on implementation – consistently and step by step.",
-    references: "On request, we are happy to name clients you may contact directly – so you can get a first-hand picture of our work.",
+    references: "On request, we are happy to name business partners you may contact directly\u00a0– so you can get a first-hand picture of our work.",
     situation: "The situation",
     why: "Why it mattered to the client",
     assignment: "The assignment",
@@ -301,7 +301,7 @@ const enText: Texts = {
   kontakt: {
     eyebrow: "Contact",
     title: "Let's talk about your situation.",
-    lead: "An initial conversation is non-binding. We listen, ask the right questions and tell you openly whether and how we can support you.",
+    lead: "We listen, ask the right questions and tell you openly whether and how we can support you.",
     linkedin: (name: string) => `${name} on LinkedIn`,
   },
   footer: {

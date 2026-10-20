@@ -71,7 +71,7 @@ const rows: Row[] = [
     content: (
       <dl className="space-y-2">
         <Field k="Headline">Mehr erreichen – mit den richtigen Kompetenzen in der richtigen Rolle.</Field>
-        <Field k="Druck von außen">Märkte werden enger · Kosten steigen · Fachkräfte fehlen · Komplexität steigt · Umsetzungsdruck wächst · Nachlassende Eigenverantwortlichkeit</Field>
+        <Field k="Druck von außen">Märkte werden enger · Kosten steigen · Fachkräfte fehlen · Komplexität steigt · Umsetzungsdruck wächst · Eigenverantwortlichkeit lässt nach</Field>
         <Field k="Folgen">{pains.map((p) => p.title).join(" · ")}</Field>
         <Field k="Kernfrage">Die Frage ist nicht, ob Sie in Ihre Menschen investieren – sondern wo und wie es am meisten bewirkt.</Field>
       </dl>
