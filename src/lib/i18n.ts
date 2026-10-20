@@ -53,7 +53,7 @@ const deText = {
       "Fachkräfte fehlen",
       "Komplexität steigt",
       "Umsetzungsdruck wächst",
-      "Nachlassende Eigen\u00adverantwortlichkeit",
+      "Eigen\u00adverantwortlichkeit lässt nach",
     ],
     question: ["Die Frage ist nicht, ob Sie in Ihre Menschen investieren – ", "sondern wo und wie es am meisten bewirkt."],
   },
