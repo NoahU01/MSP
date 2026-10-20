@@ -61,7 +61,7 @@ export const bausteine: Baustein[] = [
       },
       {
         title: "Embedding learning tools",
-        items: ["Training needs and personality analyses upfront", "Application sequences for everyday work", "Follow-up support so that learning sticks"],
+        items: ["Application sequences for everyday work", "Follow-up support so that learning sticks"],
       },
     ],
     closing: "Training needs and personality analyses help to design training, workshops and coaching in a targeted way.",

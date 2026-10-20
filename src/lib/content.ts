@@ -324,7 +324,7 @@ export const bausteine: Baustein[] = [
       },
       {
         title: "Lernwerkzeuge verankern",
-        items: ["Bildungsbedarfs- und Persönlichkeitsanalysen vorab", "Anwendungssequenzen für den Arbeitsalltag", "Nachbetreuung, damit Gelerntes bleibt"],
+        items: ["Anwendungssequenzen für den Arbeitsalltag", "Nachbetreuung, damit Gelerntes bleibt"],
       },
     ],
     closing: "Bildungsbedarfs- und Persönlichkeitsanalysen helfen, Trainings, Workshops und Coachings gezielt zu gestalten.",
