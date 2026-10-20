@@ -40,8 +40,8 @@ const deText = {
   },
   hero: {
     eyebrow: "Zukunftsfaktor Mensch · seit",
-    title: "Ihr HR Businesspartner für Führungs-, Entwicklungs- und Veränderungsprozesse",
-    lead: "Wir begleiten Unternehmen individuell, ganzheitlich und nachhaltig – als Berater, Trainer und Moderatoren für KMU und Großunternehmen in der DACH-Region.",
+    title: "Ihr HR Businesspartner für Führungs-, Entwicklungs- und Veränderungs\u00adprozesse",
+    lead: "Wir begleiten Unternehmen individuell, ganzheitlich und nachhaltig – als Berater, Trainer und Moderatoren für KMU und Großunternehmen in der DACH\u2011Region.",
     cta: "Was Sie davon haben",
   },
   ausgangslage: {
@@ -52,8 +52,8 @@ const deText = {
       "Kosten steigen",
       "Fachkräfte fehlen",
       "Komplexität steigt",
-      "Umsetzungsdruck wächst",
-      "Eigen\u00adverantwortlichkeit lässt nach",
+      "Umsetzungs\u00addruck wächst",
+      "Eigen\u00adverantwort\u00adlichkeit lässt nach",
     ],
     question: ["Die Frage ist nicht, ob Sie in Ihre Menschen investieren – ", "sondern wo und wie es am meisten bewirkt."],
   },

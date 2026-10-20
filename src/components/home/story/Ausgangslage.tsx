@@ -53,7 +53,7 @@ export function Ausgangslage({ variant = "box", locale = "de" }: { variant?: "bo
           <div className="rounded-[28px] bg-navy p-6 text-white shadow-[0_30px_70px_rgba(0,84,130,0.25)] sm:p-10">
             <ul className="grid grid-cols-2 gap-2.5">
               {pressures.map(({ icon: I, label }) => (
-                <li key={label} className="flex flex-col items-start gap-2 rounded-2xl bg-white/10 px-4 py-3.5">
+                <li key={label} className="flex flex-col items-start gap-2 rounded-2xl bg-white/10 px-3 py-3.5 sm:px-4">
                   <I className="size-5 shrink-0 text-brand" />
                   <span className="text-[15px] font-semibold leading-snug">{label}</span>
                 </li>
