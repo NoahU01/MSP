@@ -157,7 +157,7 @@ const deText = {
   kontakt: {
     eyebrow: "Kontakt",
     title: "Lassen Sie uns über Ihre Situation sprechen.",
-    lead: "Ein erstes Gespräch ist unverbindlich. Wir hören zu, stellen die richtigen Fragen und sagen Ihnen offen, ob und wie wir Sie unterstützen können.",
+    lead: "Wir hören zu, stellen die richtigen Fragen und sagen Ihnen offen, ob und wie wir Sie unterstützen können.",
     linkedin: (name: string) => `${name} auf LinkedIn`,
   },
   footer: {
@@ -301,7 +301,7 @@ const enText: Texts = {
   kontakt: {
     eyebrow: "Contact",
     title: "Let's talk about your situation.",
-    lead: "An initial conversation is non-binding. We listen, ask the right questions and tell you openly whether and how we can support you.",
+    lead: "We listen, ask the right questions and tell you openly whether and how we can support you.",
     linkedin: (name: string) => `${name} on LinkedIn`,
   },
   footer: {
