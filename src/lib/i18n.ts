@@ -161,10 +161,8 @@ const deText = {
     linkedin: (name: string) => `${name} auf LinkedIn`,
   },
   footer: {
-    service: "Service",
     imprint: "Impressum",
     privacy: "Datenschutz",
-    copyright: "Ihr Partner für Führungs- und Veränderungsprozesse",
   },
 };
 
@@ -303,10 +301,8 @@ const enText: Texts = {
     linkedin: (name: string) => `${name} on LinkedIn`,
   },
   footer: {
-    service: "Service",
     imprint: "Legal notice",
     privacy: "Privacy policy",
-    copyright: "Your partner for leadership and change processes",
   },
 };
 

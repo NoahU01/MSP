@@ -2,57 +2,39 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Fragment } from "react";
 import { content, localeFromPath, texts } from "@/lib/i18n";
 
-// Rechtstexte (Impressum, Datenschutz) gibt es nur auf Deutsch; die englische Seite verlinkt sie.
+// Schmale Fußzeile nach Vorbild empiria: links Firma und Jahr, rechts die Rechtslinks.
+// Adresse und Kontaktwege stehen direkt darüber im Kontaktbereich.
+// Rechtstexte gibt es nur auf Deutsch; die englische Seite verlinkt sie.
 export function Footer() {
   const locale = localeFromPath(usePathname());
   const { company } = content(locale);
   const t = texts[locale].footer;
+  const links = [
+    { href: "/impressum", label: t.imprint },
+    { href: "/datenschutz", label: t.privacy },
+  ];
   return (
-    <footer className="bg-deep text-white/80">
-      {/* Links Firma und Kontaktwege, rechts die Rechtstexte – auf DE und EN gleich, auf daniel wie live. */}
-      <div className="mx-auto flex max-w-6xl flex-col gap-10 px-4 py-14 sm:px-6 md:flex-row md:justify-between">
-        <div>
-          <p className="font-semibold text-white">{company.name}</p>
-          <p className="mt-1 text-sm font-semibold text-brand">
-            {company.slogan}
-          </p>
-          <p className="mt-3 text-sm leading-relaxed">
-            {company.street}
-            <br />
-            {company.zip} {company.city}
-          </p>
-          <p className="mt-3 text-sm leading-relaxed">
-            <a href={company.phoneHref} className="inline-block py-1 hover:text-white">
-              {company.phone}
-            </a>
-            <br />
-            <a href={`mailto:${company.email}`} className="inline-block py-1 hover:text-white">
-              {company.email}
-            </a>
-          </p>
-        </div>
-
-        <div className="md:min-w-48">
-          <p className="font-semibold text-white">{t.service}</p>
-          <ul className="mt-2 space-y-0.5 text-sm">
-            <li>
-              <Link href="/impressum" className="inline-block py-1 hover:text-white">
-                {t.imprint}
+    <footer className="bg-deep text-[15px] font-light text-white/75">
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-3 px-4 py-7 text-center sm:px-6 md:flex-row md:justify-between md:text-left">
+        <p>
+          {company.name} {new Date().getFullYear()}
+        </p>
+        <p className="flex flex-wrap justify-center gap-x-5 gap-y-1 md:gap-x-3">
+          {links.map((l, i) => (
+            <Fragment key={l.href}>
+              {i > 0 && (
+                <span aria-hidden="true" className="hidden md:inline">
+                  |
+                </span>
+              )}
+              <Link href={l.href} className="inline-block py-1 transition hover:text-white">
+                {l.label}
               </Link>
-            </li>
-            <li>
-              <Link href="/datenschutz" className="inline-block py-1 hover:text-white">
-                {t.privacy}
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div>
-        <p className="mx-auto max-w-6xl px-4 py-6 text-xs text-white/50 sm:px-6">
-          © {company.since}–{new Date().getFullYear()} {company.name} · {t.copyright}
+            </Fragment>
+          ))}
         </p>
       </div>
     </footer>
