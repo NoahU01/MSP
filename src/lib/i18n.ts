@@ -161,7 +161,6 @@ const deText = {
     linkedin: (name: string) => `${name} auf LinkedIn`,
   },
   footer: {
-    services: "Leistungen",
     service: "Service",
     imprint: "Impressum",
     privacy: "Datenschutz",
@@ -304,7 +303,6 @@ const enText: Texts = {
     linkedin: (name: string) => `${name} on LinkedIn`,
   },
   footer: {
-    services: "Services",
     service: "Service",
     imprint: "Legal notice",
     privacy: "Privacy policy",
