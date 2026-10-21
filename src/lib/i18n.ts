@@ -163,7 +163,6 @@ const deText = {
   footer: {
     services: "Leistungen",
     service: "Service",
-    login: "Kunden-Login",
     imprint: "Impressum",
     privacy: "Datenschutz",
     copyright: "Ihr Partner für Führungs- und Veränderungsprozesse",
@@ -307,7 +306,6 @@ const enText: Texts = {
   footer: {
     services: "Services",
     service: "Service",
-    login: "Client login",
     imprint: "Legal notice",
     privacy: "Privacy policy",
     copyright: "Your partner for leadership and change processes",
