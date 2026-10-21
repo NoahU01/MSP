@@ -60,15 +60,6 @@ export function Footer() {
           <p className="font-semibold text-white">{t.service}</p>
           <ul className="mt-2 space-y-0.5 text-sm">
             <li>
-              <a
-                href={company.customerLoginUrl}
-                className="inline-block py-1 hover:text-white"
-                rel="noopener"
-              >
-                {t.login}
-              </a>
-            </li>
-            <li>
               <Link href="/impressum" className="inline-block py-1 hover:text-white">
                 {t.imprint}
               </Link>
