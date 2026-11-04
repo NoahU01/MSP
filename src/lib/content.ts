@@ -233,7 +233,7 @@ export const team: Person[] = [
     name: "Kathrin Strohmeier",
     role: "Praxisgestalterin", // steht für: "Damit Entwicklung im Alltag wirklich ankommt."
     baustein: "MSP Lernwelt",
-    image: "/images/team/kathrin-strohmeier-2026.jpg",
+    image: "/images/team/kathrin-strohmeier-portraet.jpg",
     linkedin: "https://www.linkedin.com/in/kathrin-strohmeier/",
   },
 ];
