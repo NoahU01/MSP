@@ -163,6 +163,7 @@ const deText = {
   footer: {
     imprint: "Impressum",
     privacy: "Datenschutz",
+    cookies: "Cookie-Einstellungen",
   },
 };
 
@@ -303,6 +304,7 @@ const enText: Texts = {
   footer: {
     imprint: "Legal notice",
     privacy: "Privacy policy",
+    cookies: "Cookie settings",
   },
 };
 

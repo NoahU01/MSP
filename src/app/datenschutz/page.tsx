@@ -59,8 +59,27 @@ export default function DatenschutzPage() {
       <h2>5. Cookies, Tracking und Schriftarten</h2>
       <p>
         Diese Website setzt keine Cookies zu Analyse- oder Marketingzwecken und verwendet keine
-        Tracking-Dienste. Die verwendeten Schriftarten sind lokal eingebunden; beim Seitenaufruf
-        wird keine Verbindung zu Servern Dritter (z. B. Google) hergestellt.
+        Tracking-Dienste. Die verwendeten Schriftarten sind lokal eingebunden; dafür wird keine
+        Verbindung zu Servern Dritter (z. B. Google) hergestellt.
+      </p>
+      <p>
+        Zur Verwaltung der Cookie-Einstellungen nutzen wir den Dienst Cookiebot der Usercentrics A/S,
+        Havnegade 39, 1058 Kopenhagen, Dänemark. Beim Seitenaufruf wird dafür ein Skript von den
+        Servern des Anbieters geladen; technisch bedingt wird dabei Ihre IP-Adresse an den Anbieter
+        übermittelt. Ihre Auswahl wird für zwölf Monate im Cookie „CookieConsent“ in Ihrem Browser gespeichert. Im
+        Einwilligungsprotokoll des Anbieters werden Ihre Auswahl, eine zufällig erzeugte
+        Einwilligungs-ID, die aufgerufene URL und Angaben zu Ihrem Browser (User Agent) gespeichert.
+        Nach Angaben des Anbieters werden diese Daten nach zwölf Monaten gelöscht. Rechtsgrundlage
+        ist unser berechtigtes Interesse an der Verwaltung und dem Nachweis von Einwilligungen (Art. 6
+        Abs. 1 lit. f DSGVO); das Speichern des Cookies ist nach § 25 Abs. 2 Nr. 2 TDDDG unbedingt
+        erforderlich. Weitere Informationen finden Sie in der{" "}
+        <a href="https://www.cookiebot.com/en/privacy-policy/" target="_blank" rel="noopener noreferrer">
+          Datenschutzerklärung von Cookiebot
+        </a>
+        .
+      </p>
+      <p>
+        Ihre Auswahl können Sie jederzeit über den Link „Cookie-Einstellungen“ am Seitenende ändern.
       </p>
 
       <h2>6. SSL-/TLS-Verschlüsselung</h2>

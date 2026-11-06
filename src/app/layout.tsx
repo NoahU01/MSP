@@ -31,6 +31,18 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="de" className={`${openSans.variable} h-full antialiased`}>
+      <head>
+        {/* Bewusst "manual" + async: Synchron mit blockingmode "auto" löst Cookiebot einen Hydration-Fehler aus (React #418)
+            und der Banner verschwindet. Die Seite hat kein Tracking, es gibt also nichts automatisch zu blockieren. */}
+        <script
+          id="Cookiebot"
+          src="https://consent.cookiebot.com/uc.js"
+          data-cbid="5cb1ea9a-752b-4e7b-b314-f5e19a59a75d"
+          data-blockingmode="manual"
+          type="text/javascript"
+          async
+        />
+      </head>
       <body className="flex min-h-full flex-col font-sans">
         <a
           href="#inhalt"

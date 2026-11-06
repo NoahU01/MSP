@@ -8,6 +8,7 @@ import { content, localeFromPath, texts } from "@/lib/i18n";
 // Schmale Fußzeile nach Vorbild empiria: links Firma und Jahr, rechts die Rechtslinks.
 // Adresse und Kontaktwege stehen direkt darüber im Kontaktbereich.
 // Rechtstexte gibt es nur auf Deutsch; die englische Seite verlinkt sie.
+// „Cookie-Einstellungen“ öffnet den Cookiebot-Dialog erneut, damit die Auswahl jederzeit änderbar bleibt.
 export function Footer() {
   const locale = localeFromPath(usePathname());
   const { company } = content(locale);
@@ -35,6 +36,16 @@ export function Footer() {
               </Link>
             </Fragment>
           ))}
+          <span aria-hidden="true" className="hidden md:inline">
+            |
+          </span>
+          <button
+            type="button"
+            onClick={() => (window as Window & { Cookiebot?: { renew: () => void } }).Cookiebot?.renew()}
+            className="inline-block cursor-pointer py-1 transition hover:text-white"
+          >
+            {t.cookies}
+          </button>
         </p>
       </div>
     </footer>
